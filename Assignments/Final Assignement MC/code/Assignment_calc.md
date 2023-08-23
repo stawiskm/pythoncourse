@@ -19,8 +19,7 @@ def perform_operation(args):
         raise ValueError("Invalid number provided")
 
     # Converting numbers to integers
-    num1 = number_map[num1]
-    num2 = number_map[num2]
+    num1, num2 = number_map[num1],number_map[num2]
 
     # Performing the operation
     if operation == "plus":

@@ -155,13 +155,13 @@ def create_random_patient():
 
 def get_random_height():
     # Retrieve a random height value from an API
-    response = requests.get("http://www.randomnumberapi.com/api/v1.0/random", params={"min": 130, "max": 210, "count": 1})
+    response = requests.get("https://www.random.org/integers/?num=1&min=130&max=210&col=1&base=10&format=plain&rnd=new")
     if response.status_code != 200:
         raise requests.RequestException("Failed to retrieve random height.")
     data = response.json()
     if not data:
         raise ValueError("Empty response received for random height.")
-    height = float(data[0])
+    height = float(data)
     if height < 130:
         raise ValueError("Invalid random height value received.")
     logger.info(f"Random height generated: {height} cm")
@@ -169,13 +169,13 @@ def get_random_height():
 
 def get_random_weight():
     # Retrieve a random weight value from an API
-    response = requests.get("http://www.randomnumberapi.com/api/v1.0/random", params={"min": 40, "max": 140, "count": 1})
+    response = requests.get("https://www.random.org/integers/?num=1&min=40&max=140&col=1&base=10&format=plain&rnd=new")
     if response.status_code != 200:
         raise requests.RequestException("Failed to retrieve random weight.")
     data = response.json()
     if not data:
         raise ValueError("Empty response received for random weight.")
-    weight = data[0]
+    weight = data
     if weight < 40:
         raise ValueError("Invalid random weight value received.")
     logger.info(f"Random weight generated: {weight} kg")
