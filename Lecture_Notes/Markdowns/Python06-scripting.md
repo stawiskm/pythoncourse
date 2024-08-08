@@ -3,32 +3,40 @@
 This step-by-step guide will help you learn how to program a Python script that can be launched from the console. We will gradually build the script, adding new features and functionality at each step. The final code will include a graphical user interface (GUI) with various features such as BMI calculation, data logging, data storage in CSV format, data visualization, and more.
 
 ## Step 1: Simple "Hello, World!"
+
 Let's start with a simple "Hello, World!" program to ensure that everything is set up correctly.
 
 1. Create a new Python file called `script.py`.
 2. Open the file in a text editor or an integrated development environment (IDE) of your choice.
 3. Add the following code to the file:
+
 ```python
 print("Hello, World!")
 ```
+
 4. Save the file.
 
-To run the script:
-1. Open the console or terminal.
-2. Navigate to the directory where the `script.py` file is located.
-3. Enter the following command:
-```
-python3 script.py
-```
+    To run the script:
+
+    1. Open the console or terminal.
+    2. Navigate to the directory where the `script.py` file is located.
+    3. Enter the following command:
+
+        ```shell
+        python3 script.py
+        ```
+
 4. You should see the output `Hello, World!` in the console.
 
 Congratulations! You've successfully created and executed a simple Python script. Let's move on to the next step.
 
 ## Step 2: "Hello, World!" with Name as an Argument
+
 Next, let's modify the script to accept a name as an argument and customize the greeting message.
 
 1. Open the `script.py` file.
 2. Replace the existing code with the following:
+
 ```python
 import sys
 
@@ -39,15 +47,19 @@ else:
 
 print(f"Hello, {name}!")
 ```
+
 3. Save the file.
 
 To run the script with a name:
+
 1. Open the console or terminal.
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
+
 ```
 python3 script.py Alice
 ```
+
 4. You should see the output `Hello, Alice!` in the console.
 
 If you don't provide a name as an argument, the script will use "World" as the default name.
@@ -55,10 +67,12 @@ If you don't provide a name as an argument, the script will use "World" as the d
 Great job! You've enhanced the script to accept an argument and customized the greeting message. Let's continue to the next step.
 
 ## Step 3: BMI Calculator with Height and Weight
+
 In this step, we'll add functionality to calculate the body mass index (BMI) based on user-provided height and weight values.
 
 1. Open the `script.py` file.
 2. Replace the existing code with the following:
+
 ```python
 def calculate_bmi(height=0, weight=0):
     if height == 0:
@@ -72,15 +86,19 @@ def calculate_bmi(height=0, weight=0):
 bmi = calculate_bmi()
 print(f"Your BMI is: {bmi:.2f}")
 ```
+
 3. Save the file.
 
 To run the script and calculate BMI:
+
 1. Open the console or terminal.
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
+
 ```
 python script.py Alice
 ```
+
 4. Follow the prompts to enter the height and weight values.
 5. You should see the output `Hello, Alice!` followed by the calculated BMI.
 
@@ -89,14 +107,18 @@ The script will ask for the height and weight values if they are not provided as
 Fantastic progress! You've implemented a BMI calculator in your script. Let's move on to the next step.
 
 ## Step 4: Script with a GUI Interface for Height and Weight Input
+
 In this step, we'll enhance the script by adding a graphical user interface (GUI) to input the height and weight values.
 
 1. Install the required dependencies:
+
 ```
 pip3 install tkinter
 ```
+
 2. Open the `script.py` file.
 3. Replace the existing code with the following:
+
 ```python
 import tkinter as tk
 
@@ -131,15 +153,19 @@ calculate_button.pack()
 
 window.mainloop()
 ```
+
 4. Save the file.
 
 To run the script with the GUI interface:
+
 1. Open the console or terminal.
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
+
 ```
 python3 script.py
 ```
+
 4. The GUI window titled "BMI Calculator" will appear.
 5. Enter the height and weight values in the corresponding entry fields.
 6. Click the "Calculate BMI" button.
@@ -150,10 +176,12 @@ You now have a graphical interface for entering the height and weight values. Th
 Let's proceed to the next step.
 
 ## Step 5: Adding a Logger Component to Log What's Happening
+
 In this step, we'll introduce logging to the script to track and log various events and messages.
 
 1. Open the `script.py` file.
 2. Add the following code at the beginning of the file, before the `import` statements:
+
 ```python
 import logging
 
@@ -161,7 +189,9 @@ import logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger("EDC")
 ```
+
 3. Replace the existing `calculate_bmi` function with the following code:
+
 ```python
 def calculate_bmi(height=0, weight=0):
     if height == 0:
@@ -177,12 +207,15 @@ def calculate_bmi(height=0, weight=0):
     return bmi
 # ...
 ```
+
 4. Save the file.
 
 To run the script with logging:
+
 1. Open the console or terminal.
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
+
 ```
 python3 script.py
 ```
@@ -194,14 +227,18 @@ You've successfully added a logger component to the script, and now you can trac
 Let's proceed to the next step.
 
 ## Step 6: GUI Can Save Height, Weight, and Cardiac Event to a CSV
+
 In this step, we'll add a the variable cardiac event and add functionality to save the height, weight, and cardiac event data entered through the GUI to a CSV file.
 
 1. Open the `script.py` file.
 2. Add the following `import` statement at the beginning of the file, after the other `import` statements:
+
 ```python
 import csv
 ```
+
 3. Add the following code after the `weight_entry.pack()` line:
+
 ```python
 # ...
 weight_entry.pack()
@@ -213,7 +250,9 @@ cardiac_event_checkbox.pack()
 
 # ...
 ```
+
 4. Replace the existing `calculate_bmi` function with the following code:
+
 ```python
 def calculate_bmi(height=0, weight=0):
     if height == 0:
@@ -235,15 +274,19 @@ def calculate_bmi(height=0, weight=0):
     return bmi
 # ...
 ```
+
 5. Save the file.
 
 To run the script and save data to a CSV file:
+
 1. Open the console or terminal.
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
+
 ```
 python3 script.py
 ```
+
 4. Use the GUI to enter height, weight, and cardiac event data.
 5. Click the "Calculate BMI" button.
 6. The calculated BMI will be displayed, and the data will be saved to a CSV file named `data.csv` in the same directory.
@@ -253,10 +296,12 @@ Congratulations! You've added the functionality to save patient data to a CSV fi
 Let's move on to the next step.
 
 ## Step 7: GUI Can Display Rows of CSV
+
 In this step, we'll add functionality to display all the rows from the CSV file in the GUI.
 
 1. Open the `script.py` file.
 2. Add the following code after the `calculate_bmi` function:
+
 ```python
 def calculate_bmi():
     # ...
@@ -279,14 +324,18 @@ def display_data():
 window = tk.Tk()
 # ...
 ```
+
 3. Modify the `window` definition code as follows:
+
 ```python
 window = tk.Tk()
 window.title("Electronic Data Capture")
 
 # ...
 ```
+
 4. Add the following code after the `calculate_button.pack()` line:
+
 ```python
 # ...
 calculate_button.pack()
@@ -296,15 +345,19 @@ display_button.pack()
 
 # ...
 ```
+
 5. Save the file.
 
 To run the script and display the data:
+
 1. Open the console or terminal.
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
+
 ```
 python3 script.py
 ```
+
 4. Use the GUI to enter height, weight, and cardiac event data and save it.
 5. Click the "Records" button.
 6. A new window titled "Records" will open, showing all the rows from the `data.csv` file.
@@ -314,10 +367,12 @@ You've successfully implemented the feature to display all the rows from the CSV
 Great work! Let's proceed to the next step.
 
 ## Step 8: GUI Can Delete Rows from CSV
+
 In this step, we'll add functionality to delete rows from the CSV file using the GUI.
 
 1. Open the `script.py` file.
 2. Replace the existing `display_data` function with the following code:
+
 ```python
 def display_data():
     # Read data from the CSV file
@@ -357,15 +412,19 @@ def delete_row(index, display_window):
 window = tk.Tk()
 # ...
 ```
+
 3. Save the file.
 
 To run the script and delete rows from the CSV file:
+
 1. Open the console or terminal.
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
+
 ```
 python3 script.py
 ```
+
 4. Use the GUI to enter height, weight, and cardiac event data and save it.
 5. Click the "Records" button.
 6. A new window titled "Records" will open, showing all the rows from the `data.csv` file, with a "Delete" button next to each row.
@@ -377,10 +436,12 @@ Well done! You've added the functionality to delete rows from the CSV file using
 Let's proceed to the next step.
 
 ## Step 9: Adding Raise Error Tests to Make the Code More Stable
+
 In this step, we'll enhance the code by adding error handling and raise error tests to make it more stable.
 
 1. Open the `script.py` file.
 2. Replace the existing `delete_row` function with the following code:
+
 ```python
 def calculate_bmi(height=0, weight=0):
     if height == 0:
@@ -404,7 +465,9 @@ def calculate_bmi(height=0, weight=0):
     return bmi
 # ...
 ```
+
 3. Replace the existing `delete_row` function with the following code:
+
 ```python
 def delete_row(index, display_window):
     # Read data from the CSV file
@@ -426,15 +489,19 @@ def delete_row(index, display_window):
     display_data()
 # ...
 ```
+
 4. Save the file.
 
 To run the script and test error handling:
+
 1. Open the console or terminal.
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
+
 ```
 python3 script.py
 ```
+
 4. Use the GUI to enter height, weight, and cardiac event data and save it.
 5. Click the "Calculate BMI" button.
 6. If you enter invalid height or weight values (e.g., negative values), an error message will be displayed in the console.
@@ -444,18 +511,24 @@ Great job! You've added error handling and raise error tests to improve the stab
 Let's move on to the next step.
 
 ## Step 10: GUI Can Visualize Data Points
+
 In this step, we'll add features that will allow us to visualize the CSV file's data points and color them in accordance with cardiac events.
 
 1. Install the required dependencies:
+
 ```
 pip3 install matplotlib
 ```
+
 2. Open the `script.py` file.
 3. Add the following `import` statement at the beginning of the file, after the other `import` statements:
+
 ```python
 import matplotlib.pyplot as plt
 ```
+
 4. Add the following code after the `display_button.pack()` line:
+
 ```python
 # ...
 display_button.pack()
@@ -465,7 +538,9 @@ visualize_button.pack()
 
 # ...
 ```
+
 5. Add following `visualize_data` function:
+
 ```python
 def visualize_data():
     # Read data from the CSV file
@@ -527,15 +602,19 @@ def visualize_data():
 window = tk.Tk()
 # ...
 ```
+
 4. Save the file.
 
 To run the script and visualize the data:
+
 1. Open the console or terminal.
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
+
 ```
 python3 script.py
 ```
+
 4. Use the GUI to enter height, weight, and cardiac event data and save it.
 5. Click the "Visualize Data" button.
 6. A figure with two subplots will appear, visualizing the BMI distribution by cardiac event and the relationship between height and weight.
@@ -545,19 +624,25 @@ Fantastic work! You've implemented data visualization functionality in your scri
 Let's move on to the final step.
 
 ## Step 11: Adding a Button to Generate a Random Patient
+
 In this final step, we'll add functionality to generate a random patient with random height and weight values.
 
 1. Install the required dependency:
+
 ```
 pip3 install requests
 ```
+
 2. Open the `script.py` file.
 3. Add the following `import` statement at the beginning of the file, after the other `import` statements:
+
 ```python
 import requests
 import random
 ```
+
 4. Add the following code after the `display_button.pack()` line:
+
 ```python
 # ...
 visualize_button.pack()
@@ -567,7 +652,9 @@ randompatient_button.pack()
 
 # ...
 ```
+
 5. Add following `create_random_patient` function:
+
 ```python
 def create_random_patient():
     # Generate random height and weight values
@@ -639,15 +726,19 @@ def get_cardiac_event_distribution(bmi):
 window = tk.Tk()
 # ...
 ```
+
 4. Save the file.
 
 To run the script and generate a random patient:
+
 1. Open the console or terminal.
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
+
 ```
 python3 script.py
 ```
+
 4. Click the "Generate one Random Patient" button.
 5. The height and weight fields will be filled with random values.
 6. The BMI will be calculated, and the cardiac event checkbox will be set accordingly.
