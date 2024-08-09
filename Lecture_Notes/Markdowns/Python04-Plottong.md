@@ -1,5 +1,28 @@
 # Guide to Plotting with Seaborn and Matplotlib in Python
 
+Data visualization is an essential part of data analysis, as it helps you understand patterns and relationships in your data. Python offers powerful libraries for creating various types of plots, including Matplotlib and Seaborn. This guide will introduce you to these libraries and show you how to create different types of plots to visualize your data.
+
+## Table of Contents
+
+- [Guide to Plotting with Seaborn and Matplotlib in Python](#guide-to-plotting-with-seaborn-and-matplotlib-in-python)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Installing the Libraries](#installing-the-libraries)
+  - [Importing the Libraries](#importing-the-libraries)
+  - [Basic Plotting with Matplotlib](#basic-plotting-with-matplotlib)
+    - [Customizing Plots](#customizing-plots)
+  - [Basic Plotting with Seaborn](#basic-plotting-with-seaborn)
+    - [Customizing Seaborn Plots](#customizing-seaborn-plots)
+  - [Common Plot Types](#common-plot-types)
+    - [Bar Plot](#bar-plot)
+    - [Histogram](#histogram)
+    - [Scatter Plot](#scatter-plot)
+    - [Box Plot](#box-plot)
+    - [Heatmap](#heatmap)
+  - [Advanced Customization](#advanced-customization)
+  - [Saving Plots](#saving-plots)
+  - [Conclusion](#conclusion)
+
 ## Introduction
 
 Python offers powerful libraries for data visualization, with Matplotlib and Seaborn being two of the most popular. This guide will introduce you to these libraries and show you how to create various types of plots to visualize your data.
@@ -26,7 +49,7 @@ import seaborn as sns
 Matplotlib is the foundation for most of Python’s plotting libraries. Here's how to create a simple line plot:
 
 ```python
-import numpy as np
+import numpy as np55
 
 # Sample data
 x = np.linspace(0, 10, 100)
@@ -205,6 +228,58 @@ sns.scatterplot(data=data, x="sepal_length", y="sepal_width", hue="species")
 
 # Add a title
 plt.title('Sepal Length vs Width by Species')
+
+# Show the plot
+plt.show()
+```
+
+### Box Plot
+
+**Matplotlib:**
+
+```python
+# Sample data
+data = np.random.randn(100, 4)
+
+# Create a box plot
+plt.boxplot(data)
+
+# Add a title
+plt.title('Box Plot')
+
+# Show the plot
+plt.show()
+```
+
+**Seaborn:**
+
+```python
+# Sample data
+data = sns.load_dataset("tips")
+
+# Create a box plot
+sns.boxplot(data=data, x="day", y="total_bill")
+
+# Add a title
+plt.title('Total Bill by Day')
+
+# Show the plot
+plt.show()
+```
+
+### Heatmap
+
+**Seaborn:**
+
+```python
+# Sample data
+data = sns.load_dataset("flights")
+
+# Create a heatmap
+sns.heatmap(data.pivot("month", "year", "passengers"))
+
+# Add a title
+plt.title('Passengers by Month and Year')
 
 # Show the plot
 plt.show()

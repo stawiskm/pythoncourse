@@ -56,7 +56,7 @@ To run the script with a name:
 2. Navigate to the directory where the `script.py` file is located.
 3. Enter the following command:
 
-```
+```python
 python3 script.py Alice
 ```
 
@@ -643,106 +643,106 @@ import random
 
 4. Add the following code after the `display_button.pack()` line:
 
-```python
-# ...
-visualize_button.pack()
+    ```python
+    # ...
+    visualize_button.pack()
 
-randompatient_button = tk.Button(window, text="Generate one Random Patient", command=create_random_patient)
-randompatient_button.pack()
+    randompatient_button = tk.Button(window, text="Generate one Random Patient", command=create_random_patient)
+    randompatient_button.pack()
 
-# ...
-```
+    # ...
+    ```
 
 5. Add following `create_random_patient` function:
 
-```python
-def create_random_patient():
-    # Generate random height and weight values
-    height = float(get_random_height())
-    weight = float(get_random_weight())
-    height_entry.delete(0, tk.END)
-    height_entry.insert(0, height)
-    weight_entry.delete(0, tk.END)
-    weight_entry.insert(0, weight)
+    ```python
+    def create_random_patient():
+        # Generate random height and weight values
+        height = float(get_random_height())
+        weight = float(get_random_weight())
+        height_entry.delete(0, tk.END)
+        height_entry.insert(0, height)
+        weight_entry.delete(0, tk.END)
+        weight_entry.insert(0, weight)
 
-    logger.info(f"Generated random patient: Height: {height} m, Weight: {weight} kg")
+        logger.info(f"Generated random patient: Height: {height} m, Weight: {weight} kg")
 
-    # Calculate BMI for the generated patient
-    bmi = weight / (height ** 2)
-    result_label.config(text=f"Patient's BMI is: {bmi:.2f}")
+        # Calculate BMI for the generated patient
+        bmi = weight / (height ** 2)
+        result_label.config(text=f"Patient's BMI is: {bmi:.2f}")
 
-    # Determine the cardiac event for the generated BMI
-    event = get_cardiac_event_distribution(bmi)
-    # Set the cardiac event value in the checkbox
-    cardiac_event_var.set(event)
+        # Determine the cardiac event for the generated BMI
+        event = get_cardiac_event_distribution(bmi)
+        # Set the cardiac event value in the checkbox
+        cardiac_event_var.set(event)
 
-    logger.info(f"Height: {height} m, Weight: {weight} kg")
-    logger.info(f"BMI: {bmi:.2f}, Cardiac Event: {event}")
+        logger.info(f"Height: {height} m, Weight: {weight} kg")
+        logger.info(f"BMI: {bmi:.2f}, Cardiac Event: {event}")
 
-    # Save the generated patient data
-    with open("data.csv", "a", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow([height, weight, bmi, event])
+        # Save the generated patient data
+        with open("data.csv", "a", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow([height, weight, bmi, event])
 
 
-def get_random_height():
-    # Retrieve a random height value from an API
-    response = requests.get("http://www.randomnumberapi.com/api/v1.0/random", params={"min": 130, "max": 210, "count": 1})
-    if response.status_code != 200:
-        raise requests.RequestException("Failed to retrieve random height.")
-    data = response.json()
-    if not data:
-        raise ValueError("Empty response received for random height.")
-    height = float(data[0])
-    if height < 130:
-        raise ValueError("Invalid random height value received.")
-    logger.info(f"Random height generated: {height} cm")
-    return height / 100
+    def get_random_height():
+        # Retrieve a random height value from an API
+        response = requests.get("http://www.randomnumberapi.com/api/v1.0/random", params={"min": 130, "max": 210, "count": 1})
+        if response.status_code != 200:
+            raise requests.RequestException("Failed to retrieve random height.")
+        data = response.json()
+        if not data:
+            raise ValueError("Empty response received for random height.")
+        height = float(data[0])
+        if height < 130:
+            raise ValueError("Invalid random height value received.")
+        logger.info(f"Random height generated: {height} cm")
+        return height / 100
 
-def get_random_weight():
-    # Retrieve a random weight value from an API
-    response = requests.get("http://www.randomnumberapi.com/api/v1.0/random", params={"min": 40, "max": 140, "count": 1})
-    if response.status_code != 200:
-        raise requests.RequestException("Failed to retrieve random weight.")
-    data = response.json()
-    if not data:
-        raise ValueError("Empty response received for random weight.")
-    weight = data[0]
-    if weight < 40:
-        raise ValueError("Invalid random weight value received.")
-    logger.info(f"Random weight generated: {weight} kg")
-    return weight
+    def get_random_weight():
+        # Retrieve a random weight value from an API
+        response = requests.get("http://www.randomnumberapi.com/api/v1.0/random", params={"min": 40, "max": 140, "count": 1})
+        if response.status_code != 200:
+            raise requests.RequestException("Failed to retrieve random weight.")
+        data = response.json()
+        if not data:
+            raise ValueError("Empty response received for random weight.")
+        weight = data[0]
+        if weight < 40:
+            raise ValueError("Invalid random weight value received.")
+        logger.info(f"Random weight generated: {weight} kg")
+        return weight
 
-def get_cardiac_event_distribution(bmi):
-    if bmi < 9 or bmi > 83:
-        raise ValueError("BMI value should be between 9 and 83.")
-    if bmi <= 22:
-        return "No"
-    if bmi <= 38:
-        risk = (bmi - 22) / (38 - 22)
-        return 'Yes' if random.random() < risk else 'No'
-    return "Yes"
-    
-window = tk.Tk()
-# ...
-```
+    def get_cardiac_event_distribution(bmi):
+        if bmi < 9 or bmi > 83:
+            raise ValueError("BMI value should be between 9 and 83.")
+        if bmi <= 22:
+            return "No"
+        if bmi <= 38:
+            risk = (bmi - 22) / (38 - 22)
+            return 'Yes' if random.random() < risk else 'No'
+        return "Yes"
+        
+    window = tk.Tk()
+    # ...
+    ```
 
 4. Save the file.
 
-To run the script and generate a random patient:
+    To run the script and generate a random patient:
 
-1. Open the console or terminal.
-2. Navigate to the directory where the `script.py` file is located.
-3. Enter the following command:
+    1. Open the console or terminal.
+    2. Navigate to the directory where the `script.py` file is located.
+    3. Enter the following command:
 
-```
-python3 script.py
-```
+        ```python
+        python3 script.py
+        ```
 
-4. Click the "Generate one Random Patient" button.
-5. The height and weight fields will be filled with random values.
-6. The BMI will be calculated, and the cardiac event checkbox will be set accordingly.
-7. Click the "Calculate BMI" button to display the calculated BMI and save the patient data.
+    4. Click the "Generate one Random Patient" button.
+    5. The height and weight fields will be filled with random values.
+    6. The BMI will be calculated, and the cardiac event checkbox will be set accordingly.
+    7. Click the "Calculate BMI" button to display the calculated BMI and save the patient data.
 
 Amazing work! You've added the functionality to generate a random patient with random height and weight values.
 
