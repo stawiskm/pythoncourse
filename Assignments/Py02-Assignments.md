@@ -165,19 +165,146 @@ def check_heart_rate(heart_rate_data):
 
 ## Problem 2: Medical Imaging Pixel Intensity Analysis
 
+### Hard
+
 **Scenario:**  
 A radiologist is analyzing a grayscale MRI image represented as a 2D array, where each element in the array represents the intensity of a pixel (ranging from 0 to 255). The radiologist wants to identify regions of interest (ROI) where the pixel intensity exceeds a certain threshold, indicating possible abnormalities.
 
 **Problem Statement:**  
 Write a program that takes a 2D array representing an MRI scan and a threshold value as input. The program should:
 
-1. Identify all contiguous regions (clusters) in the array where the pixel intensity exceeds the threshold.
-2. For each cluster, calculate the size of the region (number of pixels) and the average intensity.
-3. Return a list of clusters with their respective sizes and average intensities.
+1. Should create a segmentation mask where each pixel above the threshold is marked as 1 and others as 0.
+2. Calculate the following from Mask:
+    - The total number of pixels above the threshold.
+    - The average intensity of the pixels above the threshold.
+    - The maximum intensity value among the pixels above the threshold.
+3. Apply the Mask to the Image and window the remaining pixel values between 0 and 255.
+4. Return the segmentation mask, the calculated values, and the windowed image.
 
 **Array Usage:**  
 
 - The MRI scan data is stored in a 2D array of integers.
-- The program uses the array to identify contiguous regions (clusters) of high intensity, calculate their sizes, and determine the average intensity within each cluster.
 
 These problems can be solved efficiently using arrays and basic array operations in coding.
+
+```python
+# Example usage
+mri_image = np.array([[10, 50, 200], [30, 180, 250], [15, 90, 220]])
+threshold = 100
+
+results = analyze_mri_image(mri_image, threshold)
+
+print("Segmentation Mask:\n", results['segmentation_mask'])
+print("Total Pixels Above Threshold:", results['total_above_threshold'])
+print("Average Intensity of Pixels Above Threshold:", results['average_intensity'])
+print("Maximum Intensity Value Among Pixels Above Threshold:", results['max_intensity'])
+print("Windowed Image:\n", results['windowed_image'])
+
+# Print-> Segmentation Mask:
+#  [[0 0 1]
+#   [0 1 1]
+#   [0 0 1]]
+# Total Pixels Above Threshold: 4
+# Average Intensity of Pixels Above Threshold: 212.5
+# Maximum Intensity Value Among Pixels Above Threshold: 250
+# Windowed Image:
+# [[  0   0 200]
+#  [  0 180 250]
+#  [  0   0 220]]
+```
+
+*If you stop here, and code this function, by yourself, you will learn a lot. (HARD)*
+
+---
+---
+---
+
+### Medium
+
+Here's how to solve the problem efficiently using array functions and numpy:
+
+1. **Create a Segmentation Mask**:
+   - Create a new 2D array (mask) where each pixel is set to 1 if its intensity exceeds the threshold, and 0 otherwise.
+
+2. **Calculate Statistics from the Mask**:
+   - Extract the pixels from the original image where the mask value is 1 (i.e., pixels above the threshold).
+   - Count the total number of these pixels.
+   - Compute the average intensity of these pixels by summing their intensities and dividing by the total number of pixels.
+   - Determine the maximum intensity value among these pixels.
+
+3. **Apply Mask and do the windowing of the values**:
+   - Use `numpy.where` to apply the mask. Pixels above the threshold get new values within the range of 0 to 255.
+     - **Windowing with Full 0-255 Range**:
+       - After identifying the pixels above the threshold, we find the minimum and maximum intensity values among them.
+       - We then linearly rescale these pixel values so that the minimum value maps to 0 and the maximum value maps to 255. This is done using the formula:
+        ![alt text](image.png)
+       - We use `numpy.clip` to ensure the rescaled values remain within the 0-255 range.
+     - **Handling Edge Cases**:
+       - If all pixels above the threshold have the same intensity (i.e., `max_intensity == min_intensity`), the `scale` is set to 1, preventing division by zero.
+
+4. **Return Results**:
+   - Provide the segmentation mask.
+   - Return the total count of pixels above the threshold.
+   - Return the average and maximum intensity values of the pixels above the threshold.
+   - Provide the modified image where non-ROI pixels are set to 0 and intensity values are clipped to the valid range.
+
+*If you stop here, and code this function, with the help of the instructions above, you still learn a lot. (MEDIUM)*
+
+---
+---
+---
+
+### Easy
+
+Here’s some dummy code in Python to achieve this. We'll use basic array operations and numpy for efficiency.
+
+```python
+import numpy as np
+
+def analyze_mri_image(mri_image, threshold):
+    max_intensity = 0
+    min_intensity = 0
+    
+    # Convert the input image to a numpy array (if not already in that format)
+    mri_image = #TODO
+        
+    # Step 1: Create a segmentation mask
+    segmentation_mask = #TODO
+    
+    # Step 2: Calculate statistics
+    # Get pixels above the threshold
+    above_threshold_pixels = #TODO
+    
+    # Calculate the total number of pixels above the threshold
+    total_above_threshold = #TODO
+    
+    # Calculate the average intensity of the pixels above the threshold
+    if total_above_threshold > 0:
+        average_intensity = #TODO
+        max_intensity = above_threshold_pixels.max()
+        min_intensity = above_threshold_pixels.min()
+    else:
+        average_intensity = 0  # Avoid division by zero if no pixels exceed the threshold
+        max_intensity = 0
+        min_intensity = 0
+    
+    # Step 3: Apply the mask and window the pixel values
+    # Initialize the windowed image with zeros
+    windowed_image = #TODO
+    
+    if total_above_threshold > 0:
+        # Rescale the pixel values to the 0-255 range
+        scale = 255 / (max_intensity - min_intensity) if max_intensity != min_intensity else 1
+        windowed_image[segmentation_mask == 1] = np.clip((above_threshold_pixels - min_intensity) * scale, 0, 255)
+    
+    # Return results
+    return {
+        'segmentation_mask': segmentation_mask,
+        'total_above_threshold': total_above_threshold,
+        'average_intensity': average_intensity,
+        'max_intensity': max_intensity,
+        'windowed_image': windowed_image
+    }
+```
+
+This code provides a comprehensive analysis of the MRI image and efficiently processes the data using numpy's capabilities.
