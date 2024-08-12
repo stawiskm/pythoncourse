@@ -1,0 +1,101 @@
+Patient_ID,Age,Gender,Primary_Diagnosis,Num_Comorbidities,Length_of_Stay,Discharge_Destination,Follow_Up_Appointment,Readmitted_Within_30_Days
+1,69,female,Kidney disease,1,13,Home,1,0
+2,32,Female,Pneumonia,5,1,Nursing Home,0,0
+3,89,male,Diabetes,5,1,Home,0,0
+4,78,male,Diabetes,0,16,Home with Services,1,0
+5,38,Male,Pneumonia,5,3,Home with Services,0,1
+6,41,male,Heart failure,1,19,Home,1,0
+7,20,Male,Heart Failure,5,3,Home,0,1
+8,39,male,COPD,1,18,Home,1,0
+9,70,Female,Diabetes,1,18,Home,1,0
+10,19,male,Kidney Disease,0,18,Home with Services,0,0
+11,47,Male,Diabetes,5,2,Rehabilitation Center,1,1
+12,55,Male,pneumonia,0,9,Home,0,0
+13,19,Female,Diabetes,5,2,Home,1,1
+14,81,male,Diabetes,0,20,Home with Services,1,0
+15,77,male,Heart Failure,1,14,Home with Services,0,0
+16,38,Female,Heart Failure,1,14,Nursing Home,0,0
+17,50,male,diabetes,5,3,Home,0,1
+18,75,male,Heart failure,0,9,Nursing Home,1,0
+19,39,Male,Kidney Disease,5,1,Home with Services,0,1
+20,66,male,Diabetes,0,8,Home with Services,1,0
+21,76,male,Diabetes,1,5,Rehabilitation Center,1,0
+22,59,Female,COPD,1,18,Home,0,0
+23,77,Female,Heart Failure,5,3,Nursing Home,0,1
+24,32,female,Kidney Disease,1,9,Home with Services,1,0
+25,79,Male,diabetes,1,11,Home with Services,1,0
+26,79,male,Heart failure,0,14,Nursing Home,0,0
+27,64,male,Pneumonia,0,14,Rehabilitation Center,0,0
+28,79,female,Heart failure,1,10,Home with Services,0,0
+29,68,male,pneumonia,5,3,Home,0,1
+30,72,Male,Diabetes,0,8,Home with Services,0,0
+31,81,female,diabetes,5,3,Home,1,1
+32,20,Male,pneumonia,1,8,Nursing Home,1,0
+33,68,female,Kidney Disease,0,19,Home,1,0
+34,24,female,Pneumonia,1,14,Nursing Home,1,0
+35,38,Female,Heart Failure,0,14,Home,0,0
+36,56,Male,diabetes,1,7,Nursing Home,0,0
+37,35,male,diabetes,5,2,Home,0,1
+38,21,male,Diabetes,1,20,Rehabilitation Center,1,0
+39,77,Male,Kidney disease,0,5,Home,1,0
+40,31,male,diabetes,0,12,Home,0,0
+41,26,male,COPD,5,1,Rehabilitation Center,0,0
+42,70,Male,Pneumonia,0,17,Home with Services,1,0
+43,19,female,Pneumonia,5,2,Home with Services,1,1
+44,77,Male,COPD,0,20,Home,0,0
+45,88,female,COPD,1,12,Rehabilitation Center,0,0
+46,61,male,COPD,0,20,Home,1,0
+47,25,male,Pneumonia,5,1,Nursing Home,0,0
+48,64,male,Heart failure,0,6,Nursing Home,0,0
+49,52,Female,Pneumonia,1,5,Home,0,0
+50,53,female,Kidney disease,0,16,Home with Services,1,0
+51,67,Female,Diabetes,1,20,Home with Services,1,0
+52,21,Female,pneumonia,1,20,Home,1,0
+53,19,Male,Heart failure,5,1,Home,1,1
+54,23,Female,Heart Failure,0,8,Nursing Home,1,0
+55,71,Male,pneumonia,1,12,Home with Services,1,0
+56,21,Male,Diabetes,0,16,Home,1,0
+57,71,Female,Kidney disease,1,6,Nursing Home,0,0
+58,80,female,Kidney disease,0,7,Home with Services,0,0
+59,35,female,Heart Failure,5,2,Rehabilitation Center,0,1
+60,61,female,Heart failure,0,5,Nursing Home,0,0
+61,51,female,COPD,5,2,Home with Services,0,1
+62,79,female,Heart failure,1,17,Home with Services,0,0
+63,31,Female,Kidney disease,0,7,Nursing Home,0,0
+64,65,Female,Pneumonia,0,15,Rehabilitation Center,1,0
+65,32,male,Diabetes,1,9,Nursing Home,1,0
+66,89,female,Heart Failure,0,16,Home with Services,0,0
+67,79,Female,Diabetes,5,3,Home,0,0
+68,57,male,Kidney Disease,0,5,Home,1,0
+69,70,female,Kidney Disease,1,5,Nursing Home,0,0
+70,41,Male,Heart failure,0,12,Home with Services,0,0
+71,43,male,Kidney disease,5,1,Home,1,0
+72,77,Female,Kidney disease,0,15,Home with Services,0,0
+73,58,Male,COPD,5,3,Nursing Home,1,1
+74,46,Male,COPD,0,17,Home,0,0
+75,32,Male,COPD,1,17,Home with Services,1,0
+76,62,male,Pneumonia,0,16,Home,1,0
+77,82,Female,pneumonia,0,19,Nursing Home,1,0
+78,88,Male,diabetes,1,18,Home with Services,0,0
+79,26,female,pneumonia,5,2,Home,1,0
+80,18,Male,Diabetes,1,17,Nursing Home,0,0
+81,25,Male,pneumonia,1,7,Home,0,0
+82,80,male,Pneumonia,0,6,Home,0,0
+83,28,male,Diabetes,5,2,Rehabilitation Center,0,0
+84,25,Female,pneumonia,0,11,Rehabilitation Center,1,0
+85,52,female,Pneumonia,1,5,Nursing Home,1,0
+86,52,male,diabetes,1,14,Rehabilitation Center,0,0
+87,50,Male,pneumonia,0,12,Nursing Home,0,0
+88,22,Female,Pneumonia,1,17,Rehabilitation Center,1,0
+89,58,Male,COPD,5,1,Home,0,0
+90,45,Male,Kidney disease,1,14,Nursing Home,1,0
+91,24,male,COPD,1,14,Nursing Home,0,0
+92,89,Female,Kidney disease,1,18,Home,0,0
+93,29,female,Heart Failure,0,6,Nursing Home,1,0
+94,51,female,Heart Failure,1,7,Nursing Home,0,0
+95,50,male,Heart Failure,0,13,Rehabilitation Center,1,0
+96,65,male,diabetes,1,11,Nursing Home,0,0
+97,40,Female,COPD,5,2,Home with Services,0,0
+98,79,female,Kidney disease,0,14,Home,0,0
+99,54,female,Pneumonia,1,9,Rehabilitation Center,1,0
+100,61,female,Diabetes,1,6,Rehabilitation Center,0,0

@@ -1,0 +1,101 @@
+Patient_ID,Age,Gender,Condition,Num_Medications,Adherence_Level
+1,54,Female,Hypertension,2,Low
+2,84,Male,Hypertension & Diabetes,14,Low
+3,79,Male,Hypertension,7,High
+4,53,Male,Diabetes,7,Low
+5,72,Female,Diabetes,13,Low
+6,37,Female,Hypertension & Diabetes,3,Medium
+7,71,Male,Diabetes,14,Low
+8,40,Female,Hypertension,6,High
+9,46,Female,Hypertension & Diabetes,1,Medium
+10,37,Female,Hypertension,0,Medium
+11,75,Female,Hypertension,8,High
+12,64,Female,Diabetes,7,High
+13,85,Male,Diabetes,12,Medium
+14,34,Female,Diabetes,2,Low
+15,68,Male,Diabetes,0,Medium
+16,57,Male,Diabetes,0,High
+17,67,Female,Hypertension & Diabetes,6,Medium
+18,38,Male,Hypertension,4,High
+19,85,Male,Hypertension,10,Medium
+20,41,Male,Hypertension,0,Low
+21,63,Female,Hypertension,0,Medium
+22,62,Female,Diabetes,7,Medium
+23,70,Male,Hypertension,10,High
+24,53,Female,Hypertension & Diabetes,1,High
+25,66,Female,Hypertension & Diabetes,2,High
+26,64,Female,Hypertension,1,Medium
+27,69,Female,Hypertension,2,Low
+28,51,Male,Hypertension & Diabetes,6,High
+29,76,Male,Hypertension & Diabetes,14,High
+30,64,Female,Diabetes,9,Medium
+31,81,Female,Hypertension & Diabetes,10,High
+32,64,Male,Diabetes,9,Low
+33,66,Male,Diabetes,9,Low
+34,43,Female,Diabetes,9,High
+35,32,Male,Diabetes,1,High
+36,30,Female,Diabetes,2,Medium
+37,76,Female,Hypertension,11,Low
+38,55,Male,Hypertension & Diabetes,6,Low
+39,43,Male,Diabetes,3,High
+40,68,Female,Hypertension & Diabetes,9,Medium
+41,67,Female,Hypertension & Diabetes,7,Low
+42,38,Male,Diabetes,1,Low
+43,83,Female,Hypertension,12,Medium
+44,44,Male,Diabetes,3,Medium
+45,55,Female,Hypertension,8,Low
+46,42,Male,Hypertension & Diabetes,4,Low
+47,71,Male,Hypertension,7,Medium
+48,68,Male,Hypertension,3,Low
+49,61,Female,Hypertension,9,High
+50,33,Female,Hypertension & Diabetes,4,High
+51,59,Male,Hypertension & Diabetes,8,Medium
+52,66,Female,Hypertension,7,Medium
+53,73,Male,Hypertension,14,Medium
+54,68,Male,Diabetes,0,High
+55,44,Female,Hypertension,2,Low
+56,58,Female,Diabetes,3,High
+57,65,Male,Hypertension,1,Low
+58,42,Female,Diabetes,0,High
+59,76,Female,Hypertension & Diabetes,9,Low
+60,36,Male,Hypertension,7,High
+61,79,Male,Hypertension,14,Medium
+62,57,Female,Hypertension,4,High
+63,31,Male,Hypertension,0,Low
+64,35,Male,Diabetes,6,High
+65,57,Female,Hypertension,6,High
+66,57,Male,Hypertension & Diabetes,8,High
+67,72,Male,Hypertension & Diabetes,12,Medium
+68,59,Female,Hypertension,8,High
+69,40,Female,Hypertension & Diabetes,0,Medium
+70,57,Male,Hypertension,0,Medium
+71,86,Male,Hypertension,9,High
+72,68,Female,Hypertension & Diabetes,8,High
+73,68,Female,Hypertension,11,High
+74,30,Female,Hypertension & Diabetes,2,Low
+75,56,Female,Diabetes,0,High
+76,42,Male,Hypertension,3,Medium
+77,32,Female,Diabetes,8,High
+78,68,Female,Hypertension & Diabetes,2,Low
+79,68,Male,Diabetes,13,High
+80,37,Female,Diabetes,6,Low
+81,56,Male,Hypertension & Diabetes,3,Low
+82,38,Female,Diabetes,2,High
+83,72,Female,Diabetes,9,Medium
+84,62,Female,Hypertension & Diabetes,4,Low
+85,53,Male,Diabetes,4,High
+86,44,Male,Hypertension & Diabetes,2,High
+87,61,Female,Diabetes,8,Medium
+88,61,Male,Hypertension & Diabetes,3,Low
+89,80,Male,Hypertension & Diabetes,5,Low
+90,41,Male,Diabetes,3,High
+91,68,Male,Diabetes,4,High
+92,31,Male,Diabetes,6,Medium
+93,32,Male,Hypertension,8,Medium
+94,66,Female,Hypertension,6,Low
+95,46,Female,Hypertension,4,Low
+96,31,Male,Hypertension & Diabetes,9,High
+97,73,Female,Diabetes,6,Low
+98,57,Female,Hypertension & Diabetes,6,Medium
+99,52,Female,Hypertension,9,Medium
+100,66,Female,Diabetes,4,High

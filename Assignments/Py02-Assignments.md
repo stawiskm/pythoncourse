@@ -21,17 +21,11 @@ The program should output a list of times (in minutes from the start of the 24-h
 
 ```python
 # Example usage (dummy data)
-# Random seed random.seed(seed=None)
-np.random.seed(42)
-# Generate dummy heart rate data
-high_phase_data = np.random.randint(95, 130, size=500)
-normal_phase_data = np.random.randint(50, 120, size=440)
-low_phase_data = np.random.randint(35, 70, size=500)
-heart_rate_data = np.concatenate([high_phase_data, normal_phase_data, low_phase_data])
-# Check for alerts
+# read in the heart rate data csv file as array of integers 
+heart_rate_data = np.genfromtxt('Data/heart_rate_data.csv', delimiter=',')
+# Run the function
 alerts = check_heart_rate(heart_rate_data)
 print(alerts)  # Print the detected alerts
-
 # {'Tachycardia': [(47, 65, 19), (234, 248, 15), (315, 329, 15), (404, 439, 36)], 'Bradycardia': [(990, 1001, 12), (1090, 1100, 11), (1166, 1179, 14), (1374, 1388, 15)]}
 
 ```
@@ -178,7 +172,7 @@ Write a program that takes a 2D array representing an MRI scan and a threshold v
     - The total number of pixels above the threshold.
     - The average intensity of the pixels above the threshold.
     - The maximum intensity value among the pixels above the threshold.
-3. Apply the Mask to the Image and window the remaining pixel values between 0 and 255.
+3. Apply the Mask to the Image and window the remaining pixel values between 10 and 255.
 4. Return the segmentation mask, the calculated values, and the windowed image.
 
 **Array Usage:**  
@@ -233,12 +227,12 @@ Here's how to solve the problem efficiently using array functions and numpy:
    - Determine the maximum intensity value among these pixels.
 
 3. **Apply Mask and do the windowing of the values**:
-   - Use `numpy.where` to apply the mask. Pixels above the threshold get new values within the range of 0 to 255.
+   - Use `numpy.where` to apply the mask. Pixels above the threshold get new values within the range of 10 to 255.
      - **Windowing with Full 0-255 Range**:
        - After identifying the pixels above the threshold, we find the minimum and maximum intensity values among them.
-       - We then linearly rescale these pixel values so that the minimum value maps to 0 and the maximum value maps to 255. This is done using the formula:
+       - We then linearly rescale these pixel values so that the minimum value maps to 10 and the maximum value maps to 255. This is done using the formula:
         ![alt text](image.png)
-       - We use `numpy.clip` to ensure the rescaled values remain within the 0-255 range.
+       - We use `numpy.clip` to ensure the rescaled values remain within the 10-255 range.
      - **Handling Edge Cases**:
        - If all pixels above the threshold have the same intensity (i.e., `max_intensity == min_intensity`), the `scale` is set to 1, preventing division by zero.
 
