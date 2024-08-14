@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Assignments &lpar;Py02&rpar;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="assignments-py02">Assignments (Py02)</h1>
+<h2 id="problem-1-patient-monitoring-and-alert-system">Problem 1: Patient Monitoring and Alert System</h2>
+<h3 id="hard">Hard</h3>
+<p><strong>Scenario:</strong><br>
+A hospital has a patient monitoring system that tracks the vital signs of patients in the intensive care unit (ICU). Each patient’s heart rate is recorded every minute and stored in an array. The array for each patient contains the heart rate data for the last 24 hours (1440 minutes). The hospital wants to implement an alert system that detects potential issues based on abnormal heart rate patterns.</p>
+<p><strong>Problem Statement:</strong><br>
+Write a program that takes in the heart rate data for a patient as an array of 1440 integers and checks for the following:
+1. <strong>Tachycardia Alert:</strong> If the heart rate exceeds 100 bpm for 15 consecutive minutes or more, raise a Tachycardia alert.
+2. <strong>Bradycardia Alert:</strong> If the heart rate drops below 60 bpm for 10 consecutive minutes or more, raise a Bradycardia alert.</p>
+<p>The program should output a list of times (in minutes from the start of the 24-hour period) where alerts were triggered.</p>
+<p><strong>Array Usage:</strong></p>
+<ul>
+<li>The heart rate data is stored in an array of integers.</li>
+<li>The program uses the array to check for consecutive abnormal values and raises alerts accordingly.</li>
+</ul>
+<pre><code class="language-python"><span class="hljs-comment"># Example usage (dummy data)</span>
+<span class="hljs-comment"># read in the heart rate data csv file as array of integers </span>
+heart_rate_data = np.genfromtxt(<span class="hljs-string">&#x27;Data/heart_rate_data.csv&#x27;</span>, delimiter=<span class="hljs-string">&#x27;,&#x27;</span>)
+<span class="hljs-comment"># Run the function</span>
+alerts = check_heart_rate(heart_rate_data)
+<span class="hljs-built_in">print</span>(alerts)  <span class="hljs-comment"># Print the detected alerts</span>
+<span class="hljs-comment"># {&#x27;Tachycardia&#x27;: [(47, 65, 19), (234, 248, 15), (315, 329, 15), (404, 439, 36)], &#x27;Bradycardia&#x27;: [(990, 1001, 12), (1090, 1100, 11), (1166, 1179, 14), (1374, 1388, 15)]}</span>
+
+</code></pre>
+<p><em>If you stop here, and code this function, by yourself, you will learn a lot. (HARD)</em></p>
+<hr>
+<hr>
+<hr>
+<h3 id="medium">Medium</h3>
+<p>To solve the problem more efficiently using array functions and reduce the number of iterations, follow these steps:</p>
+<h4 id="1-identify-consecutive-segments">1. <strong>Identify Consecutive Segments</strong></h4>
+<ul>
+<li>Use a <strong>sliding window</strong> or <strong>filtering technique</strong> to find segments of the array where the heart rate is consistently above 100 bpm or below 60 bpm.</li>
+<li>For each value in the array, you can create a binary mask (an array of 0s and 1s), where:
+<ul>
+<li>1 indicates the heart rate exceeds 100 bpm (for Tachycardia) or drops below 60 bpm (for Bradycardia).</li>
+<li>0 indicates normal heart rate.</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-find-runs-of-1s">2. <strong>Find Runs of 1s</strong></h4>
+<ul>
+<li>Use <strong>array operations</strong> to identify consecutive runs of 1s in the binary mask.</li>
+<li>This can be achieved by using functions that help detect the start and end of each run, such as <strong><code>diff</code></strong>, <strong><code>cumsum</code></strong>, or by combining conditions.</li>
+</ul>
+<h4 id="3-filter-based-on-length">3. <strong>Filter Based on Length</strong></h4>
+<ul>
+<li>Once you have the segments where the heart rate is consistently abnormal, filter these segments by their length:
+<ul>
+<li>For Tachycardia, only keep segments where the length is 15 minutes or more.</li>
+<li>For Bradycardia, only keep segments where the length is 10 minutes or more.</li>
+</ul>
+</li>
+<li>The length of a segment is determined by counting the consecutive 1s.</li>
+</ul>
+<h4 id="4-extract-start-and-end-times">4. <strong>Extract Start and End Times</strong></h4>
+<ul>
+<li>For each valid segment that meets the length criteria, calculate the start and end times.</li>
+<li>Use the indices of the start and end of the segments to determine the exact times (in minutes from the start of the 24-hour period).</li>
+</ul>
+<h4 id="5-output-the-alerts">5. <strong>Output the Alerts</strong></h4>
+<ul>
+<li>Compile the start and end times of all valid Tachycardia and Bradycardia alerts into a list.</li>
+<li>Return or print this list.</li>
+</ul>
+<h4 id="efficiency-considerations">Efficiency Considerations</h4>
+<ul>
+<li>By converting the heart rate data into binary masks and then using array operations to detect and filter segments, you minimize the need for explicit loops.</li>
+<li>This approach leverages vectorized operations that are typically more efficient than manual iteration, especially for large datasets like a 1440-element array.</li>
+</ul>
+<h4 id="summary-of-steps-using-array-functions">Summary of Steps Using Array Functions</h4>
+<ol>
+<li><strong>Create binary masks</strong> for abnormal heart rates.</li>
+<li><strong>Identify consecutive runs</strong> of abnormal values using array operations.</li>
+<li><strong>Filter</strong> these runs by duration to determine valid alerts.</li>
+<li><strong>Calculate and store</strong> the times of these alerts.</li>
+<li><strong>Return the results</strong> in a structured format.</li>
+</ol>
+<p><em>If you stop here, and code this function, with the help of the instructions above, you still learn a lot. (MEDIUM)</em></p>
+<hr>
+<hr>
+<hr>
+<h3 id="easy">Easy</h3>
+<p>Fill the TODOs in the code below to complete the function.</p>
+<p>Here's the dummy Python code that outlines the process using array functions to minimize iterations:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">check_heart_rate</span>(<span class="hljs-params">heart_rate_data</span>):
+    <span class="hljs-comment"># Step 1: Create binary masks</span>
+    tachy_mask = <span class="hljs-comment">#TODO # Mask for Tachycardia</span>
+    brady_mask = <span class="hljs-comment">#TODO # Mask for Bradycardia</span>
+    
+    <span class="hljs-comment"># Step 2: Identify consecutive runs of abnormal values</span>
+    <span class="hljs-comment"># Calculate differences to find the start and end of runs</span>
+    tachy_diff = <span class="hljs-comment">#TODO  # Calculate diff for Tachycardia</span>
+    brady_diff = <span class="hljs-comment">#TODO  # Calculate diff for Bradycardia</span>
+
+    <span class="hljs-comment"># Find the indices where runs start and end</span>
+    tachy_start_indices = np.where(tachy_diff == <span class="hljs-number">1</span>)[<span class="hljs-number">0</span>]
+    tachy_end_indices = np.where(tachy_diff == -<span class="hljs-number">1</span>)[<span class="hljs-number">0</span>] - <span class="hljs-number">1</span>
+
+    brady_start_indices = <span class="hljs-comment">#TODO</span>
+    brady_end_indices = <span class="hljs-comment">#TODO</span>
+
+    <span class="hljs-comment"># Step 3: Filter by length of runs</span>
+    tachy_alerts = []
+    brady_alerts = []
+
+    <span class="hljs-keyword">for</span> start, end <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(tachy_start_indices, tachy_end_indices):
+        lenght = end - start + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">if</span> lenght &gt;= <span class="hljs-number">15</span>:  <span class="hljs-comment"># Check if the run is 15 minutes or more</span>
+            tachy_alerts.append((start, end, lenght))
+
+    <span class="hljs-comment">#TODO same for brady_alerts loop</span>
+
+    <span class="hljs-comment"># Step 4: Combine the alerts</span>
+    alerts = {
+        <span class="hljs-string">&quot;Tachycardia&quot;</span>: tachy_alerts,
+        <span class="hljs-string">&quot;Bradycardia&quot;</span>: brady_alerts
+    }
+
+    <span class="hljs-keyword">return</span> alerts
+
+</code></pre>
+<h4 id="breakdown-of-the-python-code">Breakdown of the Python Code</h4>
+<ol>
+<li>
+<p><strong>Binary Masks:</strong></p>
+<ul>
+<li><code>tachy_mask</code> and <code>brady_mask</code> are arrays where each element is <code>True</code> if the corresponding heart rate meets the criteria for Tachycardia or Bradycardia, respectively.</li>
+</ul>
+</li>
+<li>
+<p><strong>Identifying Consecutive Runs:</strong></p>
+<ul>
+<li><code>np.diff</code> is used to find where the binary mask switches from <code>False</code> to <code>True</code> (indicating the start of a run) and from <code>True</code> to <code>False</code> (indicating the end of a run).</li>
+<li>Concatenating with <code>[0]</code> ensures that changes at the boundaries (beginning or end) are detected.</li>
+</ul>
+</li>
+<li>
+<p><strong>Filtering Runs:</strong></p>
+<ul>
+<li>The code checks each run to see if it meets the minimum duration required for an alert.</li>
+<li>Only runs that are long enough are stored in the <code>tachy_alerts</code> or <code>brady_alerts</code> lists.</li>
+</ul>
+</li>
+<li>
+<p><strong>Combining Alerts:</strong></p>
+<ul>
+<li>The alerts are stored in a dictionary and returned.</li>
+</ul>
+</li>
+</ol>
+<p><em>You finished this problem, if you complete the code above, and test it with the example usage. (EASY)</em></p>
+<hr>
+<hr>
+<hr>
+<h2 id="problem-2-medical-imaging-pixel-intensity-analysis">Problem 2: Medical Imaging Pixel Intensity Analysis</h2>
+<h3 id="hard-1">Hard</h3>
+<p><strong>Scenario:</strong><br>
+A radiologist is analyzing a grayscale MRI image represented as a 2D array, where each element in the array represents the intensity of a pixel (ranging from 0 to 255). The radiologist wants to identify regions of interest (ROI) where the pixel intensity exceeds a certain threshold, indicating possible abnormalities.</p>
+<p><strong>Problem Statement:</strong><br>
+Write a program that takes a 2D array representing an MRI scan and a threshold value as input. The program should:</p>
+<ol>
+<li>Should create a segmentation mask where each pixel above the threshold is marked as 1 and others as 0.</li>
+<li>Calculate the following from Mask:
+<ul>
+<li>The total number of pixels above the threshold.</li>
+<li>The average intensity of the pixels above the threshold.</li>
+<li>The maximum intensity value among the pixels above the threshold.</li>
+</ul>
+</li>
+<li>Apply the Mask to the Image and window the remaining pixel values between 10 and 255.</li>
+<li>Return the segmentation mask, the calculated values, and the windowed image.</li>
+</ol>
+<p><strong>Array Usage:</strong></p>
+<ul>
+<li>The MRI scan data is stored in a 2D array of integers.</li>
+</ul>
+<p>These problems can be solved efficiently using arrays and basic array operations in coding.</p>
+<pre><code class="language-python"><span class="hljs-comment"># Example usage</span>
+mri_image = np.array([[<span class="hljs-number">10</span>, <span class="hljs-number">50</span>, <span class="hljs-number">200</span>], [<span class="hljs-number">30</span>, <span class="hljs-number">180</span>, <span class="hljs-number">250</span>], [<span class="hljs-number">15</span>, <span class="hljs-number">90</span>, <span class="hljs-number">220</span>]])
+threshold = <span class="hljs-number">100</span>
+
+results = analyze_mri_image(mri_image, threshold)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Segmentation Mask:\n&quot;</span>, results[<span class="hljs-string">&#x27;segmentation_mask&#x27;</span>])
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Total Pixels Above Threshold:&quot;</span>, results[<span class="hljs-string">&#x27;total_above_threshold&#x27;</span>])
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Average Intensity of Pixels Above Threshold:&quot;</span>, results[<span class="hljs-string">&#x27;average_intensity&#x27;</span>])
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Maximum Intensity Value Among Pixels Above Threshold:&quot;</span>, results[<span class="hljs-string">&#x27;max_intensity&#x27;</span>])
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Windowed Image:\n&quot;</span>, results[<span class="hljs-string">&#x27;windowed_image&#x27;</span>])
+
+<span class="hljs-comment"># Print-&gt; Segmentation Mask:</span>
+<span class="hljs-comment">#  [[0 0 1]</span>
+<span class="hljs-comment">#   [0 1 1]</span>
+<span class="hljs-comment">#   [0 0 1]]</span>
+<span class="hljs-comment"># Total Pixels Above Threshold: 4</span>
+<span class="hljs-comment"># Average Intensity of Pixels Above Threshold: 212.5</span>
+<span class="hljs-comment"># Maximum Intensity Value Among Pixels Above Threshold: 250</span>
+<span class="hljs-comment"># Windowed Image:</span>
+<span class="hljs-comment"># [[  0   0 200]</span>
+<span class="hljs-comment">#  [  0 180 250]</span>
+<span class="hljs-comment">#  [  0   0 220]]</span>
+</code></pre>
+<p><em>If you stop here, and code this function, by yourself, you will learn a lot. (HARD)</em></p>
+<hr>
+<hr>
+<hr>
+<h3 id="medium-1">Medium</h3>
+<p>Here's how to solve the problem efficiently using array functions and numpy:</p>
+<ol>
+<li>
+<p><strong>Create a Segmentation Mask</strong>:</p>
+<ul>
+<li>Create a new 2D array (mask) where each pixel is set to 1 if its intensity exceeds the threshold, and 0 otherwise.</li>
+</ul>
+</li>
+<li>
+<p><strong>Calculate Statistics from the Mask</strong>:</p>
+<ul>
+<li>Extract the pixels from the original image where the mask value is 1 (i.e., pixels above the threshold).</li>
+<li>Count the total number of these pixels.</li>
+<li>Compute the average intensity of these pixels by summing their intensities and dividing by the total number of pixels.</li>
+<li>Determine the maximum intensity value among these pixels.</li>
+</ul>
+</li>
+<li>
+<p><strong>Apply Mask and do the windowing of the values</strong>:</p>
+<ul>
+<li>Use <code>numpy.where</code> to apply the mask. Pixels above the threshold get new values within the range of 10 to 255.
+<ul>
+<li><strong>Windowing with Full 0-255 Range</strong>:
+<ul>
+<li>After identifying the pixels above the threshold, we find the minimum and maximum intensity values among them.</li>
+<li>We then linearly rescale these pixel values so that the minimum value maps to 10 and the maximum value maps to 255. This is done using the formula:
+<img src="file:////home/marc/Git/pythoncourse/Assignments/image.png" alt="alt text"></li>
+<li>We use <code>numpy.clip</code> to ensure the rescaled values remain within the 10-255 range.</li>
+</ul>
+</li>
+<li><strong>Handling Edge Cases</strong>:
+<ul>
+<li>If all pixels above the threshold have the same intensity (i.e., <code>max_intensity == min_intensity</code>), the <code>scale</code> is set to 1, preventing division by zero.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Return Results</strong>:</p>
+<ul>
+<li>Provide the segmentation mask.</li>
+<li>Return the total count of pixels above the threshold.</li>
+<li>Return the average and maximum intensity values of the pixels above the threshold.</li>
+<li>Provide the modified image where non-ROI pixels are set to 0 and intensity values are clipped to the valid range.</li>
+</ul>
+</li>
+</ol>
+<p><em>If you stop here, and code this function, with the help of the instructions above, you still learn a lot. (MEDIUM)</em></p>
+<hr>
+<hr>
+<hr>
+<h3 id="easy-1">Easy</h3>
+<p>Here’s some dummy code in Python to achieve this. We'll use basic array operations and numpy for efficiency.</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">analyze_mri_image</span>(<span class="hljs-params">mri_image, threshold</span>):
+    max_intensity = <span class="hljs-number">0</span>
+    min_intensity = <span class="hljs-number">0</span>
+    
+    <span class="hljs-comment"># Convert the input image to a numpy array (if not already in that format)</span>
+    mri_image = <span class="hljs-comment">#TODO</span>
+        
+    <span class="hljs-comment"># Step 1: Create a segmentation mask</span>
+    segmentation_mask = <span class="hljs-comment">#TODO</span>
+    
+    <span class="hljs-comment"># Step 2: Calculate statistics</span>
+    <span class="hljs-comment"># Get pixels above the threshold</span>
+    above_threshold_pixels = <span class="hljs-comment">#TODO</span>
+    
+    <span class="hljs-comment"># Calculate the total number of pixels above the threshold</span>
+    total_above_threshold = <span class="hljs-comment">#TODO</span>
+    
+    <span class="hljs-comment"># Calculate the average intensity of the pixels above the threshold</span>
+    <span class="hljs-keyword">if</span> total_above_threshold &gt; <span class="hljs-number">0</span>:
+        average_intensity = <span class="hljs-comment">#TODO</span>
+        max_intensity = above_threshold_pixels.<span class="hljs-built_in">max</span>()
+        min_intensity = above_threshold_pixels.<span class="hljs-built_in">min</span>()
+    <span class="hljs-keyword">else</span>:
+        average_intensity = <span class="hljs-number">0</span>  <span class="hljs-comment"># Avoid division by zero if no pixels exceed the threshold</span>
+        max_intensity = <span class="hljs-number">0</span>
+        min_intensity = <span class="hljs-number">0</span>
+    
+    <span class="hljs-comment"># Step 3: Apply the mask and window the pixel values</span>
+    <span class="hljs-comment"># Initialize the windowed image with zeros</span>
+    windowed_image = <span class="hljs-comment">#TODO</span>
+    
+    <span class="hljs-keyword">if</span> total_above_threshold &gt; <span class="hljs-number">0</span>:
+        <span class="hljs-comment"># Rescale the pixel values to the 0-255 range</span>
+        scale = <span class="hljs-number">255</span> / (max_intensity - min_intensity) <span class="hljs-keyword">if</span> max_intensity != min_intensity <span class="hljs-keyword">else</span> <span class="hljs-number">1</span>
+        windowed_image[segmentation_mask == <span class="hljs-number">1</span>] = np.clip((above_threshold_pixels - min_intensity) * scale, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>)
+    
+    <span class="hljs-comment"># Return results</span>
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-string">&#x27;segmentation_mask&#x27;</span>: segmentation_mask,
+        <span class="hljs-string">&#x27;total_above_threshold&#x27;</span>: total_above_threshold,
+        <span class="hljs-string">&#x27;average_intensity&#x27;</span>: average_intensity,
+        <span class="hljs-string">&#x27;max_intensity&#x27;</span>: max_intensity,
+        <span class="hljs-string">&#x27;windowed_image&#x27;</span>: windowed_image
+    }
+</code></pre>
+<p>This code provides a comprehensive analysis of the MRI image and efficiently processes the data using numpy's capabilities.</p>
+
+            
+            
+        </body>
+        </html>
