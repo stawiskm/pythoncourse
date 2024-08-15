@@ -274,22 +274,21 @@ def analyze_mri_image(mri_image, threshold):
     
     # Calculate the average intensity of the pixels above the threshold
     if total_above_threshold > 0:
-        average_intensity = #TODO
+        average_intensity = above_threshold_pixels.mean()
         max_intensity = above_threshold_pixels.max()
         min_intensity = above_threshold_pixels.min()
+
+        # Step 3: Apply the mask and window the pixel values
+        # segment the image by applying the mask
+        segmented_image = #TODO  
+        # Rescale the pixel values to the 10-255 range
+        windowed_image = #TODO
+
     else:
         average_intensity = 0  # Avoid division by zero if no pixels exceed the threshold
         max_intensity = 0
         min_intensity = 0
-    
-    # Step 3: Apply the mask and window the pixel values
-    # Initialize the windowed image with zeros
-    windowed_image = #TODO
-    
-    if total_above_threshold > 0:
-        # Rescale the pixel values to the 0-255 range
-        scale = 255 / (max_intensity - min_intensity) if max_intensity != min_intensity else 1
-        windowed_image[segmentation_mask == 1] = np.clip((above_threshold_pixels - min_intensity) * scale, 0, 255)
+        windowed_image = mri_image
     
     # Return results
     return {

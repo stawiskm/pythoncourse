@@ -1,151 +1,379 @@
 <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>Assignments &lpar;Py02&rpar;</title>
-            <style>
-/* From extension vscode.github */
+<html>
+
+<head>
+    <title>Py02-Assignments.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
 /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-.vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only],
-.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
-.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
-	display: none;
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
 }
 
 </style>
-            
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+
 <style>
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-                font-size: 14px;
-                line-height: 1.6;
-            }
-        </style>
-        <style>
-.task-list-item {
-    list-style-type: none;
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
 }
 
-.task-list-item-checkbox {
-    margin-left: -20px;
-    vertical-align: middle;
-    pointer-events: none;
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
 }
 </style>
+
 <style>
-:root {
-  --color-note: #0969da;
-  --color-tip: #1a7f37;
-  --color-warning: #9a6700;
-  --color-severe: #bc4c00;
-  --color-caution: #d1242f;
-  --color-important: #8250df;
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
 }
 
 </style>
-<style>
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-note: #2f81f7;
-    --color-tip: #3fb950;
-    --color-warning: #d29922;
-    --color-severe: #db6d28;
-    --color-caution: #f85149;
-    --color-important: #a371f7;
-  }
-}
+<link rel="stylesheet" href="file:///home/marc/Git/pythoncourse/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///home/marc/Git/pythoncourse/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
 
-</style>
-<style>
-.markdown-alert {
-  padding: 0.5rem 1rem;
-  margin-bottom: 16px;
-  color: inherit;
-  border-left: .25em solid #888;
-}
-
-.markdown-alert>:first-child {
-  margin-top: 0
-}
-
-.markdown-alert>:last-child {
-  margin-bottom: 0
-}
-
-.markdown-alert .markdown-alert-title {
-  display: flex;
-  font-weight: 500;
-  align-items: center;
-  line-height: 1
-}
-
-.markdown-alert .markdown-alert-title .octicon {
-  margin-right: 0.5rem;
-  display: inline-block;
-  overflow: visible !important;
-  vertical-align: text-bottom;
-  fill: currentColor;
-}
-
-.markdown-alert.markdown-alert-note {
-  border-left-color: var(--color-note);
-}
-
-.markdown-alert.markdown-alert-note .markdown-alert-title {
-  color: var(--color-note);
-}
-
-.markdown-alert.markdown-alert-important {
-  border-left-color: var(--color-important);
-}
-
-.markdown-alert.markdown-alert-important .markdown-alert-title {
-  color: var(--color-important);
-}
-
-.markdown-alert.markdown-alert-warning {
-  border-left-color: var(--color-warning);
-}
-
-.markdown-alert.markdown-alert-warning .markdown-alert-title {
-  color: var(--color-warning);
-}
-
-.markdown-alert.markdown-alert-tip {
-  border-left-color: var(--color-tip);
-}
-
-.markdown-alert.markdown-alert-tip .markdown-alert-title {
-  color: var(--color-tip);
-}
-
-.markdown-alert.markdown-alert-caution {
-  border-left-color: var(--color-caution);
-}
-
-.markdown-alert.markdown-alert-caution .markdown-alert-title {
-  color: var(--color-caution);
-}
-
-</style>
-        
-        </head>
-        <body class="vscode-body vscode-light">
-            <h1 id="assignments-py02">Assignments (Py02)</h1>
+<body>
+    <h1 id="assignments-py02">Assignments (Py02)</h1>
 <h2 id="problem-1-patient-monitoring-and-alert-system">Problem 1: Patient Monitoring and Alert System</h2>
 <h3 id="hard">Hard</h3>
 <p><strong>Scenario:</strong><br>
 A hospital has a patient monitoring system that tracks the vital signs of patients in the intensive care unit (ICU). Each patient’s heart rate is recorded every minute and stored in an array. The array for each patient contains the heart rate data for the last 24 hours (1440 minutes). The hospital wants to implement an alert system that detects potential issues based on abnormal heart rate patterns.</p>
 <p><strong>Problem Statement:</strong><br>
-Write a program that takes in the heart rate data for a patient as an array of 1440 integers and checks for the following:
-1. <strong>Tachycardia Alert:</strong> If the heart rate exceeds 100 bpm for 15 consecutive minutes or more, raise a Tachycardia alert.
+Write a program that takes in the heart rate data for a patient as an array of 1440 integers and checks for the following:<br>
+1. <strong>Tachycardia Alert:</strong> If the heart rate exceeds 100 bpm for 15 consecutive minutes or more, raise a Tachycardia alert.<br>
 2. <strong>Bradycardia Alert:</strong> If the heart rate drops below 60 bpm for 10 consecutive minutes or more, raise a Bradycardia alert.</p>
 <p>The program should output a list of times (in minutes from the start of the 24-hour period) where alerts were triggered.</p>
 <p><strong>Array Usage:</strong></p>
@@ -153,15 +381,15 @@ Write a program that takes in the heart rate data for a patient as an array of 1
 <li>The heart rate data is stored in an array of integers.</li>
 <li>The program uses the array to check for consecutive abnormal values and raises alerts accordingly.</li>
 </ul>
-<pre><code class="language-python"><span class="hljs-comment"># Example usage (dummy data)</span>
+<pre class="hljs"><code><div><span class="hljs-comment"># Example usage (dummy data)</span>
 <span class="hljs-comment"># read in the heart rate data csv file as array of integers </span>
-heart_rate_data = np.genfromtxt(<span class="hljs-string">&#x27;Data/heart_rate_data.csv&#x27;</span>, delimiter=<span class="hljs-string">&#x27;,&#x27;</span>)
+heart_rate_data = np.genfromtxt(<span class="hljs-string">'Data/heart_rate_data.csv'</span>, delimiter=<span class="hljs-string">','</span>)
 <span class="hljs-comment"># Run the function</span>
 alerts = check_heart_rate(heart_rate_data)
-<span class="hljs-built_in">print</span>(alerts)  <span class="hljs-comment"># Print the detected alerts</span>
-<span class="hljs-comment"># {&#x27;Tachycardia&#x27;: [(47, 65, 19), (234, 248, 15), (315, 329, 15), (404, 439, 36)], &#x27;Bradycardia&#x27;: [(990, 1001, 12), (1090, 1100, 11), (1166, 1179, 14), (1374, 1388, 15)]}</span>
+print(alerts)  <span class="hljs-comment"># Print the detected alerts</span>
+<span class="hljs-comment"># {'Tachycardia': [(47, 65, 19), (234, 248, 15), (315, 329, 15), (404, 439, 36)], 'Bradycardia': [(990, 1001, 12), (1090, 1100, 11), (1166, 1179, 14), (1374, 1388, 15)]}</span>
 
-</code></pre>
+</div></code></pre>
 <p><em>If you stop here, and code this function, by yourself, you will learn a lot. (HARD)</em></p>
 <hr>
 <hr>
@@ -223,9 +451,9 @@ alerts = check_heart_rate(heart_rate_data)
 <h3 id="easy">Easy</h3>
 <p>Fill the TODOs in the code below to complete the function.</p>
 <p>Here's the dummy Python code that outlines the process using array functions to minimize iterations:</p>
-<pre><code class="language-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
 
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">check_heart_rate</span>(<span class="hljs-params">heart_rate_data</span>):
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">check_heart_rate</span><span class="hljs-params">(heart_rate_data)</span>:</span>
     <span class="hljs-comment"># Step 1: Create binary masks</span>
     tachy_mask = <span class="hljs-comment">#TODO # Mask for Tachycardia</span>
     brady_mask = <span class="hljs-comment">#TODO # Mask for Bradycardia</span>
@@ -237,7 +465,7 @@ alerts = check_heart_rate(heart_rate_data)
 
     <span class="hljs-comment"># Find the indices where runs start and end</span>
     tachy_start_indices = np.where(tachy_diff == <span class="hljs-number">1</span>)[<span class="hljs-number">0</span>]
-    tachy_end_indices = np.where(tachy_diff == -<span class="hljs-number">1</span>)[<span class="hljs-number">0</span>] - <span class="hljs-number">1</span>
+    tachy_end_indices = np.where(tachy_diff == <span class="hljs-number">-1</span>)[<span class="hljs-number">0</span>] - <span class="hljs-number">1</span>
 
     brady_start_indices = <span class="hljs-comment">#TODO</span>
     brady_end_indices = <span class="hljs-comment">#TODO</span>
@@ -246,7 +474,7 @@ alerts = check_heart_rate(heart_rate_data)
     tachy_alerts = []
     brady_alerts = []
 
-    <span class="hljs-keyword">for</span> start, end <span class="hljs-keyword">in</span> <span class="hljs-built_in">zip</span>(tachy_start_indices, tachy_end_indices):
+    <span class="hljs-keyword">for</span> start, end <span class="hljs-keyword">in</span> zip(tachy_start_indices, tachy_end_indices):
         lenght = end - start + <span class="hljs-number">1</span>
         <span class="hljs-keyword">if</span> lenght &gt;= <span class="hljs-number">15</span>:  <span class="hljs-comment"># Check if the run is 15 minutes or more</span>
             tachy_alerts.append((start, end, lenght))
@@ -255,13 +483,13 @@ alerts = check_heart_rate(heart_rate_data)
 
     <span class="hljs-comment"># Step 4: Combine the alerts</span>
     alerts = {
-        <span class="hljs-string">&quot;Tachycardia&quot;</span>: tachy_alerts,
-        <span class="hljs-string">&quot;Bradycardia&quot;</span>: brady_alerts
+        <span class="hljs-string">"Tachycardia"</span>: tachy_alerts,
+        <span class="hljs-string">"Bradycardia"</span>: brady_alerts
     }
 
     <span class="hljs-keyword">return</span> alerts
 
-</code></pre>
+</div></code></pre>
 <h4 id="breakdown-of-the-python-code">Breakdown of the Python Code</h4>
 <ol>
 <li>
@@ -296,7 +524,7 @@ alerts = check_heart_rate(heart_rate_data)
 <hr>
 <hr>
 <h2 id="problem-2-medical-imaging-pixel-intensity-analysis">Problem 2: Medical Imaging Pixel Intensity Analysis</h2>
-<h3 id="hard-1">Hard</h3>
+<h3 id="hard">Hard</h3>
 <p><strong>Scenario:</strong><br>
 A radiologist is analyzing a grayscale MRI image represented as a 2D array, where each element in the array represents the intensity of a pixel (ranging from 0 to 255). The radiologist wants to identify regions of interest (ROI) where the pixel intensity exceeds a certain threshold, indicating possible abnormalities.</p>
 <p><strong>Problem Statement:</strong><br>
@@ -318,17 +546,17 @@ Write a program that takes a 2D array representing an MRI scan and a threshold v
 <li>The MRI scan data is stored in a 2D array of integers.</li>
 </ul>
 <p>These problems can be solved efficiently using arrays and basic array operations in coding.</p>
-<pre><code class="language-python"><span class="hljs-comment"># Example usage</span>
+<pre class="hljs"><code><div><span class="hljs-comment"># Example usage</span>
 mri_image = np.array([[<span class="hljs-number">10</span>, <span class="hljs-number">50</span>, <span class="hljs-number">200</span>], [<span class="hljs-number">30</span>, <span class="hljs-number">180</span>, <span class="hljs-number">250</span>], [<span class="hljs-number">15</span>, <span class="hljs-number">90</span>, <span class="hljs-number">220</span>]])
 threshold = <span class="hljs-number">100</span>
 
 results = analyze_mri_image(mri_image, threshold)
 
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Segmentation Mask:\n&quot;</span>, results[<span class="hljs-string">&#x27;segmentation_mask&#x27;</span>])
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Total Pixels Above Threshold:&quot;</span>, results[<span class="hljs-string">&#x27;total_above_threshold&#x27;</span>])
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Average Intensity of Pixels Above Threshold:&quot;</span>, results[<span class="hljs-string">&#x27;average_intensity&#x27;</span>])
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Maximum Intensity Value Among Pixels Above Threshold:&quot;</span>, results[<span class="hljs-string">&#x27;max_intensity&#x27;</span>])
-<span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Windowed Image:\n&quot;</span>, results[<span class="hljs-string">&#x27;windowed_image&#x27;</span>])
+print(<span class="hljs-string">"Segmentation Mask:\n"</span>, results[<span class="hljs-string">'segmentation_mask'</span>])
+print(<span class="hljs-string">"Total Pixels Above Threshold:"</span>, results[<span class="hljs-string">'total_above_threshold'</span>])
+print(<span class="hljs-string">"Average Intensity of Pixels Above Threshold:"</span>, results[<span class="hljs-string">'average_intensity'</span>])
+print(<span class="hljs-string">"Maximum Intensity Value Among Pixels Above Threshold:"</span>, results[<span class="hljs-string">'max_intensity'</span>])
+print(<span class="hljs-string">"Windowed Image:\n"</span>, results[<span class="hljs-string">'windowed_image'</span>])
 
 <span class="hljs-comment"># Print-&gt; Segmentation Mask:</span>
 <span class="hljs-comment">#  [[0 0 1]</span>
@@ -341,12 +569,12 @@ results = analyze_mri_image(mri_image, threshold)
 <span class="hljs-comment"># [[  0   0 200]</span>
 <span class="hljs-comment">#  [  0 180 250]</span>
 <span class="hljs-comment">#  [  0   0 220]]</span>
-</code></pre>
+</div></code></pre>
 <p><em>If you stop here, and code this function, by yourself, you will learn a lot. (HARD)</em></p>
 <hr>
 <hr>
 <hr>
-<h3 id="medium-1">Medium</h3>
+<h3 id="medium">Medium</h3>
 <p>Here's how to solve the problem efficiently using array functions and numpy:</p>
 <ol>
 <li>
@@ -372,8 +600,8 @@ results = analyze_mri_image(mri_image, threshold)
 <li><strong>Windowing with Full 0-255 Range</strong>:
 <ul>
 <li>After identifying the pixels above the threshold, we find the minimum and maximum intensity values among them.</li>
-<li>We then linearly rescale these pixel values so that the minimum value maps to 10 and the maximum value maps to 255. This is done using the formula:
-<img src="file:////home/marc/Git/pythoncourse/Assignments/image.png" alt="alt text"></li>
+<li>We then linearly rescale these pixel values so that the minimum value maps to 10 and the maximum value maps to 255. This is done using the formula:<br>
+<img src="image.png" alt="alt text"></li>
 <li>We use <code>numpy.clip</code> to ensure the rescaled values remain within the 10-255 range.</li>
 </ul>
 </li>
@@ -400,11 +628,11 @@ results = analyze_mri_image(mri_image, threshold)
 <hr>
 <hr>
 <hr>
-<h3 id="easy-1">Easy</h3>
+<h3 id="easy">Easy</h3>
 <p>Here’s some dummy code in Python to achieve this. We'll use basic array operations and numpy for efficiency.</p>
-<pre><code class="language-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
 
-<span class="hljs-keyword">def</span> <span class="hljs-title function_">analyze_mri_image</span>(<span class="hljs-params">mri_image, threshold</span>):
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">analyze_mri_image</span><span class="hljs-params">(mri_image, threshold)</span>:</span>
     max_intensity = <span class="hljs-number">0</span>
     min_intensity = <span class="hljs-number">0</span>
     
@@ -423,35 +651,33 @@ results = analyze_mri_image(mri_image, threshold)
     
     <span class="hljs-comment"># Calculate the average intensity of the pixels above the threshold</span>
     <span class="hljs-keyword">if</span> total_above_threshold &gt; <span class="hljs-number">0</span>:
-        average_intensity = <span class="hljs-comment">#TODO</span>
-        max_intensity = above_threshold_pixels.<span class="hljs-built_in">max</span>()
-        min_intensity = above_threshold_pixels.<span class="hljs-built_in">min</span>()
+        average_intensity = above_threshold_pixels.mean()
+        max_intensity = above_threshold_pixels.max()
+        min_intensity = above_threshold_pixels.min()
+
+        <span class="hljs-comment"># Step 3: Apply the mask and window the pixel values</span>
+        <span class="hljs-comment"># segment the image by applying the mask</span>
+        segmented_image = <span class="hljs-comment">#TODO  </span>
+        <span class="hljs-comment"># Rescale the pixel values to the 10-255 range</span>
+        windowed_image = <span class="hljs-comment">#TODO</span>
+
     <span class="hljs-keyword">else</span>:
         average_intensity = <span class="hljs-number">0</span>  <span class="hljs-comment"># Avoid division by zero if no pixels exceed the threshold</span>
         max_intensity = <span class="hljs-number">0</span>
         min_intensity = <span class="hljs-number">0</span>
-    
-    <span class="hljs-comment"># Step 3: Apply the mask and window the pixel values</span>
-    <span class="hljs-comment"># Initialize the windowed image with zeros</span>
-    windowed_image = <span class="hljs-comment">#TODO</span>
-    
-    <span class="hljs-keyword">if</span> total_above_threshold &gt; <span class="hljs-number">0</span>:
-        <span class="hljs-comment"># Rescale the pixel values to the 0-255 range</span>
-        scale = <span class="hljs-number">255</span> / (max_intensity - min_intensity) <span class="hljs-keyword">if</span> max_intensity != min_intensity <span class="hljs-keyword">else</span> <span class="hljs-number">1</span>
-        windowed_image[segmentation_mask == <span class="hljs-number">1</span>] = np.clip((above_threshold_pixels - min_intensity) * scale, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>)
+        windowed_image = mri_image
     
     <span class="hljs-comment"># Return results</span>
     <span class="hljs-keyword">return</span> {
-        <span class="hljs-string">&#x27;segmentation_mask&#x27;</span>: segmentation_mask,
-        <span class="hljs-string">&#x27;total_above_threshold&#x27;</span>: total_above_threshold,
-        <span class="hljs-string">&#x27;average_intensity&#x27;</span>: average_intensity,
-        <span class="hljs-string">&#x27;max_intensity&#x27;</span>: max_intensity,
-        <span class="hljs-string">&#x27;windowed_image&#x27;</span>: windowed_image
+        <span class="hljs-string">'segmentation_mask'</span>: segmentation_mask,
+        <span class="hljs-string">'total_above_threshold'</span>: total_above_threshold,
+        <span class="hljs-string">'average_intensity'</span>: average_intensity,
+        <span class="hljs-string">'max_intensity'</span>: max_intensity,
+        <span class="hljs-string">'windowed_image'</span>: windowed_image
     }
-</code></pre>
+</div></code></pre>
 <p>This code provides a comprehensive analysis of the MRI image and efficiently processes the data using numpy's capabilities.</p>
 
-            
-            
-        </body>
-        </html>
+</body>
+
+</html>

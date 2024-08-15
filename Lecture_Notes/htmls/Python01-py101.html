@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Python01-py101.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///home/marc/Git/pythoncourse/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///home/marc/Git/pythoncourse/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="programming-with-python">Programming with Python</h1>
+<p>This comprehensive guide will cover various fundamental topics in Python programming. It aims to provide detailed explanations, examples, and code snippets to help you understand and master these concepts. The topics covered in this guide include:</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#programming-with-python">Programming with Python</a>
+<ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#data-types">Data Types</a>
+<ul>
+<li><a href="#numeric-types">Numeric Types</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#booleans">Booleans</a></li>
+</ul>
+</li>
+<li><a href="#lists-sets-and-dictionaries">Lists, Sets, and Dictionaries</a>
+<ul>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#sets">Sets</a></li>
+<li><a href="#dictionaries">Dictionaries</a></li>
+</ul>
+</li>
+<li><a href="#operators">Operators</a>
+<ul>
+<li><a href="#arithmetic-operations">Arithmetic Operations</a></li>
+<li><a href="#comparison-operators">Comparison Operators</a></li>
+<li><a href="#logical-operators">Logical Operators</a></li>
+<li><a href="#assignment-operators">Assignment Operators</a></li>
+<li><a href="#identity-operators">Identity Operators</a></li>
+<li><a href="#membership-operators">Membership Operators</a></li>
+</ul>
+</li>
+<li><a href="#conditions-and-conditional-statements">Conditions and Conditional Statements</a>
+<ul>
+<li><a href="#if-statements">If Statements</a></li>
+</ul>
+</li>
+<li><a href="#loops-while-and-for-continue-break">Loops: while and for, continue, break</a>
+<ul>
+<li><a href="#while-loop">while Loop</a></li>
+<li><a href="#for-loop">for Loop</a></li>
+<li><a href="#continue-and-break-statements">continue and break Statements</a></li>
+</ul>
+</li>
+<li><a href="#functions">Functions</a>
+<ul>
+<li><a href="#defining-functions">Defining Functions</a></li>
+</ul>
+</li>
+<li><a href="#external-libraries">External Libraries</a>
+<ul>
+<li><a href="#installing-external-libraries">Installing External Libraries</a></li>
+<li><a href="#importing-external-libraries">Importing External Libraries</a></li>
+<li><a href="#popular-libraries">Popular Libraries</a></li>
+</ul>
+</li>
+<li><a href="#class-and-object">Class and Object</a></li>
+<li><a href="#basics-of-terminal-commands">Basics of Terminal Commands</a>
+<ul>
+<li><a href="#running-python-files">Running Python Files</a></li>
+<li><a href="#navigating-directories">Navigating Directories</a></li>
+<li><a href="#listing-files-and-directories">Listing Files and Directories</a></li>
+<li><a href="#creating-and-deleting-filesdirectories">Creating and Deleting Files/Directories</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+<p>Let's get started!</p>
+<h2 id="variables">Variables</h2>
+<p>In Python, variables are used to store data. They act as containers that hold values of different types, such as numbers, strings, or more complex data structures. To assign a value to a variable, you can use the assignment operator <code>=</code>. Here's an example:</p>
+<pre class="hljs"><code><div>x = <span class="hljs-number">10</span>
+y = <span class="hljs-string">"Hello, World!"</span>
+</div></code></pre>
+<p>Variable names can contain letters, numbers, and underscores, but they cannot start with a number. Python is case-sensitive, so <code>my_variable</code>, <code>My_Variable</code>, and <code>MY_VARIABLE</code> are considered different variables.</p>
+<h2 id="data-types">Data Types</h2>
+<h3 id="numeric-types">Numeric Types</h3>
+<p>Python supports several numeric types, including integers (<code>int</code>), floating-point numbers (<code>float</code>), and complex numbers (<code>complex</code>). Here's an example:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Integer</span>
+x = <span class="hljs-number">10</span>
+
+<span class="hljs-comment"># Floating-point number</span>
+y = <span class="hljs-number">3.14</span>
+
+<span class="hljs-comment"># Complex number</span>
+z = <span class="hljs-number">2</span> + <span class="hljs-number">3j</span>
+</div></code></pre>
+<h3 id="strings">Strings</h3>
+<p>Strings are used to represent text data in Python. You can define strings using either single quotes (<code>'</code>) or double quotes (<code>&quot;</code>). Here's an example:</p>
+<pre class="hljs"><code><div>message = <span class="hljs-string">"Hello, World!"</span>
+</div></code></pre>
+<p>You can perform various operations on strings, such as concatenation (<code>+</code>), slicing, and accessing individual characters.</p>
+<h3 id="booleans">Booleans</h3>
+<p>Booleans represent the truth values <code>True</code> or <code>False</code>. They are often used in conditions and logical operations. Here's an example:</p>
+<pre class="hljs"><code><div>is_valid = <span class="hljs-literal">True</span>
+is_invalid = <span class="hljs-literal">False</span>
+</div></code></pre>
+<h2 id="lists-sets-and-dictionaries">Lists, Sets, and Dictionaries</h2>
+<h3 id="lists">Lists</h3>
+<p>Lists are mutable, ordered collections that can store elements of different types. Here are some common operations you can perform on lists:</p>
+<pre class="hljs"><code><div>fruits = [<span class="hljs-string">"apple"</span>, <span class="hljs-string">"banana"</span>, <span class="hljs-string">"cherry"</span>]
+
+<span class="hljs-comment"># Accessing elements</span>
+print(fruits[<span class="hljs-number">0</span>])    <span class="hljs-comment"># Output: apple</span>
+
+<span class="hljs-comment"># Modifying elements</span>
+fruits[<span class="hljs-number">1</span>] = <span class="hljs-string">"pear"</span>
+print(fruits)       <span class="hljs-comment"># Output: ['apple', 'pear', 'cherry']</span>
+
+<span class="hljs-comment"># Adding elements</span>
+fruits.append(<span class="hljs-string">"orange"</span>)
+print(fruits)       <span class="hljs-comment"># Output: ['apple', 'pear', 'cherry', 'orange']</span>
+
+<span class="hljs-comment"># Removing elements</span>
+fruits.remove(<span class="hljs-string">"apple"</span>)
+print(fruits)       <span class="hljs-comment"># Output: ['pear', 'cherry', 'orange']</span>
+</div></code></pre>
+<h3 id="sets">Sets</h3>
+<p>Sets are mutable, unordered collections of unique elements. Here are some common operations you can perform on sets:</p>
+<pre class="hljs"><code><div>colors = {<span class="hljs-string">"red"</span>, <span class="hljs-string">"green"</span>, <span class="hljs-string">"blue"</span>}
+
+<span class="hljs-comment"># Adding elements</span>
+colors.add(<span class="hljs-string">"yellow"</span>)
+print(colors)       <span class="hljs-comment"># Output: {'red', 'green', 'blue', 'yellow'}</span>
+
+<span class="hljs-comment"># Removing elements</span>
+colors.remove(<span class="hljs-string">"red"</span>)
+print(colors)       <span class="hljs-comment"># Output: {'green', 'blue', 'yellow'}</span>
+</div></code></pre>
+<h3 id="dictionaries">Dictionaries</h3>
+<p>Dictionaries are mutable, unordered collections of key-value pairs. Here are some common operations you can perform on dictionaries:</p>
+<pre class="hljs"><code><div>person = {
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"John"</span>,
+    <span class="hljs-string">"age"</span>: <span class="hljs-number">30</span>,
+    <span class="hljs-string">"city"</span>: <span class="hljs-string">"New York"</span>
+}
+
+<span class="hljs-comment"># Accessing values</span>
+print(person[<span class="hljs-string">"name"</span>])   <span class="hljs-comment"># Output: John</span>
+
+<span class="hljs-comment"># Modifying values</span>
+person[<span class="hljs-string">"age"</span>] = <span class="hljs-number">31</span>
+print(person)           <span class="hljs-comment"># Output: {'name': 'John', 'age': 31, 'city': 'New York'}</span>
+
+<span class="hljs-comment"># Adding new key-value pairs</span>
+person[<span class="hljs-string">"gender"</span>] = <span class="hljs-string">"Male"</span>
+print(person)           <span class="hljs-comment"># Output: {'name':'John', 'age': 31, 'city': 'New York', 'gender': 'Male'}</span>
+
+<span class="hljs-comment"># Removing key-value pairs</span>
+<span class="hljs-keyword">del</span> person[<span class="hljs-string">"city"</span>]
+print(person)           <span class="hljs-comment"># Output: {'name': 'John', 'age': 31, 'gender': 'Male'}</span>
+</div></code></pre>
+<h2 id="operators">Operators</h2>
+<h3 id="arithmetic-operations">Arithmetic Operations</h3>
+<p>Python supports various arithmetic operations, including addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), and exponentiation (<code>**</code>). Here are a few examples:</p>
+<pre class="hljs"><code><div>a = <span class="hljs-number">5</span>
+b = <span class="hljs-number">2</span>
+
+sum = a + b          <span class="hljs-comment"># Addition</span>
+difference = a - b   <span class="hljs-comment"># Subtraction</span>
+product = a * b      <span class="hljs-comment"># Multiplication</span>
+quotient = a / b     <span class="hljs-comment"># Division</span>
+exponent = a ** b    <span class="hljs-comment"># Exponentiation</span>
+</div></code></pre>
+<h3 id="comparison-operators">Comparison Operators</h3>
+<p>Python provides comparison operators to compare values. These include equal to (<code>==</code>), not equal to (<code>!=</code>), greater than (<code>&gt;</code>), less than (<code>&lt;</code>), greater than or equal to (<code>&gt;=</code>), and less than or equal to (<code>&lt;=</code>).</p>
+<pre class="hljs"><code><div>a = <span class="hljs-number">5</span>
+b = <span class="hljs-number">2</span>
+
+is_equal = a == b          <span class="hljs-comment"># Equal to</span>
+is_not_equal = a != b      <span class="hljs-comment"># Not equal to</span>
+is_greater = a &gt; b         <span class="hljs-comment"># Greater than</span>
+is_less = a &lt; b            <span class="hljs-comment"># Less than</span>
+is_greater_equal = a &gt;= b  <span class="hljs-comment"># Greater than or equal to</span>
+is_less_equal = a &lt;= b     <span class="hljs-comment"># Less than or equal to</span>
+</div></code></pre>
+<h3 id="logical-operators">Logical Operators</h3>
+<p>Python provides logical operators to combine multiple conditions. These include <code>and</code>, <code>or</code>, and <code>not</code>. Here's an example:</p>
+<pre class="hljs"><code><div>a = <span class="hljs-number">5</span>
+b = <span class="hljs-number">2</span>
+
+<span class="hljs-comment"># Logical AND</span>
+result_and = (a &gt; <span class="hljs-number">0</span>) <span class="hljs-keyword">and</span> (b &lt; <span class="hljs-number">0</span>)
+
+<span class="hljs-comment"># Logical OR</span>
+result_or = (a &gt; <span class="hljs-number">0</span>) <span class="hljs-keyword">or</span> (b &lt; <span class="hljs-number">0</span>)
+
+<span class="hljs-comment"># Logical NOT</span>
+result_not = <span class="hljs-keyword">not</span> (a &gt; <span class="hljs-number">0</span>)
+</div></code></pre>
+<h3 id="assignment-operators">Assignment Operators</h3>
+<p>Python provides shorthand assignment operators to perform arithmetic operations and assign the result back to a variable. These include <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, and <code>**=</code>. Here's an example:</p>
+<pre class="hljs"><code><div>a = <span class="hljs-number">5</span>
+
+a += <span class="hljs-number">2</span>   <span class="hljs-comment"># Equivalent to: a = a + 2</span>
+a -= <span class="hljs-number">2</span>   <span class="hljs-comment"># Equivalent to: a = a - 2</span>
+a *= <span class="hljs-number">2</span>   <span class="hljs-comment"># Equivalent to: a = a * 2</span>
+a /= <span class="hljs-number">2</span>   <span class="hljs-comment"># Equivalent to: a = a / 2</span>
+a **= <span class="hljs-number">2</span>  <span class="hljs-comment"># Equivalent to: a = a ** 2</span>
+</div></code></pre>
+<h3 id="identity-operators">Identity Operators</h3>
+<p>Python provides identity operators to compare the memory location of two objects. These include <code>is</code> and <code>is not</code>. Here's an example:</p>
+<pre class="hljs"><code><div>a = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+b = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+
+<span class="hljs-comment"># Check if a and b refer to the same object</span>
+is_same = a <span class="hljs-keyword">is</span> b
+<span class="hljs-comment"># Check if a and b refer to different objects</span>
+is_different = a <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> b
+</div></code></pre>
+<h3 id="membership-operators">Membership Operators</h3>
+<p>Python provides membership operators to check if a value is present in a sequence (such as a list, set, or dictionary). These include <code>in</code> and <code>not in</code>. Here's an example:</p>
+<pre class="hljs"><code><div>fruits = [<span class="hljs-string">"apple"</span>, <span class="hljs-string">"banana"</span>, <span class="hljs-string">"cherry"</span>]
+
+<span class="hljs-comment"># Check if "apple" is in the list</span>
+is_present = <span class="hljs-string">"apple"</span> <span class="hljs-keyword">in</span> fruits
+<span class="hljs-comment"># Check if "pear" is not in the list</span>
+is_absent = <span class="hljs-string">"pear"</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> fruits
+</div></code></pre>
+<h2 id="conditions-and-conditional-statements">Conditions and Conditional Statements</h2>
+<h3 id="if-statements">If Statements</h3>
+<p>If statements allow you to execute different blocks of code based on certain conditions. Here's an example:</p>
+<pre class="hljs"><code><div>age = <span class="hljs-number">18</span>
+
+<span class="hljs-keyword">if</span> age &gt;= <span class="hljs-number">18</span>:
+    print(<span class="hljs-string">"You are an adult."</span>)
+<span class="hljs-keyword">elif</span> age &gt;= <span class="hljs-number">13</span>:
+    print(<span class="hljs-string">"You are a teenager."</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">"You are a child."</span>)
+</div></code></pre>
+<h2 id="loops-while-and-for-continue-break">Loops: while and for, continue, break</h2>
+<h3 id="while-loop">while Loop</h3>
+<p>The <code>while</code> loop repeatedly executes a block of code as long as a given condition is true. Here's an example:</p>
+<pre class="hljs"><code><div>count = <span class="hljs-number">0</span>
+
+<span class="hljs-keyword">while</span> count &lt; <span class="hljs-number">5</span>:
+    print(count)
+    count += <span class="hljs-number">1</span>
+</div></code></pre>
+<h3 id="for-loop">for Loop</h3>
+<p>The <code>for</code> loop iterates over a sequence of elements. Here's an example:</p>
+<pre class="hljs"><code><div>fruits = [<span class="hljs-string">"apple"</span>, <span class="hljs-string">"banana"</span>, <span class="hljs-string">"cherry"</span>]
+
+<span class="hljs-keyword">for</span> fruit <span class="hljs-keyword">in</span> fruits:
+    print(fruit)
+</div></code></pre>
+<h3 id="continue-and-break-statements">continue and break Statements</h3>
+<ul>
+<li>The <code>continue</code> statement is used to skip the current iteration and move to the next one in the loop.</li>
+<li>The <code>break</code> statement is used to exit the loop prematurely. It terminates the loop and continues with the next statement after the loop.</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10</span>):
+    <span class="hljs-keyword">if</span> i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">continue</span>    <span class="hljs-comment"># Skip even numbers</span>
+    <span class="hljs-keyword">elif</span> i == <span class="hljs-number">7</span>:
+        <span class="hljs-keyword">break</span>       <span class="hljs-comment"># Exit the loop when i is 7</span>
+    print(i)
+</div></code></pre>
+<h2 id="functions">Functions</h2>
+<h3 id="defining-functions">Defining Functions</h3>
+<p>Functions in Python allow you to encapsulate reusable blocks of code. They take input arguments (if any) and can return a value (or not). You can define your own functions using the <code>def</code> keyword. Here's an example of a function that calculates the sum of two numbers:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_numbers</span><span class="hljs-params">(a, b)</span>:</span>
+    sum = a + b
+    <span class="hljs-keyword">return</span> sum
+</div></code></pre>
+<p>You can call this function by passing two numbers as arguments:</p>
+<pre class="hljs"><code><div>result = add_numbers(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>)
+print(result)  <span class="hljs-comment"># Output: 7</span>
+</div></code></pre>
+<h2 id="external-libraries">External Libraries</h2>
+<h3 id="installing-external-libraries">Installing External Libraries</h3>
+<p>To use external libraries in Python, you need to install them. The most common way to install libraries is using the package manager <code>pip</code>. For example, to install the <code>requests</code> library, you can run the following command in your terminal:</p>
+<pre class="hljs"><code><div>pip install requests
+</div></code></pre>
+<h3 id="importing-external-libraries">Importing External Libraries</h3>
+<p>Once a library is installed, you can import it into your Python code using the <code>import</code> statement. Here's an example:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> requests
+
+response = requests.get(<span class="hljs-string">"https://www.example.com"</span>)
+print(response.status_code)
+</div></code></pre>
+<p>Some libraries may have submodules or functions that you can import individually. For example:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> sqrt
+
+result = sqrt(<span class="hljs-number">16</span>)
+print(result)  <span class="hljs-comment"># Output: 4.0</span>
+</div></code></pre>
+<p>Python comes with a rich ecosystem of libraries that can help you perform various tasks, such as data analysis, web scraping, machine learning, and more. Explore the Python Package Index (PyPI) to discover libraries that suit your needs. Some libraries come pre-installed with Python, while others need to be installed separately using <code>pip</code>.</p>
+<h3 id="popular-libraries">Popular Libraries</h3>
+<p>Some popular libraries include:</p>
+<ul>
+<li><code>numpy</code> for numerical computing.</li>
+<li><code>pandas</code> for data manipulation and analysis.</li>
+<li><code>matplotlib</code> for data visualization.</li>
+<li><code>scikit-learn</code> for machine learning.</li>
+<li><code>flask</code> for web development.</li>
+</ul>
+<h2 id="class-and-object">Class and Object</h2>
+<p>Python is an object-oriented programming language, which means it supports classes and objects. A class is a blueprint for creating objects, while an object is an instance of a class. Classes can have attributes (variables) and methods (functions).</p>
+<p>Here's an example of defining a class and creating objects:</p>
+<pre class="hljs"><code><div><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, name, age)</span>:</span>
+        self.name = name
+        self.age = age
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">greet</span><span class="hljs-params">(self)</span>:</span>
+        print(<span class="hljs-string">f"Hello, my name is <span class="hljs-subst">{self.name}</span> and I am <span class="hljs-subst">{self.age}</span> years old."</span>)
+
+<span class="hljs-comment"># Create objects of the Person class</span>
+person1 = Person(<span class="hljs-string">"Alice"</span>, <span class="hljs-number">30</span>)
+person2 = Person(<span class="hljs-string">"Bob"</span>, <span class="hljs-number">25</span>)
+
+<span class="hljs-comment"># Call the greet method on the objects</span>
+person1.greet()
+person2.greet()
+</div></code></pre>
+<p>In this example, the <code>Person</code> class has attributes <code>name</code> and <code>age</code>, and a method <code>greet</code> that prints a greeting message. We create two objects of the <code>Person</code> class and call the <code>greet</code> method on each object.</p>
+<h2 id="basics-of-terminal-commands">Basics of Terminal Commands</h2>
+<h3 id="running-python-files">Running Python Files</h3>
+<p>To run a Python file, open your terminal or command prompt and navigate to the directory where the file is located. Then, use the <code>python</code> command followed by the file name and its extension. For example:</p>
+<pre class="hljs"><code><div>python my_script.py
+</div></code></pre>
+<h3 id="navigating-directories">Navigating Directories</h3>
+<ul>
+<li><code>cd directory_name</code> - Change to a specific directory.</li>
+<li><code>cd ..</code> - Move up to the parent directory.</li>
+<li><code>cd /</code> - Move to the root directory.</li>
+</ul>
+<h3 id="listing-files-and-directories">Listing Files and Directories</h3>
+<ul>
+<li><code>ls</code> - List files and directories in the current directory.</li>
+<li><code>ls -l</code> - List files and directories with detailed information.</li>
+<li><code>ls -a</code> - List all files and directories, including hidden ones.</li>
+</ul>
+<h3 id="creating-and-deleting-filesdirectories">Creating and Deleting Files/Directories</h3>
+<ul>
+<li><code>touch file_name</code> - Create an empty file.</li>
+<li><code>mkdir directory_name</code> - Create a new directory.</li>
+<li><code>rm file_name</code> - Delete a file.</li>
+<li><code>rmdir directory_name</code> - Delete an empty directory.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>This guide has introduced you to the basics of Python programming, covering topics such as variables, data types, lists, sets, dictionaries, operators, conditions, loops, functions, external libraries, and terminal commands. By mastering these concepts, you'll be well-equipped to write Python code for a wide range of applications. Keep practicing, experimenting, and learning to enhance your Python skills further. Good luck on your programming journey!</p>
+
+</body>
+
+</html>

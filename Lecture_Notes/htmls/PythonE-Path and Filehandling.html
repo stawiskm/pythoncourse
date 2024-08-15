@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PythonE-Path and Filehandling.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///home/marc/Git/pythoncourse/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///home/marc/Git/pythoncourse/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="guide-to-path-building-and-file-handling-in-python">Guide to Path Building and File Handling in Python</h1>
+<h2 id="introduction">Introduction</h2>
+<p>File handling and path building are crucial skills in Python programming, especially for tasks involving reading from and writing to files. This guide provides a concise overview of how to build paths and handle files in Python.</p>
+<h2 id="path-building">Path Building</h2>
+<p>Path building is essential for file manipulation in Python, especially when working across different operating systems. This guide will introduce you to the basics of path building using Python's <code>os</code> and <code>pathlib</code> modules.</p>
+<h3 id="using-the-os-module">Using the <code>os</code> Module</h3>
+<p>The <code>os</code> module in Python provides functions to interact with the operating system. For path manipulations, the <code>os.path</code> submodule is particularly useful.</p>
+<p><strong>Basic Operations with <code>os.path</code>:</strong></p>
+<ol>
+<li>
+<p><strong>Joining Paths:</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> os
+
+path = os.path.join(<span class="hljs-string">"folder"</span>, <span class="hljs-string">"subfolder"</span>, <span class="hljs-string">"file.txt"</span>)
+print(path)
+<span class="hljs-comment"># Output: folder/subfolder/file.txt (on Unix-based systems)</span>
+<span class="hljs-comment">#         folder\subfolder\file.txt (on Windows)</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Getting the Absolute Path:</strong></p>
+<pre class="hljs"><code><div>abs_path = os.path.abspath(<span class="hljs-string">"file.txt"</span>)
+print(abs_path)
+<span class="hljs-comment"># Output: /current/directory/file.txt (on Unix-based systems)</span>
+<span class="hljs-comment">#         C:\current\directory\file.txt (on Windows)</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Checking Path Existence:</strong></p>
+<pre class="hljs"><code><div>exists = os.path.exists(<span class="hljs-string">"file.txt"</span>)
+print(exists)
+<span class="hljs-comment"># Output: True if file exists, False otherwise</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Splitting a Path:</strong></p>
+<pre class="hljs"><code><div>path, filename = os.path.split(<span class="hljs-string">"/folder/subfolder/file.txt"</span>)
+print(path)     <span class="hljs-comment"># Output: /folder/subfolder</span>
+print(filename) <span class="hljs-comment"># Output: file.txt</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Getting File Extension:</strong></p>
+<pre class="hljs"><code><div>filename, file_extension = os.path.splitext(<span class="hljs-string">"file.txt"</span>)
+print(filename)       <span class="hljs-comment"># Output: file</span>
+print(file_extension) <span class="hljs-comment"># Output: .txt</span>
+</div></code></pre>
+</li>
+</ol>
+<h3 id="using-the-pathlib-module">Using the <code>pathlib</code> Module</h3>
+<p>The <code>pathlib</code> module provides an object-oriented approach to handling paths.</p>
+<p><strong>Basic Operations with <code>pathlib</code>:</strong></p>
+<ol>
+<li>
+<p><strong>Creating Path Objects:</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> pathlib <span class="hljs-keyword">import</span> Path
+
+path = Path(<span class="hljs-string">"folder"</span>) / <span class="hljs-string">"subfolder"</span> / <span class="hljs-string">"file.txt"</span>
+print(path)
+<span class="hljs-comment"># Output: folder/subfolder/file.txt</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Getting the Absolute Path:</strong></p>
+<pre class="hljs"><code><div>abs_path = path.resolve()
+print(abs_path)
+<span class="hljs-comment"># Output: /current/directory/folder/subfolder/file.txt (on Unix-based systems)</span>
+<span class="hljs-comment">#         C:\current\directory\folder\subfolder\file.txt (on Windows)</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Checking Path Existence:</strong></p>
+<pre class="hljs"><code><div>exists = path.exists()
+print(exists)
+<span class="hljs-comment"># Output: True if file exists, False otherwise</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Iterating Over Directory Contents:</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> Path(<span class="hljs-string">"folder"</span>).iterdir():
+    print(item)
+<span class="hljs-comment"># Output: Lists all items in the "folder" directory</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Getting File Extension:</strong></p>
+<pre class="hljs"><code><div>file_extension = path.suffix
+print(file_extension)
+<span class="hljs-comment"># Output: .txt</span>
+</div></code></pre>
+</li>
+</ol>
+<h3 id="cross-platform-considerations">Cross-Platform Considerations</h3>
+<p>Both <code>os.path</code> and <code>pathlib</code> handle platform differences internally, ensuring that your code runs correctly on different operating systems (e.g., Windows vs. Unix-based systems).</p>
+<p>For most cases, <code>pathlib</code> is recommended due to its simplicity and readability, but <code>os.path</code> remains useful, especially for backward compatibility with older code.</p>
+<h3 id="example-combining-both-modules">Example: Combining Both Modules</h3>
+<p>Here’s an example where both modules might be used together:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">from</span> pathlib <span class="hljs-keyword">import</span> Path
+
+<span class="hljs-comment"># Use os to get the current working directory</span>
+cwd = os.getcwd()
+print(<span class="hljs-string">f"Current working directory: <span class="hljs-subst">{cwd}</span>"</span>)
+
+<span class="hljs-comment"># Create a new path using pathlib</span>
+new_path = Path(cwd) / <span class="hljs-string">"new_folder"</span> / <span class="hljs-string">"new_file.txt"</span>
+print(<span class="hljs-string">f"New path: <span class="hljs-subst">{new_path}</span>"</span>)
+
+<span class="hljs-comment"># Check if the path exists</span>
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> new_path.parent.exists():
+    new_path.parent.mkdir(parents=<span class="hljs-literal">True</span>)
+    print(<span class="hljs-string">f"Created directory: <span class="hljs-subst">{new_path.parent}</span>"</span>)
+
+<span class="hljs-comment"># Write to the file</span>
+new_path.write_text(<span class="hljs-string">"Hello, World!"</span>)
+print(<span class="hljs-string">f"Written to file: <span class="hljs-subst">{new_path}</span>"</span>)
+
+<span class="hljs-comment"># Read from the file</span>
+content = new_path.read_text()
+print(<span class="hljs-string">f"Content of the file: <span class="hljs-subst">{content}</span>"</span>)
+</div></code></pre>
+<h2 id="file-handling">File Handling</h2>
+<h3 id="opening-and-closing-files">Opening and Closing Files</h3>
+<ol>
+<li>
+<p><strong>Using <code>open</code></strong></p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Opening a file</span>
+file = open(<span class="hljs-string">'example.txt'</span>, <span class="hljs-string">'r'</span>)
+
+<span class="hljs-comment"># Reading from the file</span>
+content = file.read()
+print(content)
+
+<span class="hljs-comment"># Closing the file</span>
+file.close()
+</div></code></pre>
+</li>
+<li>
+<p><strong>Using <code>with</code> Statement</strong></p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Automatically handles closing the file</span>
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">'example.txt'</span>, <span class="hljs-string">'r'</span>) <span class="hljs-keyword">as</span> file:
+    content = file.read()
+    print(content)
+</div></code></pre>
+</li>
+</ol>
+<h3 id="reading-from-files">Reading from Files</h3>
+<ol>
+<li>
+<p><strong>Read Entire File</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">with</span> open(<span class="hljs-string">'example.txt'</span>, <span class="hljs-string">'r'</span>) <span class="hljs-keyword">as</span> file:
+    content = file.read()
+    print(content)
+</div></code></pre>
+</li>
+<li>
+<p><strong>Read Line by Line</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">with</span> open(<span class="hljs-string">'example.txt'</span>, <span class="hljs-string">'r'</span>) <span class="hljs-keyword">as</span> file:
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> file:
+        print(line.strip())  <span class="hljs-comment"># strip() removes trailing newline characters</span>
+</div></code></pre>
+</li>
+<li>
+<p><strong>Read Specific Number of Characters</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">with</span> open(<span class="hljs-string">'example.txt'</span>, <span class="hljs-string">'r'</span>) <span class="hljs-keyword">as</span> file:
+    content = file.read(<span class="hljs-number">5</span>)  <span class="hljs-comment"># Read first 5 characters</span>
+    print(content)
+</div></code></pre>
+</li>
+</ol>
+<h3 id="writing-to-files">Writing to Files</h3>
+<ol>
+<li>
+<p><strong>Write Text to File</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">with</span> open(<span class="hljs-string">'example.txt'</span>, <span class="hljs-string">'w'</span>) <span class="hljs-keyword">as</span> file:
+    file.write(<span class="hljs-string">'Hello, World!'</span>)
+</div></code></pre>
+</li>
+<li>
+<p><strong>Append Text to File</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">with</span> open(<span class="hljs-string">'example.txt'</span>, <span class="hljs-string">'a'</span>) <span class="hljs-keyword">as</span> file:
+    file.write(<span class="hljs-string">'\nAppending text.'</span>)
+</div></code></pre>
+</li>
+</ol>
+<h3 id="checking-if-file-exists">Checking if File Exists</h3>
+<ol>
+<li>
+<p><strong>Using <code>os.path.exists</code></strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> os
+
+<span class="hljs-keyword">if</span> os.path.exists(<span class="hljs-string">'example.txt'</span>):
+    print(<span class="hljs-string">'File exists.'</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">'File does not exist.'</span>)
+</div></code></pre>
+</li>
+<li>
+<p><strong>Using <code>pathlib.Path.exists</code></strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">from</span> pathlib <span class="hljs-keyword">import</span> Path
+
+path = Path(<span class="hljs-string">'example.txt'</span>)
+<span class="hljs-keyword">if</span> path.exists():
+    print(<span class="hljs-string">'File exists.'</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">'File does not exist.'</span>)
+</div></code></pre>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>Path building and file handling are fundamental aspects of Python programming. The <code>os.path</code> and <code>pathlib</code> modules offer powerful ways to manipulate filesystem paths, while Python’s built-in file handling capabilities allow for efficient reading from and writing to files. Practice these techniques to build a solid foundation for handling files in your Python projects.</p>
+
+</body>
+
+</html>

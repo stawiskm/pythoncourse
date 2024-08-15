@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Py01-Assignments.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+    
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+html,footer,header{
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Custom MD PDF CSS
+ */
+html,footer,header{
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+
+ }
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///home/marc/Git/pythoncourse/R%3A%5C2.Travail%5C1.Enseignement%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css"><link rel="stylesheet" href="file:///home/marc/Git/pythoncourse/D%3A%5Crdaros%5CCours%5C_1.Outils%5C2.Developpement%5C1.SCSS%5Cmain.css" type="text/css">
+</head>
+
+<body>
+    <h1 id="assignments-py01">Assignments (Py01)</h1>
+<h2 id="problem-1-calculator">Problem 1 (Calculator)</h2>
+<h3 id="hard">Hard</h3>
+<p>Imagine you are building a calculator, which works with a speach to text system. The system can understand numbers from zero to twenty. The system can also understand the following operations: &quot;plus&quot;, &quot;minus&quot;, &quot;multiply&quot;, and &quot;divide&quot;. And a text to speech system that can convert the result back to a voice.</p>
+<p>Write a Function that takes two word representations of numbers and an operation and returns the result of the operation as word representation.<br>
+The operation can be one of the following: &quot;add&quot;, &quot;subtract&quot;, &quot;multiply&quot;, or &quot;divide&quot;.</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Example usage:</span>
+<span class="hljs-comment"># input_list = STT-system("Voice saying; eight plus nine") </span>
+
+input_list = [<span class="hljs-string">"eight"</span>, <span class="hljs-string">"nine"</span>, <span class="hljs-string">"plus"</span>]
+result = perform_operation(input_list)
+
+<span class="hljs-comment"># TTS-system(result) -&gt; "seventeen"</span>
+</div></code></pre>
+<p><em>If you stop here, and code this function, by yourself, you will learn a lot. (HARD)</em></p>
+<hr>
+<hr>
+<hr>
+<h3 id="medium">Medium</h3>
+<p>This is only one way to solve this problem. There are many other ways to solve this problem.</p>
+<p>Write a Function that takes a list with three arguments and returns a string as a result. The first argument describes a number as a String (e.g., &quot;eight&quot;), the second argument describes another number as a String (e.g., &quot;nine&quot;), and the third argument describes the operation as a String (e.g., &quot;plus&quot;) between the numbers. The result of this operation should be returned as written numbers (e.g., &quot;seventeen&quot;).</p>
+<pre class="hljs"><code><div>def perform_operation(args):
+    # Defining a dictionary to map word representations to numbers
+
+    # Extracting the arguments by unpacking the list
+
+    # Validating the arguments by checking if they are in the dictionary
+    
+    # Converting numbers to integers by looking up the dictionary
+    
+    # Performing the operation based on the operation argument
+    
+    # Converting the result back to a string by looking up the dictionary
+    
+    return result_string # A string representation of the result
+</div></code></pre>
+<p><em>If you stop here, and code this function, with the help of the instructions above, you still learn a lot. (MEDIUM)</em></p>
+<hr>
+<hr>
+<hr>
+<h3 id="easy">Easy</h3>
+<p>Fill the TODOs in the code below to complete the function.</p>
+<pre class="hljs"><code><div>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">perform_operation</span><span class="hljs-params">(args)</span>:</span>
+    number_map = {
+        <span class="hljs-string">"zero"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"one"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"two"</span>: <span class="hljs-number">2</span>, <span class="hljs-string">"three"</span>: <span class="hljs-number">3</span>, <span class="hljs-string">"four"</span>: <span class="hljs-number">4</span>,
+        <span class="hljs-string">"five"</span>: <span class="hljs-number">5</span>, <span class="hljs-string">"six"</span>: <span class="hljs-number">6</span>, <span class="hljs-string">"seven"</span>: <span class="hljs-number">7</span>, <span class="hljs-string">"eight"</span>: <span class="hljs-number">8</span>, <span class="hljs-string">"nine"</span>: <span class="hljs-number">9</span>,
+        <span class="hljs-string">"ten"</span>: <span class="hljs-number">10</span>, <span class="hljs-string">"eleven"</span>: <span class="hljs-number">11</span>, <span class="hljs-string">"twelve"</span>: <span class="hljs-number">12</span>, <span class="hljs-string">"thirteen"</span>: <span class="hljs-number">13</span>,
+        <span class="hljs-string">"fourteen"</span>: <span class="hljs-number">14</span>, <span class="hljs-string">"fifteen"</span>: <span class="hljs-number">15</span>, <span class="hljs-string">"sixteen"</span>: <span class="hljs-number">16</span>, <span class="hljs-string">"seventeen"</span>: <span class="hljs-number">17</span>,
+        <span class="hljs-string">"eighteen"</span>: <span class="hljs-number">18</span>, <span class="hljs-string">"nineteen"</span>: <span class="hljs-number">19</span>, <span class="hljs-string">"twenty"</span>: <span class="hljs-number">20</span>
+    }
+
+    <span class="hljs-comment"># Extracting the arguments</span>
+    <span class="hljs-comment">#TODO </span>
+
+    <span class="hljs-comment"># Validating the arguments</span>
+    <span class="hljs-keyword">if</span> num1 <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> number_map <span class="hljs-keyword">or</span> num2 <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> number_map:
+        <span class="hljs-comment">#TODO </span>
+
+    <span class="hljs-comment"># Converting numbers to integers</span>
+    num1 = number_map[num1]
+    num2 = number_map[num2]
+
+    <span class="hljs-comment"># Performing the operation</span>
+    <span class="hljs-keyword">if</span> operation == <span class="hljs-string">"plus"</span>:
+        <span class="hljs-comment">#TODO </span>
+    <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"minus"</span>:
+        <span class="hljs-comment">#TODO </span>
+    <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"multiply"</span>:
+        <span class="hljs-comment">#TODO </span>
+    <span class="hljs-keyword">elif</span> operation == <span class="hljs-string">"divide"</span>:
+        <span class="hljs-keyword">if</span> num2 == <span class="hljs-number">0</span>:
+            <span class="hljs-comment">#TODO </span>
+        <span class="hljs-comment">#TODO </span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"Invalid operation provided"</span>)
+
+    <span class="hljs-comment"># Converting the result back to a string</span>
+    result_string = [key <span class="hljs-keyword">for</span> key, value <span class="hljs-keyword">in</span> number_map.items() <span class="hljs-keyword">if</span> value == result]
+    <span class="hljs-keyword">if</span> len(result_string) == <span class="hljs-number">0</span>:
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">"Invalid result"</span>)
+    
+    <span class="hljs-keyword">return</span> result_string[<span class="hljs-number">0</span>]
+
+
+<span class="hljs-comment"># Example usage:</span>
+input_list = [<span class="hljs-string">"eight"</span>, <span class="hljs-string">"nine"</span>, <span class="hljs-string">"plus"</span>]
+<span class="hljs-keyword">try</span>:
+    result = perform_operation(input_list)
+    print(result)  <span class="hljs-comment"># Output: "seventeen"</span>
+<span class="hljs-keyword">except</span> (ValueError, ZeroDivisionError) <span class="hljs-keyword">as</span> e:
+    print(e)
+
+</div></code></pre>
+<p><em>You finished this problem, if you complete the code above, and test it with the example usage. (EASY)</em></p>
+<h2 id="problem-2-prime-number-checker">Problem 2 (Prime Number Checker)</h2>
+<h3 id="hard">Hard</h3>
+<p>Imagine you are building on a cryptography system, which requires a prime number checker. The system can understand numbers from zero to one hundred The system can also understand the following operations: &quot;is prime&quot;. And a text to speech system that can convert the result back to a voice.</p>
+<p>Write a Function that takes a number as an argument and returns True if the number is a prime number, and False otherwise.</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Example usage:</span>
+<span class="hljs-comment"># input_list = Cryp-system("Check if 17 is prime")</span>
+
+input_list = [<span class="hljs-number">17</span>, <span class="hljs-string">"is prime"</span>]
+result = is_prime(input_list)
+
+<span class="hljs-comment"># Cryp-system(result) -&gt; "True"</span>
+</div></code></pre>
+<p><em>If you stop here, and code this function, by yourself, you will learn a lot. (HARD)</em></p>
+<hr>
+<hr>
+<hr>
+<h3 id="medium">Medium</h3>
+<p>This is only one way to solve this problem. There are many other ways to solve this problem.</p>
+<p>Write a Function that takes a list with two arguments and returns a boolean as a result. The first argument describes a number as an Integer (e.g., 17), and the second argument describes the operation as a String (e.g., &quot;is prime&quot;). The result of this operation should be returned as a boolean (e.g., True).</p>
+<pre class="hljs"><code><div>def is_prime(args):
+    # Extracting the arguments by unpacking the list
+
+    # Validating the arguments by checking if the number is in the correct range
+    
+    # Checking if the number is a prime number
+    
+    return result_boolean # A boolean representation of the result
+</div></code></pre>
+<p>'Think about what could happen if you don't validate the arguments. What could happen if you don't check if the number is less than 2? What could happen if you don't check if the number is divisible by any number from 2 to the number itself?'</p>
+<p><em>If you stop here, and code this function, with the help of the instructions above, you still learn a lot. (MEDIUM)</em></p>
+<hr>
+<hr>
+<hr>
+<h3 id="easy">Easy</h3>
+<p>Fill the TODOs in the code below to complete the function.</p>
+<pre class="hljs"><code><div>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">is_prime</span><span class="hljs-params">(args)</span>:</span>
+    <span class="hljs-comment"># Extracting the arguments</span>
+    <span class="hljs-comment">#TODO </span>
+
+    <span class="hljs-comment"># Validating the arguments</span>
+    <span class="hljs-keyword">if</span> num &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> num &gt; <span class="hljs-number">100</span>:
+        <span class="hljs-comment">#TODO </span>
+
+    <span class="hljs-comment"># Checking if the number is a prime number</span>
+    <span class="hljs-comment"># Check if the number is less than 2</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-comment">#<span class="hljs-doctag">TODO:</span></span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
+    <span class="hljs-comment"># Check if the number is divisible by any number from 2 to the number itself</span>
+    <span class="hljs-comment"># If it is, return False</span>
+    <span class="hljs-comment"># Otherwise, return True</span>
+    <span class="hljs-comment"># create a list with all the numbers from 2 to the number itself use the range function range()</span>
+    search_range = range(<span class="hljs-comment">#TODO)</span>
+    <span class="hljs-comment"># iterate over the search_range and check if the number is divisible by any number</span>
+    <span class="hljs-comment"># TODO in search_range:</span>
+        <span class="hljs-comment"># check if the number is divisible by i</span>
+        <span class="hljs-keyword">if</span> num % i == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">False</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">True</span>
+
+</div></code></pre>
+<p>'Think about what could happen if you don't validate the arguments. What could happen if you don't check if the number is less than 2? What could happen if you don't check if the number is divisible by any number from 2 to the number itself?'</p>
+<p><em>You finished this problem, if you complete the code above, and test it with the example usage. (EASY)</em></p>
+
+</body>
+
+</html>
