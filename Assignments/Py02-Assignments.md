@@ -184,28 +184,35 @@ These problems can be solved efficiently using arrays and basic array operations
 
 ```python
 # Example usage
-mri_image = np.array([[10, 50, 200], [30, 180, 250], [15, 90, 220]])
-threshold = 100
+import matplotlib.pyplot as plt
+import numpy as np
+from PIL import Image
 
+# Example usage (mri_image.png is a dummy image)
+mri_image = Image.open('Data/mri_image.png')
+# Convert the image to grayscale
+mri_image = np.mean(mri_image, axis=2, dtype=int)
+mri_image = np.array(mri_image)
+threshold = 250
+
+# Analyze the image
 results = analyze_mri_image(mri_image, threshold)
 
-print("Segmentation Mask:\n", results['segmentation_mask'])
-print("Total Pixels Above Threshold:", results['total_above_threshold'])
-print("Average Intensity of Pixels Above Threshold:", results['average_intensity'])
-print("Maximum Intensity Value Among Pixels Above Threshold:", results['max_intensity'])
-print("Windowed Image:\n", results['windowed_image'])
+# Plot the results
+fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+axes[0].imshow(mri_image, cmap='gray', vmin=0, vmax=255)
+axes[0].set_title('Original Image')
+axes[0].axis('off')
 
-# Print-> Segmentation Mask:
-#  [[0 0 1]
-#   [0 1 1]
-#   [0 0 1]]
-# Total Pixels Above Threshold: 4
-# Average Intensity of Pixels Above Threshold: 212.5
-# Maximum Intensity Value Among Pixels Above Threshold: 250
-# Windowed Image:
-# [[  0   0 200]
-#  [  0 180 250]
-#  [  0   0 220]]
+axes[1].imshow(results['segmentation_mask'], cmap='gray', vmin=0, vmax=1)
+axes[1].set_title('Segmentation Mask')
+axes[1].axis('off')
+
+axes[2].imshow(results['windowed_image'], cmap='gray', vmin=0, vmax=255)
+axes[2].set_title('Windowed Segmented Image')
+axes[2].axis('off')
+
+plt.show()
 ```
 
 *If you stop here, and code this function, by yourself, you will learn a lot. (HARD)*
