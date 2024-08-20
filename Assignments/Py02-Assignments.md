@@ -162,7 +162,8 @@ def check_heart_rate(heart_rate_data):
 ### Hard
 
 **Scenario:**  
-A radiologist is analyzing a grayscale MRI image represented as a 2D array, where each element in the array represents the intensity of a pixel (ranging from 0 to 255). The radiologist wants to identify regions of interest (ROI) where the pixel intensity exceeds a certain threshold, indicating possible abnormalities.
+A radiologist is analyzing a grayscale MRI image represented as a 2D array, where each element in the array represents the intensity of a pixel (ranging from 0 to 255). The radiologist wants to identify regions of interest (ROI) where the pixel intensity exceeds a certain threshold, indicating possible abnormalities. 
+!wget https://raw.githubusercontent.com/stawiskm/pythoncourse/student/Assignments/Data/mri_image.png
 
 **Problem Statement:**  
 Write a program that takes a 2D array representing an MRI scan and a threshold value as input. The program should:
