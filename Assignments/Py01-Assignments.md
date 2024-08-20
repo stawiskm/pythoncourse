@@ -118,8 +118,7 @@ except (ValueError, ZeroDivisionError) as e:
 
 ### Hard
 
-Imagine you are building on a cryptography system, which requires a prime number checker. The system can understand numbers from zero to one hundred The system can also understand the following operations: "is prime". And a text to speech system that can convert the result back to a voice.
-
+Imagine you are building on a cryptography system, which requires a prime number checker. The system can understand numbers from zero to one hundred The system can also understand the following operations: "is prime".
 Write a Function that takes a number as an argument and returns True if the number is a prime number, and False otherwise.
 
 ```python
