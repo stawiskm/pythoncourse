@@ -1,5 +1,8 @@
 # Guide to Using Python with Pandas
 
+## Official Documentation
+- [Pandas Documentation](https://pandas.pydata.org/docs/getting_started/index.html#getting-started)
+
 ## Table of Contents
 
 - [Guide to Using Python with Pandas](#guide-to-using-python-with-pandas)

@@ -4,6 +4,11 @@
 
 In this guide, we will cover the basics of working with arrays and multidimensional arrays in Python. Python provides multiple ways to handle arrays, including the built-in `list` type and the `array` and `numpy` modules for more advanced usage. We will explore how to create, manipulate, and perform operations on these arrays.
 
+## Official Documentation
+- [Python Lists](https://docs.python.org/3/tutorial/datastructures.html)
+- [Python Arrays](https://docs.python.org/3/library/array.html)
+- [NumPy Arrays](https://numpy.org/doc/stable/user/absolute_beginners.html)
+
 ### Table of Contents
 
 - [Introduction to Python Arrays and Multidimensional Arrays](#introduction-to-python-arrays-and-multidimensional-arrays)

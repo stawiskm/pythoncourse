@@ -2,6 +2,10 @@
 
 This comprehensive guide will cover various fundamental topics in Python programming. It aims to provide detailed explanations, examples, and code snippets to help you understand and master these concepts. The topics covered in this guide include:
 
+## Official Documentation
+- [Python Documentation](https://docs.python.org/3/index.html)
+- [Python Tutorial](https://docs.python.org/3/tutorial/index.html)
+
 ## Table of Contents
 
 - [Programming with Python](#programming-with-python)
