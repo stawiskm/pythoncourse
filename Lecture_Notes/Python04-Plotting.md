@@ -280,7 +280,7 @@ plt.show()
 data = sns.load_dataset("flights")
 
 # Create a heatmap
-sns.heatmap(data.pivot("month", "year", "passengers"))
+sns.heatmap(data.pivot(index='month', columns='year', values='passengers'))
 
 # Add a title
 plt.title('Passengers by Month and Year')
