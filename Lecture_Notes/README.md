@@ -28,6 +28,9 @@ Welcome to the **Lecture Notes**. This directory contains a collection of markdo
 - [**PythonE-Path and Filehandling.md**](PythonE-Path%20and%20Filehandling.md)  
   Covers file handling in Python, including reading, writing, and manipulating files and directories.
 
+- [**GIT**](Git01-101.md)  
+  An introduction to Git, explaining version control, repositories, and basic commands.
+
 ## Additional Resources
 
 - **htmls/**: Contains HTML versions of the notes, if available.
