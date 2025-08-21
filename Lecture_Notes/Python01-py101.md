@@ -1,5 +1,8 @@
 # Programming with Python
 
+## Introduction
+[Python Programming 101](Python01-py101_The_Builder_s_Journey__A_Guide_to_Python.mp4)
+
 This comprehensive guide will cover various fundamental topics in Python programming. It aims to provide detailed explanations, examples, and code snippets to help you understand and master these concepts. The topics covered in this guide include:
 
 ## Official Documentation
