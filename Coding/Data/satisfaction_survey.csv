@@ -1,0 +1,101 @@
+patient_id,age,gender,department,satisfaction_score,wait_time,treatment_outcome
+1,36,Female,Pediatrics,7,80,Improved
+2,29,Male,Cardiology,2,5,No Change
+3,33,Female,Cardiology,4,12,Improved
+4,83,Female,Orthopedics,2,54,No Change
+5,76,Male,Pediatrics,6,14,Improved
+6,48,Male,Orthopedics,10,107,Worsened
+7,58,Female,Pediatrics,6,22,Improved
+8,54,Female,Pediatrics,3,99,Improved
+9,29,Female,Pediatrics,6,78,Worsened
+10,30,Female,Cardiology,2,17,No Change
+11,52,Male,Oncology,8,31,Improved
+12,20,Female,Pediatrics,3,74,Improved
+13,29,Female,Cardiology,4,72,Worsened
+14,40,Female,Pediatrics,3,9,Improved
+15,60,Male,Cardiology,9,102,No Change
+16,57,Female,Pediatrics,9,49,Improved
+17,50,Female,Orthopedics,9,103,Worsened
+18,62,Male,Oncology,10,27,Worsened
+19,48,Female,Neurology,1,57,No Change
+20,73,Female,Orthopedics,2,107,No Change
+21,82,Male,Oncology,8,94,Improved
+22,50,Male,Neurology,10,92,Worsened
+23,21,Female,Neurology,9,52,Worsened
+24,49,Female,Cardiology,7,113,Worsened
+25,81,Male,Pediatrics,6,48,Improved
+26,56,Female,Oncology,10,71,No Change
+27,68,Male,Cardiology,3,102,Improved
+28,57,Male,Orthopedics,4,52,No Change
+29,50,Female,Orthopedics,2,27,Improved
+30,31,Female,Neurology,3,87,Improved
+31,55,Female,Cardiology,10,118,Worsened
+32,21,Male,Orthopedics,6,11,No Change
+33,25,Female,Pediatrics,1,45,Worsened
+34,76,Male,Orthopedics,7,31,Worsened
+35,77,Male,Cardiology,7,24,Worsened
+36,57,Female,Neurology,4,57,Improved
+37,67,Male,Cardiology,10,26,No Change
+38,55,Female,Oncology,6,66,No Change
+39,64,Male,Pediatrics,5,116,Improved
+40,65,Female,Oncology,3,43,Worsened
+41,74,Male,Cardiology,10,61,Improved
+42,50,Male,Orthopedics,3,95,Improved
+43,59,Male,Pediatrics,1,58,Worsened
+44,24,Female,Pediatrics,4,54,Improved
+45,36,Female,Pediatrics,10,44,Improved
+46,77,Female,Cardiology,6,55,Improved
+47,80,Male,Neurology,10,34,Improved
+48,32,Male,Pediatrics,2,72,No Change
+49,29,Female,Oncology,8,20,Improved
+50,58,Female,Orthopedics,9,63,No Change
+51,32,Male,Neurology,3,93,Worsened
+52,27,Female,Orthopedics,3,56,Improved
+53,82,Female,Cardiology,8,8,No Change
+54,60,Male,Cardiology,4,118,Improved
+55,23,Female,Neurology,1,60,Worsened
+56,36,Male,Oncology,10,97,No Change
+57,39,Male,Neurology,9,44,No Change
+58,25,Female,Cardiology,9,81,Worsened
+59,64,Male,Pediatrics,1,83,Improved
+60,49,Male,Orthopedics,7,79,Worsened
+61,18,Male,Oncology,9,82,No Change
+62,18,Male,Orthopedics,3,103,Worsened
+63,41,Female,Oncology,10,77,No Change
+64,76,Female,Oncology,6,75,No Change
+65,18,Male,Oncology,9,68,Improved
+66,35,Male,Oncology,6,84,No Change
+67,31,Male,Pediatrics,5,31,Improved
+68,29,Male,Neurology,3,92,Worsened
+69,31,Female,Neurology,4,77,Improved
+70,49,Male,Oncology,8,105,No Change
+71,79,Male,Cardiology,1,102,Improved
+72,59,Male,Pediatrics,7,84,Worsened
+73,26,Female,Neurology,5,23,Worsened
+74,55,Male,Oncology,5,29,Worsened
+75,75,Male,Cardiology,3,18,Worsened
+76,42,Female,Pediatrics,1,78,Worsened
+77,78,Female,Pediatrics,9,70,No Change
+78,30,Male,Pediatrics,1,59,Worsened
+79,81,Female,Pediatrics,9,76,No Change
+80,72,Male,Pediatrics,2,55,No Change
+81,48,Female,Oncology,8,29,Improved
+82,51,Male,Orthopedics,10,7,No Change
+83,20,Male,Cardiology,9,105,Worsened
+84,24,Male,Oncology,8,82,Worsened
+85,63,Male,Cardiology,1,115,Worsened
+86,49,Female,Orthopedics,7,61,Worsened
+87,46,Male,Orthopedics,10,89,Worsened
+88,77,Female,Neurology,1,20,Worsened
+89,74,Male,Orthopedics,5,34,Improved
+90,84,Female,Cardiology,8,28,Worsened
+91,63,Female,Cardiology,7,7,Improved
+92,65,Male,Cardiology,5,119,No Change
+93,58,Male,Neurology,3,9,No Change
+94,82,Female,Oncology,4,74,Improved
+95,48,Male,Neurology,3,119,Improved
+96,47,Male,Pediatrics,10,33,Improved
+97,63,Female,Pediatrics,9,111,Worsened
+98,30,Male,Oncology,7,55,Worsened
+99,85,Female,Oncology,6,42,Improved
+100,80,Female,Pediatrics,8,73,No Change
