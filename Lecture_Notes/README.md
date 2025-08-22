@@ -15,7 +15,7 @@ Each lecture includes a comprehensive video explanation. Click the video links i
 
 ## 📚 Contents
 
-### Core Python Modules
+### Module 1: Python Fundamentals
 
 - [**Python01-py101.md**](Python01-py101.md)  
   Introduction to Python programming, covering basic syntax, variables, data types, and control structures.
@@ -23,48 +23,53 @@ Each lecture includes a comprehensive video explanation. Click the video links i
   - [🚀 Practice in Colab - Beginner](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py01-py101-b.ipynb)
   - [🚀 Practice in Colab - Easy](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py01-py101.ipynb)
 
+### Module 2: Data Manipulation
+
 - [**Python02-Arrays.md**](Python02-arrays.md)
-  Explores arrays in Python, focusing on operations with lists and other sequence data types.
+  Working with arrays, lists, and basic data structures in Python.
   - [🎥 Watch Video](Python02-arrays_An_Introduction_to_Python_Arrays__From_Lists_to_Light_Speed.mp4)
   - [🚀 Practice in Colab - Beginner](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py02-arrays-b.ipynb)
   - [🚀 Practice in Colab - Easy](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py02-arrays.ipynb)
 
+- [**PythonE-Numpy.md**](PythonE-Numpy.md)
+  Numerical computing with NumPy arrays and mathematical operations.
+  - [🎥 Watch Video](PythonE-Numpy__Your_Python_Superpower_for_Data.mp4)
+
 - [**Python03-Pandas.md**](Python03-Pandas.md) 
-  A comprehensive guide to the Pandas library, including data manipulation, DataFrames, and Series.
+  Comprehensive data manipulation and analysis with the Pandas library.
   - [🎥 Watch Video](Python03-Pandas_Your_Ultimate_Data_Sidekick.mp4)
   - [🚀 Practice in Colab - Beginner](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py03-pandas-b.ipynb)
   - [🚀 Practice in Colab - Easy](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py03-pandas.ipynb)
 
+### Module 3: Advanced Topics
+
 - [**Python04-Plotting.md**](Python04-Plotting.md)
-  A walkthrough on data visualization in Python using Matplotlib and Seaborn.
+  Data visualization techniques using Matplotlib and Seaborn.
   - [🎥 Watch Video](Python04-Plotting_s_Viz_Duel__Matplotlib_vs.mp4)
   - [🚀 Practice in Colab - Beginner](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py04-plotting-b.ipynb)
   - [🚀 Practice in Colab - Easy](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py04-plotting.ipynb)
 
-### Extended Topics
-
 - [**PythonE-Datascience.md**](PythonE-Datascience.md)
-  An overview of data science concepts in Python, including data analysis, machine learning, and statistical techniques.
+  Complete data science workflow including analysis, machine learning, and statistical techniques.
   - [🎥 Watch Video](PythonE-Datascience_The_Data_Science_Journey__From_Numbers_to_Knowledge.mp4)
   - [🚀 Practice in Colab](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/PyE-Datascience.ipynb)
 
 - [**PythonE-GUI.md**](PythonE-GUI.md)
-  Discusses how to create graphical user interfaces (GUIs) in Python, possibly using Tkinter or PyQt.
+  Creating graphical user interfaces (GUIs) in Python using Tkinter and other libraries.
 
-- [**PythonE-Numpy.md**](PythonE-Numpy.md)
-  Focuses on the Numpy library, detailing numerical operations, array manipulation, and mathematical functions.
-  - [🎥 Watch Video](PythonE-Numpy__Your_Python_Superpower_for_Data.mp4)
-
-- [**PythonE-Path and Filehandling.md**](PythonE-Path%20and%20Filehandling.md)  
-  Covers file handling in Python, including reading, writing, and manipulating files and directories.
-
-### Version Control
+### Module 4: Useful Tools
 
 - [**Git Basics**](Git01-101.md)  
-  An introduction to Git, explaining version control, repositories, and basic commands.
+  Version control fundamentals with Git for project management and collaboration.
   - [🎥 Watch Video](Git01-101_Explained__From_Chaos_to_Control.mp4)
 
+- [**PythonE-Path and Filehandling.md**](PythonE-Path%20and%20Filehandling.md)  
+  Working with files and directories, path manipulation, and file I/O operations.
+
 ## 🚀 Quick Links
+
+### Prerequisites:
+- **[🧠 Coding Principles](../Coding_Principles/)** - Essential mindset and best practices
 
 ### Practice by Difficulty:
 - **[🟢 Beginner Level](../Coding/Level%200%20(Beginner)/)** - Start here if you're new to Python
@@ -73,18 +78,20 @@ Each lecture includes a comprehensive video explanation. Click the video links i
 - **[🔴 Hard Level](../Coding/Level%203%20(Hard)/)** - Advanced problems
 
 ### Assignments:
-- [Py01 Assignments](../Assignments/Py01-Assignments.md)
-- [Py02 Assignments](../Assignments/Py02-Assignments.md)
-- [Py03 Assignments](../Assignments/Py03-Assignments.md)
-- [Py04 Assignments](../Assignments/Py04-Assignments.md)
+- [Py01 Assignments](../Assignments/Py01-Assignments.md) - Python Fundamentals
+- [Py02 Assignments](../Assignments/Py02-Assignments.md) - Arrays and Lists
+- [Py03 Assignments](../Assignments/Py03-Assignments.md) - Data Manipulation
+- [Py04 Assignments](../Assignments/Py04-Assignments.md) - Data Visualization
 
 ## 📚 Study Tips
 
-1. **Watch the video first** - Get an overview of the concepts
-2. **Read the lecture notes** - Understand the details
-3. **Practice in Colab** - Hands-on learning with immediate feedback
-4. **Complete assignments** - Reinforce your understanding
-5. **Progress through levels** - Start with Beginner and work your way up
+1. **Start with principles** - Watch [Coding Principles](../Coding_Principles/) videos first
+2. **Watch module videos** - Get an overview of the concepts  
+3. **Read the lecture notes** - Understand the details
+4. **Practice in Colab** - Hands-on learning with immediate feedback
+5. **Complete assignments** - Reinforce your understanding
+6. **Progress through levels** - Start with Beginner and work your way up
+7. **Apply tools when needed** - Learn Git and file handling as your projects grow
 
 ---
 [⬅ Back to Main Page](../README.md)

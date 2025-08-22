@@ -11,43 +11,55 @@ Welcome to the **Python Programming Course**! This comprehensive course is desig
 ## 🎯 Quick Start Guide
 
 ### New to Programming?
-Start with our [**Git Basics**](Lecture_Notes/Git01-101.md) tutorial to learn version control, then dive into [**Python 101**](Lecture_Notes/Python01-py101.md).
+Start with our [**Coding Principles**](#module-0-coding-principles--mindset) to learn the right mindset, then dive into [**Python 101**](Lecture_Notes/Python01-py101.md).
 
 ### Ready to Code?
 Jump straight into our interactive notebooks on Google Colab - no installation required!
 
 ## 📚 Course Modules
 
+### Module 0: Coding Principles & Mindset
+Essential principles for effective programming and problem-solving.
+
+| Topic | Video | Description |
+|-------|-------|-------------|
+| **10 Ground Rules to Vibe With Your Code** | [🎥 Watch](10_Ground_Rules_to__Vibe__With_Your_Code.mp4) | Core coding principles and best practices |
+| **From Problem to Python** | [🎥 Watch](From_Problem_to_Python__A_Beginner_s_Blueprint.mp4) | Problem-solving methodology for programming |
+| **Ground Rules for Coding with AI** | [🎥 Watch](Ground_Rules_for_Coding_with_AI.mp4) | Best practices for AI-assisted programming |
+
 ### Module 1: Python Fundamentals
-Learn the building blocks of Python programming.
+Learn the core building blocks of Python programming.
 
 | Topic | Video | Theory | Practice (Colab) |
 |-------|-------|--------|-----------------|
 | **Python Basics** | [🎥 Watch](Lecture_Notes/Python01-py101_The_Builder_s_Journey__A_Guide_to_Python.mp4) | [📖 Read](Lecture_Notes/Python01-py101.md) | [Beginner](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py01-py101-b.ipynb) \| [Easy](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py01-py101.ipynb) \| [Medium](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py01-py101.ipynb) \| [Hard](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py01-py101.ipynb) |
-| **Arrays & Lists** | [🎥 Watch](Lecture_Notes/Python02-arrays_An_Introduction_to_Python_Arrays__From_Lists_to_Light_Speed.mp4) | [📖 Read](Lecture_Notes/Python02-arrays.md) | [Beginner](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py02-arrays-b.ipynb) \| [Easy](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py02-arrays.ipynb) \| [Medium](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py02-arrays.ipynb) \| [Hard](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py02-arrays.ipynb) |
 
 ### Module 2: Data Manipulation
-Master data handling with Pandas and visualization.
+Master working with data structures, arrays, and data processing.
 
 | Topic | Video | Theory | Practice (Colab) |
 |-------|-------|--------|-----------------|
+| **Arrays & Lists** | [🎥 Watch](Lecture_Notes/Python02-arrays_An_Introduction_to_Python_Arrays__From_Lists_to_Light_Speed.mp4) | [📖 Read](Lecture_Notes/Python02-arrays.md) | [Beginner](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py02-arrays-b.ipynb) \| [Easy](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py02-arrays.ipynb) \| [Medium](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py02-arrays.ipynb) \| [Hard](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py02-arrays.ipynb) |
+| **NumPy** | [🎥 Watch](Lecture_Notes/PythonE-Numpy__Your_Python_Superpower_for_Data.mp4) | [📖 Read](Lecture_Notes/PythonE-Numpy.md) | - |
 | **Pandas** | [🎥 Watch](Lecture_Notes/Python03-Pandas_Your_Ultimate_Data_Sidekick.mp4) | [📖 Read](Lecture_Notes/Python03-Pandas.md) | [Beginner](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py03-pandas-b.ipynb) \| [Easy](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py03-pandas.ipynb) \| [Medium](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py03-pandas.ipynb) \| [Hard](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py03-pandas.ipynb) |
-| **Data Visualization** | [🎥 Watch](Lecture_Notes/Python04-Plotting_s_Viz_Duel__Matplotlib_vs.mp4) | [📖 Read](Lecture_Notes/Python04-Plotting.md) | [Beginner](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py04-plotting-b.ipynb) \| [Easy](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py04-plotting.ipynb) \| [Medium](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py04-plotting.ipynb) \| [Hard](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py04-plotting.ipynb) |
 
 ### Module 3: Advanced Topics
 Explore specialized areas and advanced concepts.
 
 | Topic | Video | Theory | Practice |
 |-------|-------|--------|----------|
-| **NumPy** | [🎥 Watch](Lecture_Notes/PythonE-Numpy__Your_Python_Superpower_for_Data.mp4) | [📖 Read](Lecture_Notes/PythonE-Numpy.md) | - |
+| **Data Visualization** | [🎥 Watch](Lecture_Notes/Python04-Plotting_s_Viz_Duel__Matplotlib_vs.mp4) | [📖 Read](Lecture_Notes/Python04-Plotting.md) | [Beginner](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py04-plotting-b.ipynb) \| [Easy](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py04-plotting.ipynb) \| [Medium](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py04-plotting.ipynb) \| [Hard](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py04-plotting.ipynb) |
 | **Data Science** | [🎥 Watch](Lecture_Notes/PythonE-Datascience_The_Data_Science_Journey__From_Numbers_to_Knowledge.mp4) | [📖 Read](Lecture_Notes/PythonE-Datascience.md) | [Practice](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/PyE-Datascience.ipynb) |
 | **GUI Development** | - | [📖 Read](Lecture_Notes/PythonE-GUI.md) | - |
-| **File Handling** | - | [📖 Read](Lecture_Notes/PythonE-Path%20and%20Filehandling.md) | - |
+| **Data Visualization Rules** | [🎥 Watch](The_10_Golden_Rules_of_Data_Visualization.mp4) | - | - |
 
-### Prerequisites: Version Control
-| Topic | Video | Theory |
-|-------|-------|--------|
-| **Git Basics** | [🎥 Watch](Lecture_Notes/Git01-101_Explained__From_Chaos_to_Control.mp4) | [📖 Read](Lecture_Notes/Git01-101.md) |
+### Module 4: Useful Tools
+Practical tools for development and project management.
+
+| Topic | Video | Theory | Description |
+|-------|-------|--------|-------------|
+| **Git Version Control** | [🎥 Watch](Lecture_Notes/Git01-101_Explained__From_Chaos_to_Control.mp4) | [📖 Read](Lecture_Notes/Git01-101.md) | Version control and collaboration |
+| **File Handling** | - | [📖 Read](Lecture_Notes/PythonE-Path%20and%20Filehandling.md) | Working with files and directories |
 
 ## 📝 Assignments & Exercises
 
@@ -85,6 +97,7 @@ Advanced problems for experienced programmers.
 ## 🎥 Additional Learning Resources
 
 ### Video Tutorials Collection
+- **[🧠 Essential Coding Principles](Coding_Principles/)** - Start here for the right mindset
 - [Ground Rules for Coding with AI](Ground_Rules_for_Coding_with_AI.mp4)
 - [From Problem to Python: A Beginner's Blueprint](From_Problem_to_Python__A_Beginner_s_Blueprint.mp4)
 - [10 Ground Rules to Vibe With Your Code](10_Ground_Rules_to__Vibe__With_Your_Code.mp4)
@@ -93,22 +106,26 @@ Advanced problems for experienced programmers.
 ## 🚀 Learning Path Recommendations
 
 ### Path 1: Complete Beginner
-1. Start with [Git Basics](Lecture_Notes/Git01-101.md)
+1. **Start with Coding Principles** - Watch the [mindset videos](#module-0-coding-principles--mindset)
 2. Learn [Python Fundamentals](Lecture_Notes/Python01-py101.md)
 3. Practice with [Beginner Level Exercises](Coding/Level%200%20(Beginner)/)
-4. Progress through Arrays, Pandas, and Plotting
-5. Complete assignments for each module
+4. Progress through Data Manipulation (Arrays, NumPy, Pandas)
+5. Move to Advanced Topics (Visualization, Data Science)
+6. Learn [Useful Tools](Lecture_Notes/Git01-101.md) when needed
+7. Complete assignments for each module
 
 ### Path 2: Some Programming Experience
-1. Quick review of [Python Basics](Lecture_Notes/Python01-py101.md)
-2. Jump to [Easy Level Exercises](Coding/Level%201%20(Easy)/)
-3. Focus on [Pandas](Lecture_Notes/Python03-Pandas.md) and [Plotting](Lecture_Notes/Python04-Plotting.md)
-4. Explore [NumPy](Lecture_Notes/PythonE-Numpy.md) for numerical computing
+1. **Review Coding Principles** - Essential for good practices
+2. Quick review of [Python Basics](Lecture_Notes/Python01-py101.md)
+3. Jump to [Easy Level Exercises](Coding/Level%201%20(Easy)/)
+4. Focus on [Data Manipulation](Lecture_Notes/Python03-Pandas.md) and [Visualization](Lecture_Notes/Python04-Plotting.md)
+5. Explore [NumPy](Lecture_Notes/PythonE-Numpy.md) and [Data Science](Lecture_Notes/PythonE-Datascience.md)
 
 ### Path 3: Experienced Programmer
-1. Start with [Medium](Coding/Level%202%20(Medium)/) or [Hard Level](Coding/Level%203%20(Hard)/) exercises
-2. Deep dive into [Data Science](Lecture_Notes/PythonE-Datascience.md)
-3. Explore advanced topics like GUI development
+1. **Review AI Coding Principles** - Adapt to modern development
+2. Start with [Medium](Coding/Level%202%20(Medium)/) or [Hard Level](Coding/Level%203%20(Hard)/) exercises
+3. Deep dive into [Data Science](Lecture_Notes/PythonE-Datascience.md)
+4. Explore advanced topics like GUI development
 
 ## 📂 Repository Structure
 
