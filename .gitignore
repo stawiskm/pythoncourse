@@ -1,6 +1,3 @@
 Code_Examples/Day 4/Data/Pancreas
 .vscode
-Assignments/*.ipynb
-Assignments/StudAssignments
-!Assignments/Py02-Assignments.ipynb
-!Assignments/Py03-Assignments.ipynb
+Assignments/StudAssignments/**
