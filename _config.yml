@@ -1,15 +1,11 @@
-# Jekyll Configuration for GitHub Pages
+# GitHub Pages Configuration
 title: "Python Course - Interactive Learning Hub"
 description: "Comprehensive Python course with video tutorials, interactive exercises, and hands-on assignments"
-baseurl: ""
-url: "https://stawiskm.github.io/pythoncourse"
 
-# Theme
-theme: minima
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
+# GitHub Pages settings
+github:
+  repository_name: pythoncourse
+  repository_url: https://github.com/stawiskm/pythoncourse
 
 # Site settings
 author: "Python Course Team"

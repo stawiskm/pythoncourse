@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coding Exercises - Python Course</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+        }
+        .header {
+            background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border: 3px solid #2c3e50;
+        }
+        .header h1 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        .nav-links {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .nav-links a {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.7rem 1.2rem;
+            background: #FCE834;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        .nav-links a:hover {
+            background: #2c3e50;
+            color: #FCE834;
+        }
+        .level-section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .level-beginner { border-left: 5px solid #28a745; }
+        .level-easy { border-left: 5px solid #FCE834; }
+        .level-medium { border-left: 5px solid #fd7e14; }
+        .level-hard { border-left: 5px solid #dc3545; }
+        
+        .btn-colab {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            margin: 0.3rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+            color: white !important;
+        }
+        .btn-theory {
+            background: #2c3e50;
+            color: white !important;
+        }
+        .btn-video {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white !important;
+        }
+        h2, h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #FCE834;
+            padding-bottom: 0.5rem;
+        }
+        .exercise-item {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .exercise-item h4 {
+            margin: 0 0 0.5rem 0;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>💻 Coding Exercises</h1>
+    <p>Interactive Python practice exercises organized by difficulty level</p>
+</div>
+
+<div class="nav-links">
+    <a href="../">🎠 Main Page</a>
+    <a href="../Coding_Principles/">🧠 Principles</a>
+    <a href="../Lecture_Notes/">📚 Lecture Notes</a>
+    <a href="../Assignments/">📝 Assignments</a>
+</div>
+
+<p>Welcome to the <strong>Coding Exercises</strong> section! Here you'll find interactive Jupyter notebooks organized by difficulty level. All notebooks can be opened directly in Google Colab - no installation required!</p>
+
+<h2>🎯 Choose Your Level</h2>
+
+<div class="level-section level-beginner">
+    <h3>🟢 Level 0 - Beginner</h3>
+    <p><strong>Perfect for absolute beginners</strong> - Start here if you're new to programming</p>
+    
+    <div class="exercise-item">
+        <h4>Py01: Python Basics</h4>
+        <p>Variables, data types, and basic operations</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py01-py101-b.ipynb" class="btn-colab">🚀 Open in Colab</a>
+        <a href="../Lecture_Notes/Python01-py101.html" class="btn-colab btn-theory">📖 Theory</a>
+        <a href="../Lecture_Notes/Python01-py101_The_Builder_s_Journey__A_Guide_to_Python.mp4" class="btn-colab btn-video">🎥 Video</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py02: Working with Arrays</h4>
+        <p>Lists and basic array operations</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py02-arrays-b.ipynb" class="btn-colab">🚀 Open in Colab</a>
+        <a href="../Lecture_Notes/Python02-arrays.html" class="btn-colab btn-theory">📖 Theory</a>
+        <a href="../Lecture_Notes/Python02-arrays_An_Introduction_to_Python_Arrays__From_Lists_to_Light_Speed.mp4" class="btn-colab btn-video">🎥 Video</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py03: Introduction to Pandas</h4>
+        <p>DataFrames and basic data manipulation</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py03-pandas-b.ipynb" class="btn-colab">🚀 Open in Colab</a>
+        <a href="../Lecture_Notes/Python03-Pandas.html" class="btn-colab btn-theory">📖 Theory</a>
+        <a href="../Lecture_Notes/Python03-Pandas_Your_Ultimate_Data_Sidekick.mp4" class="btn-colab btn-video">🎥 Video</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py04: Basic Plotting</h4>
+        <p>Creating simple visualizations</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py04-plotting-b.ipynb" class="btn-colab">🚀 Open in Colab</a>
+        <a href="../Lecture_Notes/Python04-Plotting.html" class="btn-colab btn-theory">📖 Theory</a>
+        <a href="../Lecture_Notes/Python04-Plotting_s_Viz_Duel__Matplotlib_vs.mp4" class="btn-colab btn-video">🎥 Video</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>PyE: Data Science Introduction</h4>
+        <p>First steps in data science</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/PyE-Datascience.ipynb" class="btn-colab">🚀 Open in Colab</a>
+        <a href="../Lecture_Notes/PythonE-Datascience.html" class="btn-colab btn-theory">📖 Theory</a>
+        <a href="../Lecture_Notes/PythonE-Datascience_The_Data_Science_Journey__From_Numbers_to_Knowledge.mp4" class="btn-colab btn-video">🎥 Video</a>
+    </div>
+</div>
+
+<div class="level-section level-easy">
+    <h3>🟡 Level 1 - Easy</h3>
+    <p><strong>For those with basic Python understanding</strong></p>
+    
+    <div class="exercise-item">
+        <h4>Py01: Python Fundamentals</h4>
+        <p>Functions, loops, and conditionals</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py01-py101.ipynb" class="btn-colab">🚀 Open in Colab</a>
+        <a href="../Lecture_Notes/Python01-py101.html" class="btn-colab btn-theory">📖 Theory</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py02: Array Operations</h4>
+        <p>List comprehensions and array manipulation</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py02-arrays.ipynb" class="btn-colab">🚀 Open in Colab</a>
+        <a href="../Lecture_Notes/Python02-arrays.html" class="btn-colab btn-theory">📖 Theory</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py03: Data with Pandas</h4>
+        <p>Data filtering and aggregation</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py03-pandas.ipynb" class="btn-colab">🚀 Open in Colab</a>
+        <a href="../Lecture_Notes/Python03-Pandas.html" class="btn-colab btn-theory">📖 Theory</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py04: Data Visualization</h4>
+        <p>Matplotlib and Seaborn basics</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py04-plotting.ipynb" class="btn-colab">🚀 Open in Colab</a>
+        <a href="../Lecture_Notes/Python04-Plotting.html" class="btn-colab btn-theory">📖 Theory</a>
+    </div>
+</div>
+
+<div class="level-section level-medium">
+    <h3>🟠 Level 2 - Medium</h3>
+    <p><strong>Intermediate challenges to strengthen your skills</strong></p>
+    
+    <div class="exercise-item">
+        <h4>Py01: Advanced Python</h4>
+        <p>Classes, decorators, and advanced functions</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py01-py101.ipynb" class="btn-colab">🚀 Open in Colab</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py02: Complex Arrays</h4>
+        <p>Multi-dimensional arrays and NumPy</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py02-arrays.ipynb" class="btn-colab">🚀 Open in Colab</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py03: Advanced Pandas</h4>
+        <p>Merging, pivoting, and time series</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py03-pandas.ipynb" class="btn-colab">🚀 Open in Colab</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py04: Advanced Plotting</h4>
+        <p>Interactive and statistical plots</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py04-plotting.ipynb" class="btn-colab">🚀 Open in Colab</a>
+    </div>
+</div>
+
+<div class="level-section level-hard">
+    <h3>🔴 Level 3 - Hard</h3>
+    <p><strong>Advanced problems for experienced programmers</strong></p>
+    
+    <div class="exercise-item">
+        <h4>Py01: Expert Python</h4>
+        <p>Meta-programming and optimization</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py01-py101.ipynb" class="btn-colab">🚀 Open in Colab</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py02: Expert Arrays</h4>
+        <p>Performance optimization with arrays</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py02-arrays.ipynb" class="btn-colab">🚀 Open in Colab</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py03: Expert Pandas</h4>
+        <p>Complex data transformations</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py03-pandas.ipynb" class="btn-colab">🚀 Open in Colab</a>
+    </div>
+
+    <div class="exercise-item">
+        <h4>Py04: Expert Plotting</h4>
+        <p>Custom visualizations and animations</p>
+        <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py04-plotting.ipynb" class="btn-colab">🚀 Open in Colab</a>
+    </div>
+</div>
+
+<h2>💡 Learning Tips</h2>
+
+<ol>
+    <li><strong>Start at your level</strong> - Don't skip ahead too quickly</li>
+    <li><strong>Read the theory first</strong> - Check the linked lecture notes</li>
+    <li><strong>Watch the videos</strong> - Visual learning reinforces concepts</li>
+    <li><strong>Complete all TODOs</strong> - Each exercise has specific tasks</li>
+    <li><strong>Experiment</strong> - Try modifying the code to see what happens</li>
+</ol>
+
+<div class="nav-links">
+    <a href="../Assignments/">📝 Try Assignments</a>
+    <a href="../Lecture_Notes/">📚 Review Theory</a>
+</div>
+
+<hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
+
+<div class="nav-links">
+    <a href="../">🎠 Back to Main Page</a>
+</div>
+
+<p style="text-align: center; color: #2c3e50; font-style: italic; margin-top: 2rem;">
+    <em>Happy Coding! 🐍✨</em>
+</p>
+
+</body>
+</html>
