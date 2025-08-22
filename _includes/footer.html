@@ -1,0 +1,52 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+          </li>
+          {%- if site.email -%}
+          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <p style="margin-bottom: 1rem;"><strong>🚀 Quick Links</strong></p>
+        <ul class="social-media-list" style="list-style: none; margin: 0; padding: 0;">
+          <li style="margin: 0.3rem 0;"><a href="{{ '/Lecture_Notes/' | relative_url }}">📚 All Lectures</a></li>
+          <li style="margin: 0.3rem 0;"><a href="{{ '/Coding/Level%200%20(Beginner)/' | relative_url }}">🟢 Beginner Exercises</a></li>
+          <li style="margin: 0.3rem 0;"><a href="{{ '/Assignments/' | relative_url }}">📝 Assignments</a></li>
+          <li style="margin: 0.3rem 0;"><a href="https://colab.research.google.com" target="_blank">🚀 Google Colab</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p style="margin-bottom: 1rem;"><strong>📖 Learning Resources</strong></p>
+        <ul style="list-style: none; margin: 0; padding: 0;">
+          <li style="margin: 0.3rem 0;"><a href="https://docs.python.org/3/" target="_blank">Python Docs</a></li>
+          <li style="margin: 0.3rem 0;"><a href="https://pandas.pydata.org/docs/" target="_blank">Pandas Docs</a></li>
+          <li style="margin: 0.3rem 0;"><a href="https://matplotlib.org/" target="_blank">Matplotlib</a></li>
+          <li style="margin: 0.3rem 0;"><a href="https://git-scm.com/doc" target="_blank">Git Documentation</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">
+      <p style="color: var(--primary-yellow); font-size: 0.9rem;">
+        🐍 <strong>Python Course</strong> - Interactive Learning for Everyone<br>
+        <span style="font-size: 0.8rem;">Built with Jekyll • Hosted on GitHub Pages • Licensed under MIT</span>
+      </p>
+    </div>
+
+  </div>
+
+</footer>

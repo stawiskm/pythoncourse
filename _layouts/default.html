@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <!-- Breadcrumb Navigation -->
+        {% if page.breadcrumb %}
+        <nav class="breadcrumb-nav">
+          {{ page.breadcrumb }}
+        </nav>
+        {% endif %}
+        
+        <!-- Auto-generate breadcrumb if not specified -->
+        {% unless page.breadcrumb %}
+        {% if page.url != "/" %}
+        <nav class="breadcrumb-nav">
+          <a href="{{ '/' | relative_url }}">🎠 Main Page</a>
+          {% if page.url contains '/Lecture_Notes/' %}
+            | <a href="{{ '/Lecture_Notes/' | relative_url }}">📚 Lecture Notes</a>
+          {% elsif page.url contains '/Coding/' %}
+            | <a href="{{ '/Coding/' | relative_url }}">💻 Coding Exercises</a>
+          {% elsif page.url contains '/Assignments/' %}
+            | <a href="{{ '/Assignments/' | relative_url }}">📝 Assignments</a>
+          {% endif %}
+        </nav>
+        {% endif %}
+        {% endunless %}
+
+        <!-- Course Progress Indicator -->
+        {% if page.module %}
+        <div class="module-progress">
+          <strong>Module {{ page.module }}:</strong> {{ page.title }}
+          {% if page.difficulty %}
+          <span class="difficulty-badge difficulty-{{ page.difficulty }}">{{ page.difficulty | capitalize }}</span>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        {{ content }}
+
+        <!-- Auto-generate footer navigation -->
+        {% if page.url contains '/Lecture_Notes/' and page.url != '/Lecture_Notes/' %}
+        <hr style="margin: 3rem 0; border: none; border-top: 2px solid var(--primary-yellow);">
+        <nav class="breadcrumb-nav">
+          <a href="{{ '/Lecture_Notes/' | relative_url }}">⬅ Back to Lecture Notes</a> | 
+          <a href="{{ '/' | relative_url }}">🎠 Main Page</a>
+        </nav>
+        {% endif %}
+
+        {% if page.url contains '/Coding/' and page.url != '/Coding/' %}
+        <hr style="margin: 3rem 0; border: none; border-top: 2px solid var(--primary-yellow);">
+        <nav class="breadcrumb-nav">
+          <a href="{{ '/Coding/' | relative_url }}">⬅ Back to Coding Exercises</a> | 
+          <a href="{{ '/' | relative_url }}">🎠 Main Page</a>
+        </nav>
+        {% endif %}
+
+        {% if page.url contains '/Assignments/' and page.url != '/Assignments/' %}
+        <hr style="margin: 3rem 0; border: none; border-top: 2px solid var(--primary-yellow);">
+        <nav class="breadcrumb-nav">
+          <a href="{{ '/Assignments/' | relative_url }}">⬅ Back to Assignments</a> | 
+          <a href="{{ '/' | relative_url }}">🎠 Main Page</a>
+        </nav>
+        {% endif %}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    <!-- Enhanced functionality script -->
+    <script src="{{ '/assets/js/colab-enhance.js' | relative_url }}"></script>
+    
+    <!-- Custom JavaScript for enhanced functionality -->
+    <script>
+      // Add smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Add copy button to code blocks
+      document.querySelectorAll('pre').forEach(function(pre) {
+        var button = document.createElement('button');
+        button.className = 'copy-button';
+        button.textContent = 'Copy';
+        button.style.cssText = `
+          position: absolute;
+          top: 5px;
+          right: 5px;
+          background: var(--primary-yellow);
+          border: none;
+          padding: 5px 10px;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 12px;
+          color: var(--dark-blue);
+        `;
+        
+        pre.style.position = 'relative';
+        pre.appendChild(button);
+        
+        button.addEventListener('click', function() {
+          var code = pre.querySelector('code');
+          var text = code ? code.textContent : pre.textContent;
+          navigator.clipboard.writeText(text).then(function() {
+            button.textContent = 'Copied!';
+            setTimeout(function() {
+              button.textContent = 'Copy';
+            }, 2000);
+          });
+        });
+      });
+
+      // Add external link indicators
+      document.querySelectorAll('a[href^="http"]').forEach(function(link) {
+        if (!link.hostname === window.location.hostname) {
+          link.innerHTML += ' <span style="font-size: 0.8em;">↗</span>';
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+        }
+      });
+
+      // Progress tracking for checkboxes
+      document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+          localStorage.setItem('checkbox_' + window.location.pathname + '_' + this.id, this.checked);
+        });
+        
+        // Restore checkbox state
+        var saved = localStorage.getItem('checkbox_' + window.location.pathname + '_' + checkbox.id);
+        if (saved === 'true') {
+          checkbox.checked = true;
+        }
+      });
+    </script>
+
+  </body>
+
+</html>

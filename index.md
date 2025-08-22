@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Python Course - Interactive Learning Hub"
+description: "Comprehensive Python course with video tutorials, interactive exercises, and hands-on assignments"
+---
+
 # 🐍 Python Course - Interactive Learning Hub
 
 Welcome to the **Python Programming Course**! This comprehensive course is designed to take you from Python basics to advanced data science concepts through interactive tutorials, video lessons, and hands-on exercises.

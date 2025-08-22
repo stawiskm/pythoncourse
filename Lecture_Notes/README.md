@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Lecture Notes"
+description: "Interactive Python tutorials with video guides and practice exercises"
+---
+
 # Lecture Notes
 
 Welcome to the **Lecture Notes**. This directory contains a collection of markdown files designed to guide you through various Python topics. Each file is structured to provide both theoretical knowledge and practical examples.

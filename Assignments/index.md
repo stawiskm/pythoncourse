@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Assignments"
+description: "Structured practice problems and real-world scenarios"
+---
+
 # 📝 Assignments - Structured Practice Problems
 
 [🎠 Back to Main Page](../index.md) | [📚 Lecture Notes](../Lecture_Notes/) | [💻 Coding Exercises](../Coding/)

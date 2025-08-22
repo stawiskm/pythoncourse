@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Python Arrays and Multidimensional Arrays"
+module: "02"
+difficulty: "easy"
+description: "Working with arrays, lists, and NumPy"
+---
+
 # Introduction to Python Arrays and Multidimensional Arrays
 
 [⬅ Previous: Python Basics](Python01-py101.md) | [🎠 Main Page](../README.md) | [➡ Next: Pandas](Python03-Pandas.md)

@@ -1,0 +1,51 @@
+# Jekyll Configuration for GitHub Pages
+title: "Python Course - Interactive Learning Hub"
+description: "Comprehensive Python course with video tutorials, interactive exercises, and hands-on assignments"
+baseurl: ""
+url: "https://stawiskm.github.io/pythoncourse"
+
+# Theme
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Site settings
+author: "Python Course Team"
+email: ""
+twitter_username: ""
+github_username: "stawiskm"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Collections
+collections:
+  lectures:
+    output: true
+    permalink: /:collection/:name/
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .gitignore
+  - README.md
+
+# Custom variables
+course:
+  primary_color: "#FCE834"
+  secondary_color: "#ffffff"
+  accent_color: "#f5f5f5"
+  text_color: "#333333"
+  dark_text: "#2c3e50"

@@ -1,3 +1,11 @@
+---
+layout: default
+title: "Programming with Python"
+module: "01"
+difficulty: "beginner"
+description: "Introduction to Python programming fundamentals"
+---
+
 # Programming with Python
 
 [⬅ Back to Lecture Notes](README.md) | [🎠 Main Page](../README.md) | [➡ Next: Arrays](Python02-arrays.md)

@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Coding Exercises"
+description: "Interactive Python practice exercises organized by difficulty level"
+---
+
 # 💻 Coding Exercises - Interactive Python Practice
 
 [🎠 Back to Main Page](../index.md) | [📚 Lecture Notes](../Lecture_Notes/) | [📝 Assignments](../Assignments/)
