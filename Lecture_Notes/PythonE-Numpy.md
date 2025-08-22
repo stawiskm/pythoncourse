@@ -4,6 +4,8 @@
 
 ## **Introduction to NumPy**
 
+[Video: Introduction to NumPy](PythonE-Numpy__Your_Python_Superpower_for_Data.mp4)
+
 **NumPy** is a powerful library in Python that provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays efficiently. It is the foundation for many other scientific computing libraries like SciPy, Pandas, and more.
 
 ---

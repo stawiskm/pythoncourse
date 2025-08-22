@@ -1,5 +1,7 @@
 # Guide to Plotting with Seaborn and Matplotlib in Python
 
+[Video: Data Visualization with Matplotlib and Seaborn](Python04-Plotting_s_Viz_Duel__Matplotlib_vs.mp4)
+
 Data visualization is an essential part of data analysis, as it helps you understand patterns and relationships in your data. Python offers powerful libraries for creating various types of plots, including Matplotlib and Seaborn. This guide will introduce you to these libraries and show you how to create different types of plots to visualize your data.
 
 ### Official Documentation:

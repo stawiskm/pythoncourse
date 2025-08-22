@@ -1,5 +1,10 @@
 # Guide to Using Python with Pandas
 
+## Introduction
+[Video: Introduction to Pandas](Python03-Pandas_Your_Ultimate_Data_Sidekick.mp4)
+
+Pandas is a powerful data manipulation and analysis library for Python. It is widely used for data wrangling, cleaning, and analysis due to its intuitive data structures and easy-to-use functions.
+
 ## Official Documentation
 - [Pandas Documentation](https://pandas.pydata.org/docs/getting_started/index.html#getting-started)
 
@@ -29,9 +34,6 @@
     - [Writing Data to a File](#writing-data-to-a-file)
   - [Conclusion](#conclusion)
 
-## Introduction
-
-Pandas is a powerful data manipulation and analysis library for Python. It is widely used for data wrangling, cleaning, and analysis due to its intuitive data structures and easy-to-use functions.
 
 ## Setting Up
 

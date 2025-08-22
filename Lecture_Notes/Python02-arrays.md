@@ -2,6 +2,8 @@
 
 ## Overview
 
+[Video: Introduction to Python Arrays and Multidimensional Arrays](Python02-arrays_An_Introduction_to_Python_Arrays__From_Lists_to_Light_Speed.mp4)
+
 In this guide, we will cover the basics of working with arrays and multidimensional arrays in Python. Python provides multiple ways to handle arrays, including the built-in `list` type and the `array` and `numpy` modules for more advanced usage. We will explore how to create, manipulate, and perform operations on these arrays.
 
 ## Official Documentation

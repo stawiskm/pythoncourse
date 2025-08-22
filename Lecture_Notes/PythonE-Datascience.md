@@ -1,5 +1,7 @@
 # Python Data Science Guide
 
+[Video: Python Data Science Guide](PythonE-Datascience_The_Data_Science_Journey__From_Numbers_to_Knowledge.mp4)
+
 Welcome to the Python Data Science Guide! In this comprehensive guide, we will cover various fundamental topics in Python Data Science. Each topic will be explained in detail with examples and code snippets to help you understand and master the concepts. Let's dive in!
 
 ## Table of Contents
