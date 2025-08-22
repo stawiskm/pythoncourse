@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step-by-Step Guide: Programming a Python Script with Console Launch - Python Course</title>
+    
+    <style>
+    /* Inline CSS for immediate styling */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        border: 3px solid #2c3e50;
+    }
+
+    .header h1 {
+        color: #2c3e50;
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .nav-breadcrumb {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-breadcrumb a {
+        display: inline-block;
+        margin: 0.2rem;
+        padding: 0.5rem 1rem;
+        background: #FCE834;
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .nav-breadcrumb a:hover {
+        background: #2c3e50;
+        color: #FCE834;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-colab {
+        background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+        color: white !important;
+    }
+
+    .btn-video {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        color: white !important;
+    }
+
+    .btn-theory {
+        background: #2c3e50;
+        color: white !important;
+    }
+
+    .btn-principles {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50 !important;
+        font-weight: 600;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #2c3e50;
+    }
+
+    h1 {
+        border-bottom: 3px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h2 {
+        border-bottom: 2px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h3 {
+        border-bottom: 1px solid #FCE834;
+        padding-bottom: 0.3rem;
+    }
+
+    code {
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    }
+
+    pre {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        border-left: 4px solid #FCE834;
+    }
+
+    pre code {
+        background: none;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 4px solid #FCE834;
+        margin: 0;
+        padding: 1rem;
+        background: #f9f9f9;
+        font-style: italic;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    th {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background-color: rgba(252, 232, 52, 0.1);
+    }
+
+    ul, ol {
+        padding-left: 2rem;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: #FCE834;
+        background: #2c3e50;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .practice-links {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .practice-links h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="../Lecture_Notes/index.html">📚 Lecture Notes</a></div>
+    <div class="content">
+        <h1 id="step-by-step-guide-programming-a-python-script-with-console-launch">Step-by-Step Guide: Programming a Python Script with Console Launch</h1>
+<p>This step-by-step guide will help you learn how to program a Python script that can be launched from the console. We will gradually build the script, adding new features and functionality at each step. The final code will include a graphical user interface (GUI) with various features such as BMI calculation, data logging, data storage in CSV format, data visualization, and more.</p>
+<h2 id="step-1-simple-hello-world">Step 1: Simple "Hello, World!"</h2>
+<p>Let's start with a simple "Hello, World!" program to ensure that everything is set up correctly.</p>
+<ol>
+<li>Create a new Python file called <code>script.py</code>.</li>
+<li>Open the file in a text editor or an integrated development environment (IDE) of your choice.</li>
+<li>Add the following code to the file:</li>
+</ol>
+<pre><code class="language-python">print(&quot;Hello, World!&quot;)
+</code></pre>
+<ol>
+<li>
+<p>Save the file.</p>
+<p>To run the script:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>
+<p>Enter the following command:</p>
+<p><code>shell
+python3 script.py</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p>You should see the output <code>Hello, World!</code> in the console.</p>
+</li>
+</ol>
+<p>Congratulations! You've successfully created and executed a simple Python script. Let's move on to the next step.</p>
+<h2 id="step-2-hello-world-with-name-as-an-argument">Step 2: "Hello, World!" with Name as an Argument</h2>
+<p>Next, let's modify the script to accept a name as an argument and customize the greeting message.</p>
+<ol>
+<li>Open the <code>script.py</code> file.</li>
+<li>Replace the existing code with the following:</li>
+</ol>
+<pre><code class="language-python">import sys
+
+if len(sys.argv) &gt; 1:
+    name = sys.argv[1]
+else:
+    name = &quot;World&quot;
+
+print(f&quot;Hello, {name}!&quot;)
+</code></pre>
+<ol>
+<li>Save the file.</li>
+</ol>
+<p>To run the script with a name:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>Enter the following command:</li>
+</ol>
+<pre><code class="language-python">python3 script.py Alice
+</code></pre>
+<ol>
+<li>You should see the output <code>Hello, Alice!</code> in the console.</li>
+</ol>
+<p>If you don't provide a name as an argument, the script will use "World" as the default name.</p>
+<p>Great job! You've enhanced the script to accept an argument and customized the greeting message. Let's continue to the next step.</p>
+<h2 id="step-3-bmi-calculator-with-height-and-weight">Step 3: BMI Calculator with Height and Weight</h2>
+<p>In this step, we'll add functionality to calculate the body mass index (BMI) based on user-provided height and weight values.</p>
+<ol>
+<li>Open the <code>script.py</code> file.</li>
+<li>Replace the existing code with the following:</li>
+</ol>
+<pre><code class="language-python">def calculate_bmi(height=0, weight=0):
+    if height == 0:
+        height = float(input(&quot;Enter height in meters: &quot;))
+    if weight == 0:
+        weight = float(input(&quot;Enter weight in kilograms: &quot;))
+
+    bmi = weight / (height ** 2)
+    return bmi
+
+bmi = calculate_bmi()
+print(f&quot;Your BMI is: {bmi:.2f}&quot;)
+</code></pre>
+<ol>
+<li>Save the file.</li>
+</ol>
+<p>To run the script and calculate BMI:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>Enter the following command:</li>
+</ol>
+<pre><code>python script.py Alice
+</code></pre>
+<ol>
+<li>Follow the prompts to enter the height and weight values.</li>
+<li>You should see the output <code>Hello, Alice!</code> followed by the calculated BMI.</li>
+</ol>
+<p>The script will ask for the height and weight values if they are not provided as command-line arguments. The BMI will be calculated and displayed with two decimal places.</p>
+<p>Fantastic progress! You've implemented a BMI calculator in your script. Let's move on to the next step.</p>
+<h2 id="step-4-script-with-a-gui-interface-for-height-and-weight-input">Step 4: Script with a GUI Interface for Height and Weight Input</h2>
+<p>In this step, we'll enhance the script by adding a graphical user interface (GUI) to input the height and weight values.</p>
+<ol>
+<li>Install the required dependencies:</li>
+</ol>
+<pre><code>pip3 install tkinter
+</code></pre>
+<ol>
+<li>Open the <code>script.py</code> file.</li>
+<li>Replace the existing code with the following:</li>
+</ol>
+<pre><code class="language-python">import tkinter as tk
+
+def calculate_bmi(height=0, weight=0):
+    if height == 0:
+    # If height and weight are not provided, retrieve them from the GUI entry fields
+        height = float(height_entry.get())
+        weight = float(weight_entry.get())
+    # Calculate BMI
+    bmi = weight / (height ** 2)
+    result_label.config(text=f&quot;Patient's BMI is: {bmi:.2f}&quot;)
+    return bmi
+
+window = tk.Tk()
+window.title(&quot;BMI Calculator&quot;)
+
+height_label = tk.Label(window, text=&quot;Enter height in meters:&quot;)
+height_label.pack()
+height_entry = tk.Entry(window)
+height_entry.pack()
+
+weight_label = tk.Label(window, text=&quot;Enter weight in kilograms:&quot;)
+weight_label.pack()
+weight_entry = tk.Entry(window)
+weight_entry.pack()
+
+result_label = tk.Label(window)
+result_label.pack()
+
+calculate_button = tk.Button(window, text=&quot;Calculate BMI&quot;, command=calculate_bmi)
+calculate_button.pack()
+
+window.mainloop()
+</code></pre>
+<ol>
+<li>Save the file.</li>
+</ol>
+<p>To run the script with the GUI interface:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>Enter the following command:</li>
+</ol>
+<pre><code>python3 script.py
+</code></pre>
+<ol>
+<li>The GUI window titled "BMI Calculator" will appear.</li>
+<li>Enter the height and weight values in the corresponding entry fields.</li>
+<li>Click the "Calculate BMI" button.</li>
+<li>The calculated BMI will be displayed below the button.</li>
+</ol>
+<p>You now have a graphical interface for entering the height and weight values. The BMI calculation and result display are handled through the GUI. Well done!</p>
+<p>Let's proceed to the next step.</p>
+<h2 id="step-5-adding-a-logger-component-to-log-whats-happening">Step 5: Adding a Logger Component to Log What's Happening</h2>
+<p>In this step, we'll introduce logging to the script to track and log various events and messages.</p>
+<ol>
+<li>Open the <code>script.py</code> file.</li>
+<li>Add the following code at the beginning of the file, before the <code>import</code> statements:</li>
+</ol>
+<pre><code class="language-python">import logging
+
+# Configure logger
+logging.basicConfig(level=logging.INFO, format=&quot;%(asctime)s - %(levelname)s - %(message)s&quot;)
+logger = logging.getLogger(&quot;EDC&quot;)
+</code></pre>
+<ol>
+<li>Replace the existing <code>calculate_bmi</code> function with the following code:</li>
+</ol>
+<pre><code class="language-python">def calculate_bmi(height=0, weight=0):
+    if height == 0:
+    # If height and weight are not provided, retrieve them from the GUI entry fields
+        height = float(height_entry.get())
+        weight = float(weight_entry.get())
+    # Calculate BMI
+    bmi = weight / (height ** 2)
+    result_label.config(text=f&quot;Patient's BMI is: {bmi:.2f}&quot;)
+
+    logger.info(f&quot;Height: {height} m, Weight: {weight} kg&quot;)
+    logger.info(f&quot;BMI: {bmi:.2f}&quot;)
+    return bmi
+# ...
+</code></pre>
+<ol>
+<li>Save the file.</li>
+</ol>
+<p>To run the script with logging:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>Enter the following command:</li>
+</ol>
+<pre><code>python3 script.py
+</code></pre>
+<ol>
+<li>Check the console output for logged messages.</li>
+</ol>
+<p>You've successfully added a logger component to the script, and now you can track and log important events and messages during execution.</p>
+<p>Let's proceed to the next step.</p>
+<h2 id="step-6-gui-can-save-height-weight-and-cardiac-event-to-a-csv">Step 6: GUI Can Save Height, Weight, and Cardiac Event to a CSV</h2>
+<p>In this step, we'll add a the variable cardiac event and add functionality to save the height, weight, and cardiac event data entered through the GUI to a CSV file.</p>
+<ol>
+<li>Open the <code>script.py</code> file.</li>
+<li>Add the following <code>import</code> statement at the beginning of the file, after the other <code>import</code> statements:</li>
+</ol>
+<pre><code class="language-python">import csv
+</code></pre>
+<ol>
+<li>Add the following code after the <code>weight_entry.pack()</code> line:</li>
+</ol>
+<pre><code class="language-python"># ...
+weight_entry.pack()
+
+cardiac_event_var = tk.StringVar()
+cardiac_event_var.set(&quot;No&quot;) # Set the default value to &quot;No&quot;
+cardiac_event_checkbox = tk.Checkbutton(window, text=&quot;Cardiac Event (Yes/No)&quot;, variable=cardiac_event_var, onvalue=&quot;Yes&quot;, offvalue=&quot;No&quot;)
+cardiac_event_checkbox.pack()
+
+# ...
+</code></pre>
+<ol>
+<li>Replace the existing <code>calculate_bmi</code> function with the following code:</li>
+</ol>
+<pre><code class="language-python">def calculate_bmi(height=0, weight=0):
+    if height == 0:
+    # If height and weight are not provided, retrieve them from the GUI entry fields
+        height = float(height_entry.get())
+        weight = float(weight_entry.get())
+    # Calculate BMI
+    bmi = weight / (height ** 2)
+    result_label.config(text=f&quot;Patient's BMI is: {bmi:.2f}&quot;)
+
+    cardiac_event = cardiac_event_var.get()
+    logger.info(f&quot;Height: {height} m, Weight: {weight} kg&quot;)
+    logger.info(f&quot;BMI: {bmi:.2f}, Cardiac Event: {cardiac_event}&quot;)
+
+    # Save patient data
+    with open(&quot;data.csv&quot;, &quot;a&quot;, newline=&quot;&quot;) as file:
+        writer = csv.writer(file)
+        writer.writerow([height, weight, bmi, cardiac_event])
+    return bmi
+# ...
+</code></pre>
+<ol>
+<li>Save the file.</li>
+</ol>
+<p>To run the script and save data to a CSV file:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>Enter the following command:</li>
+</ol>
+<pre><code>python3 script.py
+</code></pre>
+<ol>
+<li>Use the GUI to enter height, weight, and cardiac event data.</li>
+<li>Click the "Calculate BMI" button.</li>
+<li>The calculated BMI will be displayed, and the data will be saved to a CSV file named <code>data.csv</code> in the same directory.</li>
+</ol>
+<p>Congratulations! You've added the functionality to save patient data to a CSV file. The data will include height, weight, BMI, and cardiac event information.</p>
+<p>Let's move on to the next step.</p>
+<h2 id="step-7-gui-can-display-rows-of-csv">Step 7: GUI Can Display Rows of CSV</h2>
+<p>In this step, we'll add functionality to display all the rows from the CSV file in the GUI.</p>
+<ol>
+<li>Open the <code>script.py</code> file.</li>
+<li>Add the following code after the <code>calculate_bmi</code> function:</li>
+</ol>
+<pre><code class="language-python">def calculate_bmi():
+    # ...
+
+def display_data():
+    # Read data from the CSV file
+    with open(&quot;data.csv&quot;, &quot;r&quot;) as file:
+        reader = csv.reader(file)
+        data = list(reader)
+
+    # Create a new window to display the data
+    display_window = tk.Toplevel(window)
+    display_window.title(&quot;Records&quot;)
+
+    # Create a label for each row of data and pack them in the window
+    for row in data:
+        row_label = tk.Label(display_window, text=row)
+        row_label.pack()
+
+window = tk.Tk()
+# ...
+</code></pre>
+<ol>
+<li>Modify the <code>window</code> definition code as follows:</li>
+</ol>
+<pre><code class="language-python">window = tk.Tk()
+window.title(&quot;Electronic Data Capture&quot;)
+
+# ...
+</code></pre>
+<ol>
+<li>Add the following code after the <code>calculate_button.pack()</code> line:</li>
+</ol>
+<pre><code class="language-python"># ...
+calculate_button.pack()
+
+display_button = tk.Button(window, text=&quot;Records&quot;, command=display_data)
+display_button.pack()
+
+# ...
+</code></pre>
+<ol>
+<li>Save the file.</li>
+</ol>
+<p>To run the script and display the data:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>Enter the following command:</li>
+</ol>
+<pre><code>python3 script.py
+</code></pre>
+<ol>
+<li>Use the GUI to enter height, weight, and cardiac event data and save it.</li>
+<li>Click the "Records" button.</li>
+<li>A new window titled "Records" will open, showing all the rows from the <code>data.csv</code> file.</li>
+</ol>
+<p>You've successfully implemented the feature to display all the rows from the CSV file in a separate window of the GUI.</p>
+<p>Great work! Let's proceed to the next step.</p>
+<h2 id="step-8-gui-can-delete-rows-from-csv">Step 8: GUI Can Delete Rows from CSV</h2>
+<p>In this step, we'll add functionality to delete rows from the CSV file using the GUI.</p>
+<ol>
+<li>Open the <code>script.py</code> file.</li>
+<li>Replace the existing <code>display_data</code> function with the following code:</li>
+</ol>
+<pre><code class="language-python">def display_data():
+    # Read data from the CSV file
+    with open(&quot;data.csv&quot;, &quot;r&quot;) as file:
+        reader = csv.reader(file)
+        data = list(reader)
+
+    # Create a new window to display the data
+    display_window = tk.Toplevel(window)
+    display_window.title(&quot;Data Display&quot;)
+
+    # Create a label for each row of data, a delete button, and pack them in the window
+    for i, row in enumerate(data):
+        row_label = tk.Label(display_window, text=row)
+        row_label.pack()
+
+        delete_button = tk.Button(display_window, text=&quot;Delete&quot;, command=lambda i=i: delete_row(i, display_window))
+        delete_button.pack()
+
+def delete_row(index, display_window):
+    # Read data from the CSV file
+    with open(&quot;data.csv&quot;, &quot;r&quot;) as file:
+        reader = csv.reader(file)
+        data = list(reader)
+
+    # Delete the selected row
+    del data[index]
+
+    # Write the updated data back to the CSV file
+    with open(&quot;data.csv&quot;, &quot;w&quot;, newline=&quot;&quot;) as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
+
+    display_window.destroy()
+    display_data()
+
+window = tk.Tk()
+# ...
+</code></pre>
+<ol>
+<li>Save the file.</li>
+</ol>
+<p>To run the script and delete rows from the CSV file:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>Enter the following command:</li>
+</ol>
+<pre><code>python3 script.py
+</code></pre>
+<ol>
+<li>Use the GUI to enter height, weight, and cardiac event data and save it.</li>
+<li>Click the "Records" button.</li>
+<li>A new window titled "Records" will open, showing all the rows from the <code>data.csv</code> file, with a "Delete" button next to each row.</li>
+<li>Click the "Delete" button next to the row you want to delete.</li>
+<li>The selected row will be removed from the <code>data.csv</code> file, and the window will update to reflect the changes.</li>
+</ol>
+<p>Well done! You've added the functionality to delete rows from the CSV file using the GUI.</p>
+<p>Let's proceed to the next step.</p>
+<h2 id="step-9-adding-raise-error-tests-to-make-the-code-more-stable">Step 9: Adding Raise Error Tests to Make the Code More Stable</h2>
+<p>In this step, we'll enhance the code by adding error handling and raise error tests to make it more stable.</p>
+<ol>
+<li>Open the <code>script.py</code> file.</li>
+<li>Replace the existing <code>delete_row</code> function with the following code:</li>
+</ol>
+<pre><code class="language-python">def calculate_bmi(height=0, weight=0):
+    if height == 0:
+    # If height and weight are not provided, retrieve them from the GUI entry fields
+        height = float(height_entry.get())
+        weight = float(weight_entry.get())
+    # Calculate BMI
+    if height &lt;= 0 or weight &lt;= 0:
+        raise ValueError(&quot;Height and weight must be positive values.&quot;)
+    bmi = weight / (height ** 2)
+    result_label.config(text=f&quot;Patient's BMI is: {bmi:.2f}&quot;)
+
+    cardiac_event = cardiac_event_var.get()
+    logger.info(f&quot;Height: {height} m, Weight: {weight} kg&quot;)
+    logger.info(f&quot;BMI: {bmi:.2f}, Cardiac Event: {cardiac_event}&quot;)
+
+    # Save patient data
+    with open(&quot;data.csv&quot;, &quot;a&quot;, newline=&quot;&quot;) as file:
+        writer = csv.writer(file)
+        writer.writerow([height, weight, bmi, cardiac_event])
+    return bmi
+# ...
+</code></pre>
+<ol>
+<li>Replace the existing <code>delete_row</code> function with the following code:</li>
+</ol>
+<pre><code class="language-python">def delete_row(index, display_window):
+    # Read data from the CSV file
+    with open(&quot;data.csv&quot;, &quot;r&quot;) as file:
+        reader = csv.reader(file)
+        data = list(reader)
+
+    # Delete the selected row
+    if index &lt; 0 or index &gt;= len(data):
+        raise IndexError(&quot;Invalid row index.&quot;)
+    del data[index]
+
+    # Write the updated data back to the CSV file
+    with open(&quot;data.csv&quot;, &quot;w&quot;, newline=&quot;&quot;) as file:
+        writer = csv.writer(file)
+        writer.writerows(data)
+
+    display_window.destroy()
+    display_data()
+# ...
+</code></pre>
+<ol>
+<li>Save the file.</li>
+</ol>
+<p>To run the script and test error handling:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>Enter the following command:</li>
+</ol>
+<pre><code>python3 script.py
+</code></pre>
+<ol>
+<li>Use the GUI to enter height, weight, and cardiac event data and save it.</li>
+<li>Click the "Calculate BMI" button.</li>
+<li>If you enter invalid height or weight values (e.g., negative values), an error message will be displayed in the console.</li>
+</ol>
+<p>Great job! You've added error handling and raise error tests to improve the stability of the code.</p>
+<p>Let's move on to the next step.</p>
+<h2 id="step-10-gui-can-visualize-data-points">Step 10: GUI Can Visualize Data Points</h2>
+<p>In this step, we'll add features that will allow us to visualize the CSV file's data points and color them in accordance with cardiac events.</p>
+<ol>
+<li>Install the required dependencies:</li>
+</ol>
+<pre><code>pip3 install matplotlib
+</code></pre>
+<ol>
+<li>Open the <code>script.py</code> file.</li>
+<li>Add the following <code>import</code> statement at the beginning of the file, after the other <code>import</code> statements:</li>
+</ol>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+</code></pre>
+<ol>
+<li>Add the following code after the <code>display_button.pack()</code> line:</li>
+</ol>
+<pre><code class="language-python"># ...
+display_button.pack()
+
+visualize_button = tk.Button(window, text=&quot;Visualize Data&quot;, command=visualize_data)
+visualize_button.pack()
+
+# ...
+</code></pre>
+<ol>
+<li>Add following <code>visualize_data</code> function:</li>
+</ol>
+<pre><code class="language-python">def visualize_data():
+    # Read data from the CSV file
+    with open(&quot;data.csv&quot;, &quot;r&quot;) as file:
+        reader = csv.reader(file)
+        data = list(reader)
+
+    # Extract the necessary data for visualization
+    heights = []
+    weights = []
+    cardiac_events = []
+    bmis = []
+
+    for row in data:
+        if len(row) != 4:
+            raise ValueError(&quot;Invalid data format in CSV file.&quot;)
+        height = float(row[0])
+        weight = float(row[1])
+        bmi = float(row[2])
+        cardiac_event = row[3]
+
+        heights.append(height)
+        weights.append(weight)
+        cardiac_events.append(cardiac_event)
+        bmis.append(bmi)
+
+    # Group the BMI values by CardiacEvent
+    grouped_data = {}
+    for event, bmi_value, height_value, weight_value in zip(cardiac_events, bmis, heights, weights):
+        if event not in grouped_data:
+            grouped_data[event] = {'BMI': [], 'Height': [], 'Weight': []}
+        grouped_data[event]['BMI'].append(bmi_value)
+        grouped_data[event]['Height'].append(height_value)
+        grouped_data[event]['Weight'].append(weight_value)
+
+    # Create a figure with two subplots
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+
+    # Boxplot for BMI
+    ax1.boxplot([grouped_data['No']['BMI'], grouped_data['Yes']['BMI']], labels=['No', 'Yes'])
+    ax1.set_xlabel('Cardiac Event')
+    ax1.set_ylabel('BMI [kg/m²]')
+    ax1.set_title('Body mass index (BMI) Distribution by Cardiac Event')
+
+    # Scatterplot for height and weight
+    ax2.scatter(grouped_data['No']['Height'], grouped_data['No']['Weight'], c='blue', label='No')
+    ax2.scatter(grouped_data['Yes']['Height'], grouped_data['Yes']['Weight'], c='red', label='Yes')
+    ax2.set_xlabel('Height [m]')
+    ax2.set_ylabel('Weight [kg]')
+    ax2.set_title('Relationship between Height and Weight')
+    ax2.legend()
+
+    # Adjust spacing between subplots
+    plt.tight_layout()
+
+    # Show the plot
+    plt.show()
+
+window = tk.Tk()
+# ...
+</code></pre>
+<ol>
+<li>Save the file.</li>
+</ol>
+<p>To run the script and visualize the data:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>Enter the following command:</li>
+</ol>
+<pre><code>python3 script.py
+</code></pre>
+<ol>
+<li>Use the GUI to enter height, weight, and cardiac event data and save it.</li>
+<li>Click the "Visualize Data" button.</li>
+<li>A figure with two subplots will appear, visualizing the BMI distribution by cardiac event and the relationship between height and weight.</li>
+</ol>
+<p>Fantastic work! You've implemented data visualization functionality in your script.</p>
+<p>Let's move on to the final step.</p>
+<h2 id="step-11-adding-a-button-to-generate-a-random-patient">Step 11: Adding a Button to Generate a Random Patient</h2>
+<p>In this final step, we'll add functionality to generate a random patient with random height and weight values.</p>
+<ol>
+<li>Install the required dependency:</li>
+</ol>
+<pre><code>pip3 install requests
+</code></pre>
+<ol>
+<li>Open the <code>script.py</code> file.</li>
+<li>Add the following <code>import</code> statement at the beginning of the file, after the other <code>import</code> statements:</li>
+</ol>
+<pre><code class="language-python">import requests
+import random
+</code></pre>
+<ol>
+<li>
+<p>Add the following code after the <code>display_button.pack()</code> line:</p>
+<p>```python</p>
+<h1 id="_1">...</h1>
+<p>visualize_button.pack()</p>
+<p>randompatient_button = tk.Button(window, text="Generate one Random Patient", command=create_random_patient)
+randompatient_button.pack()</p>
+<h1 id="_2">...</h1>
+<p>```</p>
+</li>
+<li>
+<p>Add following <code>create_random_patient</code> function:</p>
+<p>```python
+def create_random_patient():
+    # Generate random height and weight values
+    height = float(get_random_height())
+    weight = float(get_random_weight())
+    height_entry.delete(0, tk.END)
+    height_entry.insert(0, height)
+    weight_entry.delete(0, tk.END)
+    weight_entry.insert(0, weight)</p>
+<pre><code>logger.info(f"Generated random patient: Height: {height} m, Weight: {weight} kg")
+
+# Calculate BMI for the generated patient
+bmi = weight / (height ** 2)
+result_label.config(text=f"Patient's BMI is: {bmi:.2f}")
+
+# Determine the cardiac event for the generated BMI
+event = get_cardiac_event_distribution(bmi)
+# Set the cardiac event value in the checkbox
+cardiac_event_var.set(event)
+
+logger.info(f"Height: {height} m, Weight: {weight} kg")
+logger.info(f"BMI: {bmi:.2f}, Cardiac Event: {event}")
+
+# Save the generated patient data
+with open("data.csv", "a", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow([height, weight, bmi, event])
+</code></pre>
+<p>def get_random_height():
+    # Retrieve a random height value from an API
+    response = requests.get("http://www.randomnumberapi.com/api/v1.0/random", params={"min": 130, "max": 210, "count": 1})
+    if response.status_code != 200:
+        raise requests.RequestException("Failed to retrieve random height.")
+    data = response.json()
+    if not data:
+        raise ValueError("Empty response received for random height.")
+    height = float(data[0])
+    if height &lt; 130:
+        raise ValueError("Invalid random height value received.")
+    logger.info(f"Random height generated: {height} cm")
+    return height / 100</p>
+<p>def get_random_weight():
+    # Retrieve a random weight value from an API
+    response = requests.get("http://www.randomnumberapi.com/api/v1.0/random", params={"min": 40, "max": 140, "count": 1})
+    if response.status_code != 200:
+        raise requests.RequestException("Failed to retrieve random weight.")
+    data = response.json()
+    if not data:
+        raise ValueError("Empty response received for random weight.")
+    weight = data[0]
+    if weight &lt; 40:
+        raise ValueError("Invalid random weight value received.")
+    logger.info(f"Random weight generated: {weight} kg")
+    return weight</p>
+<p>def get_cardiac_event_distribution(bmi):
+    if bmi &lt; 9 or bmi &gt; 83:
+        raise ValueError("BMI value should be between 9 and 83.")
+    if bmi &lt;= 22:
+        return "No"
+    if bmi &lt;= 38:
+        risk = (bmi - 22) / (38 - 22)
+        return 'Yes' if random.random() &lt; risk else 'No'
+    return "Yes"</p>
+<p>window = tk.Tk()</p>
+<h1 id="_3">...</h1>
+<p>```</p>
+</li>
+<li>
+<p>Save the file.</p>
+<p>To run the script and generate a random patient:</p>
+<ol>
+<li>Open the console or terminal.</li>
+<li>Navigate to the directory where the <code>script.py</code> file is located.</li>
+<li>
+<p>Enter the following command:</p>
+<p><code>python
+python3 script.py</code></p>
+</li>
+<li>
+<p>Click the "Generate one Random Patient" button.</p>
+</li>
+<li>The height and weight fields will be filled with random values.</li>
+<li>The BMI will be calculated, and the cardiac event checkbox will be set accordingly.</li>
+<li>Click the "Calculate BMI" button to display the calculated BMI and save the patient data.</li>
+</ol>
+</li>
+</ol>
+<p>Amazing work! You've added the functionality to generate a random patient with random height and weight values.</p>
+<p>Congratulations! You have successfully created a step-by-step guide to learning programming a Python script that can be launched from the console. The final code includes features such as a GUI interface, BMI calculation, data logging, data storage in CSV format, data visualization, error handling, and random patient generation.</p>
+<p>Feel free to explore and enhance the script further to suit your needs and expand your Python programming skills. Happy coding!</p>
+    </div>
+    
+    <hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
+    <p style="text-align: center; color: #2c3e50; font-style: italic;">
+        <strong>Happy Learning! 🐍✨</strong>
+    </p>
+</body>
+</html>

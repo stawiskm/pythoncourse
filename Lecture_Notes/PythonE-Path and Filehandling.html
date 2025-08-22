@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to Path Building and File Handling in Python - Python Course</title>
+    
+    <style>
+    /* Inline CSS for immediate styling */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        border: 3px solid #2c3e50;
+    }
+
+    .header h1 {
+        color: #2c3e50;
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .nav-breadcrumb {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-breadcrumb a {
+        display: inline-block;
+        margin: 0.2rem;
+        padding: 0.5rem 1rem;
+        background: #FCE834;
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .nav-breadcrumb a:hover {
+        background: #2c3e50;
+        color: #FCE834;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-colab {
+        background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+        color: white !important;
+    }
+
+    .btn-video {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        color: white !important;
+    }
+
+    .btn-theory {
+        background: #2c3e50;
+        color: white !important;
+    }
+
+    .btn-principles {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50 !important;
+        font-weight: 600;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #2c3e50;
+    }
+
+    h1 {
+        border-bottom: 3px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h2 {
+        border-bottom: 2px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h3 {
+        border-bottom: 1px solid #FCE834;
+        padding-bottom: 0.3rem;
+    }
+
+    code {
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    }
+
+    pre {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        border-left: 4px solid #FCE834;
+    }
+
+    pre code {
+        background: none;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 4px solid #FCE834;
+        margin: 0;
+        padding: 1rem;
+        background: #f9f9f9;
+        font-style: italic;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    th {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background-color: rgba(252, 232, 52, 0.1);
+    }
+
+    ul, ol {
+        padding-left: 2rem;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: #FCE834;
+        background: #2c3e50;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .practice-links {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .practice-links h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="../Lecture_Notes/index.html">📚 Lecture Notes</a></div>
+    <div class="content">
+        <h1 id="guide-to-path-building-and-file-handling-in-python">Guide to Path Building and File Handling in Python</h1>
+<h2 id="introduction">Introduction</h2>
+<p>File handling and path building are crucial skills in Python programming, especially for tasks involving reading from and writing to files. This guide provides a concise overview of how to build paths and handle files in Python.</p>
+<h2 id="path-building">Path Building</h2>
+<p>Path building is essential for file manipulation in Python, especially when working across different operating systems. This guide will introduce you to the basics of path building using Python's <code>os</code> and <code>pathlib</code> modules.</p>
+<h3 id="using-the-os-module">Using the <code>os</code> Module</h3>
+<p>The <code>os</code> module in Python provides functions to interact with the operating system. For path manipulations, the <code>os.path</code> submodule is particularly useful.</p>
+<p><strong>Basic Operations with <code>os.path</code>:</strong></p>
+<ol>
+<li><strong>Joining Paths:</strong></li>
+</ol>
+<p>```python
+   import os</p>
+<p>path = os.path.join("folder", "subfolder", "file.txt")
+   print(path)
+   # Output: folder/subfolder/file.txt (on Unix-based systems)
+   #         folder\subfolder\file.txt (on Windows)
+   ```</p>
+<ol>
+<li><strong>Getting the Absolute Path:</strong></li>
+</ol>
+<p><code>python
+   abs_path = os.path.abspath("file.txt")
+   print(abs_path)
+   # Output: /current/directory/file.txt (on Unix-based systems)
+   #         C:\current\directory\file.txt (on Windows)</code></p>
+<ol>
+<li><strong>Checking Path Existence:</strong></li>
+</ol>
+<p><code>python
+   exists = os.path.exists("file.txt")
+   print(exists)
+   # Output: True if file exists, False otherwise</code></p>
+<ol>
+<li><strong>Splitting a Path:</strong></li>
+</ol>
+<p><code>python
+   path, filename = os.path.split("/folder/subfolder/file.txt")
+   print(path)     # Output: /folder/subfolder
+   print(filename) # Output: file.txt</code></p>
+<ol>
+<li><strong>Getting File Extension:</strong></li>
+</ol>
+<p><code>python
+   filename, file_extension = os.path.splitext("file.txt")
+   print(filename)       # Output: file
+   print(file_extension) # Output: .txt</code></p>
+<h3 id="using-the-pathlib-module">Using the <code>pathlib</code> Module</h3>
+<p>The <code>pathlib</code> module provides an object-oriented approach to handling paths.</p>
+<p><strong>Basic Operations with <code>pathlib</code>:</strong></p>
+<ol>
+<li><strong>Creating Path Objects:</strong></li>
+</ol>
+<p>```python
+   from pathlib import Path</p>
+<p>path = Path("folder") / "subfolder" / "file.txt"
+   print(path)
+   # Output: folder/subfolder/file.txt
+   ```</p>
+<ol>
+<li><strong>Getting the Absolute Path:</strong></li>
+</ol>
+<p><code>python
+   abs_path = path.resolve()
+   print(abs_path)
+   # Output: /current/directory/folder/subfolder/file.txt (on Unix-based systems)
+   #         C:\current\directory\folder\subfolder\file.txt (on Windows)</code></p>
+<ol>
+<li><strong>Checking Path Existence:</strong></li>
+</ol>
+<p><code>python
+   exists = path.exists()
+   print(exists)
+   # Output: True if file exists, False otherwise</code></p>
+<ol>
+<li><strong>Iterating Over Directory Contents:</strong></li>
+</ol>
+<p><code>python
+   for item in Path("folder").iterdir():
+       print(item)
+   # Output: Lists all items in the "folder" directory</code></p>
+<ol>
+<li><strong>Getting File Extension:</strong></li>
+</ol>
+<p><code>python
+   file_extension = path.suffix
+   print(file_extension)
+   # Output: .txt</code></p>
+<h3 id="cross-platform-considerations">Cross-Platform Considerations</h3>
+<p>Both <code>os.path</code> and <code>pathlib</code> handle platform differences internally, ensuring that your code runs correctly on different operating systems (e.g., Windows vs. Unix-based systems).</p>
+<p>For most cases, <code>pathlib</code> is recommended due to its simplicity and readability, but <code>os.path</code> remains useful, especially for backward compatibility with older code.</p>
+<h3 id="example-combining-both-modules">Example: Combining Both Modules</h3>
+<p>Here’s an example where both modules might be used together:</p>
+<pre><code class="language-python">import os
+from pathlib import Path
+
+# Use os to get the current working directory
+cwd = os.getcwd()
+print(f&quot;Current working directory: {cwd}&quot;)
+
+# Create a new path using pathlib
+new_path = Path(cwd) / &quot;new_folder&quot; / &quot;new_file.txt&quot;
+print(f&quot;New path: {new_path}&quot;)
+
+# Check if the path exists
+if not new_path.parent.exists():
+    new_path.parent.mkdir(parents=True)
+    print(f&quot;Created directory: {new_path.parent}&quot;)
+
+# Write to the file
+new_path.write_text(&quot;Hello, World!&quot;)
+print(f&quot;Written to file: {new_path}&quot;)
+
+# Read from the file
+content = new_path.read_text()
+print(f&quot;Content of the file: {content}&quot;)
+</code></pre>
+<h2 id="file-handling">File Handling</h2>
+<h3 id="opening-and-closing-files">Opening and Closing Files</h3>
+<ol>
+<li><strong>Using <code>open</code></strong></li>
+</ol>
+<p>```python
+   # Opening a file
+   file = open('example.txt', 'r')</p>
+<p># Reading from the file
+   content = file.read()
+   print(content)</p>
+<p># Closing the file
+   file.close()
+   ```</p>
+<ol>
+<li><strong>Using <code>with</code> Statement</strong></li>
+</ol>
+<p><code>python
+   # Automatically handles closing the file
+   with open('example.txt', 'r') as file:
+       content = file.read()
+       print(content)</code></p>
+<h3 id="reading-from-files">Reading from Files</h3>
+<ol>
+<li><strong>Read Entire File</strong></li>
+</ol>
+<p><code>python
+   with open('example.txt', 'r') as file:
+       content = file.read()
+       print(content)</code></p>
+<ol>
+<li><strong>Read Line by Line</strong></li>
+</ol>
+<p><code>python
+   with open('example.txt', 'r') as file:
+       for line in file:
+           print(line.strip())  # strip() removes trailing newline characters</code></p>
+<ol>
+<li><strong>Read Specific Number of Characters</strong></li>
+</ol>
+<p><code>python
+   with open('example.txt', 'r') as file:
+       content = file.read(5)  # Read first 5 characters
+       print(content)</code></p>
+<h3 id="writing-to-files">Writing to Files</h3>
+<ol>
+<li><strong>Write Text to File</strong></li>
+</ol>
+<p><code>python
+   with open('example.txt', 'w') as file:
+       file.write('Hello, World!')</code></p>
+<ol>
+<li><strong>Append Text to File</strong></li>
+</ol>
+<p><code>python
+   with open('example.txt', 'a') as file:
+       file.write('\nAppending text.')</code></p>
+<h3 id="checking-if-file-exists">Checking if File Exists</h3>
+<ol>
+<li><strong>Using <code>os.path.exists</code></strong></li>
+</ol>
+<p>```python
+   import os</p>
+<p>if os.path.exists('example.txt'):
+       print('File exists.')
+   else:
+       print('File does not exist.')
+   ```</p>
+<ol>
+<li><strong>Using <code>pathlib.Path.exists</code></strong></li>
+</ol>
+<p>```python
+   from pathlib import Path</p>
+<p>path = Path('example.txt')
+   if path.exists():
+       print('File exists.')
+   else:
+       print('File does not exist.')
+   ```</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Path building and file handling are fundamental aspects of Python programming. The <code>os.path</code> and <code>pathlib</code> modules offer powerful ways to manipulate filesystem paths, while Python’s built-in file handling capabilities allow for efficient reading from and writing to files. Practice these techniques to build a solid foundation for handling files in your Python projects.</p>
+    </div>
+    
+    <hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
+    <p style="text-align: center; color: #2c3e50; font-style: italic;">
+        <strong>Happy Learning! 🐍✨</strong>
+    </p>
+</body>
+</html>

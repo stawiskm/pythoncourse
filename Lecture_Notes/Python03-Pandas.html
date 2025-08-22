@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to Using Python with Pandas - Python Course</title>
+    
+    <style>
+    /* Inline CSS for immediate styling */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        border: 3px solid #2c3e50;
+    }
+
+    .header h1 {
+        color: #2c3e50;
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .nav-breadcrumb {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-breadcrumb a {
+        display: inline-block;
+        margin: 0.2rem;
+        padding: 0.5rem 1rem;
+        background: #FCE834;
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .nav-breadcrumb a:hover {
+        background: #2c3e50;
+        color: #FCE834;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-colab {
+        background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+        color: white !important;
+    }
+
+    .btn-video {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        color: white !important;
+    }
+
+    .btn-theory {
+        background: #2c3e50;
+        color: white !important;
+    }
+
+    .btn-principles {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50 !important;
+        font-weight: 600;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #2c3e50;
+    }
+
+    h1 {
+        border-bottom: 3px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h2 {
+        border-bottom: 2px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h3 {
+        border-bottom: 1px solid #FCE834;
+        padding-bottom: 0.3rem;
+    }
+
+    code {
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    }
+
+    pre {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        border-left: 4px solid #FCE834;
+    }
+
+    pre code {
+        background: none;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 4px solid #FCE834;
+        margin: 0;
+        padding: 1rem;
+        background: #f9f9f9;
+        font-style: italic;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    th {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background-color: rgba(252, 232, 52, 0.1);
+    }
+
+    ul, ol {
+        padding-left: 2rem;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: #FCE834;
+        background: #2c3e50;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .practice-links {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .practice-links h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="../Lecture_Notes/index.html">📚 Lecture Notes</a></div>
+    <div class="content">
+        <h1 id="guide-to-using-python-with-pandas">Guide to Using Python with Pandas</h1>
+<p><a href="Python02-arrays.html">⬅ Previous: Arrays</a> | <a href="../README.html">🎠 Main Page</a> | <a href="Python04-Plotting.html">➡ Next: Plotting</a></p>
+<h2 id="introduction">Introduction</h2>
+<p><a href="Python03-Pandas_Your_Ultimate_Data_Sidekick.mp4">🎥 Video: Introduction to Pandas</a></p>
+<h2 id="practice-in-google-colab">🚀 Practice in Google Colab</h2>
+<ul>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py03-pandas-b.ipynb">🟢 <strong>Beginner Level</strong></a> - Start here if you're new</li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py03-pandas.ipynb">🟡 <strong>Easy Level</strong></a> - Basic understanding</li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py03-pandas.ipynb">🟠 <strong>Medium Level</strong></a> - Intermediate challenges</li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py03-pandas.ipynb">🔴 <strong>Hard Level</strong></a> - Advanced problems</li>
+</ul>
+<h2 id="assignments">📝 Assignments</h2>
+<ul>
+<li><a href="../Assignments/Py03-Assignments.html">Python 03 Assignments</a></li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Assignments/Py03-Assignments.ipynb">Assignment Notebook</a></li>
+</ul>
+<p>Pandas is a powerful data manipulation and analysis library for Python. It is widely used for data wrangling, cleaning, and analysis due to its intuitive data structures and easy-to-use functions.</p>
+<h2 id="official-documentation">Official Documentation</h2>
+<ul>
+<li><a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started">Pandas Documentation</a></li>
+</ul>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#guide-to-using-python-with-pandas">Guide to Using Python with Pandas</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#setting-up">Setting Up</a><ul>
+<li><a href="#installing-pandas">Installing Pandas</a></li>
+<li><a href="#importing-pandas">Importing Pandas</a></li>
+</ul>
+</li>
+<li><a href="#data-structures-in-pandas">Data Structures in Pandas</a><ul>
+<li><a href="#creating-a-series">Creating a Series</a></li>
+<li><a href="#creating-a-dataframe">Creating a DataFrame</a></li>
+</ul>
+</li>
+<li><a href="#basic-operations">Basic Operations</a><ul>
+<li><a href="#viewing-data">Viewing Data</a></li>
+<li><a href="#selecting-data">Selecting Data</a></li>
+<li><a href="#filtering-data">Filtering Data</a></li>
+<li><a href="#adding-and-modifying-columns">Adding and Modifying Columns</a></li>
+<li><a href="#deleting-columns">Deleting Columns</a></li>
+<li><a href="#handling-missing-data">Handling Missing Data</a></li>
+</ul>
+</li>
+<li><a href="#advanced-operations">Advanced Operations</a><ul>
+<li><a href="#grouping-data">Grouping Data</a></li>
+<li><a href="#merging-dataframes">Merging DataFrames</a></li>
+</ul>
+</li>
+<li><a href="#saving-and-loading-data">Saving and Loading Data</a><ul>
+<li><a href="#reading-data-from-a-file">Reading Data from a File</a></li>
+<li><a href="#writing-data-to-a-file">Writing Data to a File</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<h2 id="setting-up">Setting Up</h2>
+<h3 id="installing-pandas">Installing Pandas</h3>
+<p>Before using Pandas, you need to install it. You can install Pandas using pip:</p>
+<pre><code class="language-bash">pip install pandas
+</code></pre>
+<h3 id="importing-pandas">Importing Pandas</h3>
+<p>To use Pandas, you need to import it into your Python script or Jupyter Notebook:</p>
+<pre><code class="language-python">import pandas as pd
+</code></pre>
+<h2 id="data-structures-in-pandas">Data Structures in Pandas</h2>
+<p>Pandas primarily uses two data structures:</p>
+<ol>
+<li><strong>Series</strong>: A one-dimensional labeled array capable of holding any data type.</li>
+<li><strong>DataFrame</strong>: A two-dimensional labeled data structure with columns of potentially different types.</li>
+</ol>
+<h3 id="creating-a-series">Creating a Series</h3>
+<p>A Series can be created from a list, NumPy array, or a dictionary.</p>
+<pre><code class="language-python">import pandas as pd
+
+# Creating a Series from a list
+data = [1, 2, 3, 4, 5]
+series = pd.Series(data)
+print(series)
+
+# Creating a Series from a dictionary
+data = {'a': 1, 'b': 2, 'c': 3}
+series = pd.Series(data)
+print(series)
+</code></pre>
+<h3 id="creating-a-dataframe">Creating a DataFrame</h3>
+<p>A DataFrame can be created from a dictionary, list of dictionaries, or a NumPy array.</p>
+<pre><code class="language-python"># Creating a DataFrame from a dictionary
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'City': ['New York', 'San Francisco', 'Los Angeles']
+}
+df = pd.DataFrame(data)
+print(df)
+
+# Creating a DataFrame from a list of dictionaries
+data = [
+    {'Name': 'Alice', 'Age': 25, 'City': 'New York'},
+    {'Name': 'Bob', 'Age': 30, 'City': 'San Francisco'},
+    {'Name': 'Charlie', 'Age': 35, 'City': 'Los Angeles'}
+]
+df = pd.DataFrame(data)
+print(df)
+</code></pre>
+<h2 id="basic-operations">Basic Operations</h2>
+<h3 id="viewing-data">Viewing Data</h3>
+<ul>
+<li><strong>Head and Tail</strong>: View the first or last few rows of the DataFrame.</li>
+</ul>
+<pre><code class="language-python">print(df.head())  # Default is 5
+print(df.tail(2))  # View last 2 rows
+</code></pre>
+<ul>
+<li><strong>Info</strong>: Get a summary of the DataFrame.</li>
+</ul>
+<pre><code class="language-python">print(df.info())
+</code></pre>
+<ul>
+<li><strong>Describe</strong>: Get descriptive statistics for numerical columns.</li>
+</ul>
+<pre><code class="language-python">print(df.describe())
+</code></pre>
+<h3 id="selecting-data">Selecting Data</h3>
+<ul>
+<li><strong>Selecting columns</strong>: </li>
+</ul>
+<pre><code class="language-python">print(df['Name'])  # Select single column
+print(df[['Name', 'City']])  # Select multiple columns
+</code></pre>
+<ul>
+<li><strong>Selecting rows by label</strong>:</li>
+</ul>
+<pre><code class="language-python">print(df.loc[0])  # Select first row by index
+print(df.loc[0:1])  # Select first two rows by index
+</code></pre>
+<ul>
+<li><strong>Selecting rows by position</strong>:</li>
+</ul>
+<pre><code class="language-python">print(df.iloc[0])  # Select first row by position
+print(df.iloc[0:2])  # Select first two rows by position
+</code></pre>
+<h3 id="filtering-data">Filtering Data</h3>
+<ul>
+<li><strong>Filtering rows based on a condition</strong>:</li>
+</ul>
+<pre><code class="language-python">print(df[df['Age'] &gt; 25])  # Select rows where Age &gt; 25
+</code></pre>
+<h3 id="adding-and-modifying-columns">Adding and Modifying Columns</h3>
+<ul>
+<li><strong>Adding a new column</strong>:</li>
+</ul>
+<pre><code class="language-python">df['Country'] = ['USA', 'USA', 'USA']
+print(df)
+</code></pre>
+<ul>
+<li><strong>Modifying an existing column</strong>:</li>
+</ul>
+<pre><code class="language-python">df['Age'] = df['Age'] + 1
+print(df)
+</code></pre>
+<h3 id="deleting-columns">Deleting Columns</h3>
+<ul>
+<li><strong>Deleting a column</strong>:</li>
+</ul>
+<pre><code class="language-python">df = df.drop('Country', axis=1)
+print(df)
+</code></pre>
+<h3 id="handling-missing-data">Handling Missing Data</h3>
+<ul>
+<li><strong>Identifying missing data</strong>:</li>
+</ul>
+<pre><code class="language-python">print(df.isnull())
+print(df.isnull().sum())
+</code></pre>
+<ul>
+<li><strong>Dropping missing values</strong>:</li>
+</ul>
+<pre><code class="language-python">df = df.dropna()
+print(df)
+</code></pre>
+<ul>
+<li><strong>Filling missing values</strong>:</li>
+</ul>
+<pre><code class="language-python">df = df.fillna(0)
+print(df)
+</code></pre>
+<h2 id="advanced-operations">Advanced Operations</h2>
+<h3 id="grouping-data">Grouping Data</h3>
+<p>Grouping data is useful for aggregating information based on certain criteria.</p>
+<pre><code class="language-python">data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'Alice', 'Bob', 'Charlie'],
+    'Year': [2020, 2020, 2020, 2021, 2021, 2021],
+    'Sales': [250, 300, 400, 200, 350, 300]
+}
+df = pd.DataFrame(data)
+
+grouped = df.groupby('Name').sum()
+print(grouped)
+</code></pre>
+<h3 id="merging-dataframes">Merging DataFrames</h3>
+<p>Merging allows you to combine two DataFrames based on a common column or index.</p>
+<pre><code class="language-python">data1 = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35]
+}
+data2 = {
+    'Name': ['Alice', 'Bob', 'David'],
+    'Salary': [50000, 60000, 70000]
+}
+
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
+
+merged = pd.merge(df1, df2, on='Name', how='inner')
+print(merged)
+</code></pre>
+<h2 id="saving-and-loading-data">Saving and Loading Data</h2>
+<h3 id="reading-data-from-a-file">Reading Data from a File</h3>
+<p>Pandas can read data from various file formats including CSV, Excel, and SQL databases.</p>
+<pre><code class="language-python"># Reading from a CSV file
+df = pd.read_csv('data.csv')
+
+# Reading from an Excel file
+df = pd.read_excel('data.xlsx')
+
+# Reading from a SQL database
+import sqlite3
+conn = sqlite3.connect('database.db')
+df = pd.read_sql_query('SELECT * FROM table_name', conn)
+</code></pre>
+<h3 id="writing-data-to-a-file">Writing Data to a File</h3>
+<p>Pandas can write data to various file formats as well.</p>
+<pre><code class="language-python"># Writing to a CSV file
+df.to_csv('output.csv', index=False)
+
+# Writing to an Excel file
+df.to_excel('output.xlsx', index=False)
+
+# Writing to a SQL database
+df.to_sql('table_name', conn, if_exists='replace', index=False)
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>This guide provides an overview of using Pandas for data manipulation and analysis. By mastering these basic and advanced operations, you can efficiently handle and analyze large datasets in Python. Practice with different datasets and explore Pandas documentation for more functionalities and use cases. Happy coding!</p>
+<h2 id="next-steps">🎯 Next Steps</h2>
+<ol>
+<li><strong>Practice with exercises</strong>: Open the <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py03-pandas-b.ipynb">Colab notebooks</a> and complete the exercises</li>
+<li><strong>Complete assignments</strong>: Work through the <a href="../Assignments/Py03-Assignments.html">Py03 Assignments</a></li>
+<li><strong>Continue learning</strong>: Move on to <a href="Python04-Plotting.html">Python04: Plotting</a></li>
+</ol>
+<hr />
+<p><a href="Python02-arrays.html">⬅ Previous: Arrays</a> | <a href="../README.html">🎠 Main Page</a> | <a href="Python04-Plotting.html">➡ Next: Plotting</a></p>
+    </div>
+    
+    <hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
+    <p style="text-align: center; color: #2c3e50; font-style: italic;">
+        <strong>Happy Learning! 🐍✨</strong>
+    </p>
+</body>
+</html>

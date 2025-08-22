@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments (Py03) - Python Course</title>
+    
+    <style>
+    /* Inline CSS for immediate styling */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        border: 3px solid #2c3e50;
+    }
+
+    .header h1 {
+        color: #2c3e50;
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .nav-breadcrumb {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-breadcrumb a {
+        display: inline-block;
+        margin: 0.2rem;
+        padding: 0.5rem 1rem;
+        background: #FCE834;
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .nav-breadcrumb a:hover {
+        background: #2c3e50;
+        color: #FCE834;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-colab {
+        background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+        color: white !important;
+    }
+
+    .btn-video {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        color: white !important;
+    }
+
+    .btn-theory {
+        background: #2c3e50;
+        color: white !important;
+    }
+
+    .btn-principles {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50 !important;
+        font-weight: 600;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #2c3e50;
+    }
+
+    h1 {
+        border-bottom: 3px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h2 {
+        border-bottom: 2px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h3 {
+        border-bottom: 1px solid #FCE834;
+        padding-bottom: 0.3rem;
+    }
+
+    code {
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    }
+
+    pre {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        border-left: 4px solid #FCE834;
+    }
+
+    pre code {
+        background: none;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 4px solid #FCE834;
+        margin: 0;
+        padding: 1rem;
+        background: #f9f9f9;
+        font-style: italic;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    th {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background-color: rgba(252, 232, 52, 0.1);
+    }
+
+    ul, ol {
+        padding-left: 2rem;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: #FCE834;
+        background: #2c3e50;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .practice-links {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .practice-links h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="../Assignments/index.html">📝 Assignments</a></div>
+    <div class="content">
+        <h1 id="assignments-py03">Assignments (Py03)</h1>
+<h2 id="problem-1-predicting-hospital-readmission-rates">Problem 1: Predicting Hospital Readmission Rates</h2>
+<h3 id="hard">Hard</h3>
+<p><strong>Scenario:</strong> A hospital wants to reduce its 30-day readmission rates, a key quality measure in healthcare. The hospital has historical data on patients, including demographics, diagnoses, treatments, discharge instructions, and whether or not they were readmitted within 30 days.</p>
+<p><strong>Objective:</strong> Analyze the data to identify patterns and predictors of readmission.</p>
+<p><strong>Pandas Tasks:</strong></p>
+<ol>
+<li><strong>Data Cleaning:</strong> Use Pandas to clean the dataset by handling missing values, removing duplicates, and standardizing the format of the data.</li>
+<li><strong>Feature Engineering:</strong> Create new features, such as the length of stay, number of comorbidities, or discharge destination, that could be relevant to predicting readmission.</li>
+<li><strong>Data Analysis:</strong> Perform exploratory data analysis (EDA) to identify correlations between patient characteristics and readmission rates. Visualize trends using Pandas' plotting functions.</li>
+</ol>
+<pre><code class="language-python"># Example usage (dummy data)
+# Load the data
+data = pd.read_csv('fictitious_hospital_data.csv')
+# Data cleaning
+data_cleaned = clean_data(data)
+# Feature engineering
+data_fe = engineer_features(data_cleaned)
+# Data analysis
+analyze_data(data_fe)
+</code></pre>
+<p><em>If you stop here, and code this function, by yourself, you will learn a lot. (HARD)</em></p>
+<h2 id="-">---</h2>
+<hr />
+<h3 id="medium">Medium</h3>
+<ol>
+<li><strong>Data Cleaning:</strong></li>
+<li>Check and handle missing values and duplicates.<ul>
+<li>Check for missing values in each column, by using the <code>isnull()</code> method followed by <code>sum()</code>.</li>
+</ul>
+</li>
+<li>
+<p>Standardize the format of categorical data (e.g., convert to lowercase).</p>
+<ul>
+<li>Convert the <code>Gender</code>, <code>Primary_Diagnosis</code>, and <code>Discharge_Destination</code> columns to lowercase using the <code>str.lower()</code> method.</li>
+</ul>
+</li>
+<li>
+<p><strong>Feature Engineering:</strong></p>
+</li>
+<li>
+<p>Create new features like <code>Length_of_Stay_Category</code>, <code>Age_Group</code>, and <code>Comorbidity_Burden</code> based on existing columns.</p>
+<ul>
+<li>Create a new feature <code>Length_of_Stay_Category</code> by binning the <code>Length_of_Stay</code> column into categories like 'Short', 'Medium', 'Long', and 'Very Long'.</li>
+<li>Create a new feature <code>Age_Group</code> by binning the <code>Age</code> column into categories like 'Young', 'Middle-aged', 'Senior', and 'Elderly'.</li>
+<li>Create a new feature <code>Comorbidity_Burden</code> by binning the <code>Num_Comorbidities</code> column into categories like 'None', 'Low', 'Medium', and 'High'.</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Analysis:</strong></p>
+</li>
+<li>Calculate the readmission rate by different categorical features such as gender, primary diagnosis, length of stay, age group, discharge destination, and comorbidity burden.<ul>
+<li>Group the data by each categorical feature and calculate the mean of the <code>Readmitted_Within_30_Days</code> column.</li>
+</ul>
+</li>
+<li>Generate summary statistics for the cleaned data.<ul>
+<li>Calculate descriptive statistics like mean, standard deviation, min, max, etc., for numerical columns using the <code>describe()</code> method.</li>
+</ul>
+</li>
+<li>Calculate the correlation matrix to understand relationships between numerical features.<ul>
+<li>Use the <code>corr()</code> method to calculate the correlation between numerical columns.</li>
+</ul>
+</li>
+</ol>
+<p><em>If you stop here, and code this function, with the help of the instructions above, you still learn a lot. (MEDIUM)</em></p>
+<h2 id="-_1">---</h2>
+<hr />
+<h3 id="easy">Easy</h3>
+<p>Fill the TODOs in the code below to complete the function.</p>
+<p>Here's some dummy code to solve Problem 1 using Pandas, covering data cleaning, feature engineering, and data analysis tasks:</p>
+<pre><code class="language-python">import pandas as pd
+import numpy as np
+
+# Load the data
+data = #TODO, read the data from 'fictitious_hospital_data.csv'
+
+# 1. Data Cleaning
+# -----------------
+
+# Check for missing values
+missing_values =  #TODO check for missing values in each column
+print(&quot;Missing values in each column:&quot;)
+print(missing_values)
+
+# Drop rows with missing values (if any)
+data_cleaned =  #TODO drop rows with missing values
+
+# Check for duplicate rows
+duplicate_rows =  #TODO, check for duplicate rows
+# print(f&quot;Number of duplicate rows: {duplicate_rows}&quot;)
+
+# Drop duplicate rows (if any)
+data_cleaned = #TODO
+
+# Standardize categorical data (convert to lower case or consistent format)
+data_cleaned['Gender'] = #TODO
+data_cleaned['Primary_Diagnosis'] = #TODO
+data_cleaned['Discharge_Destination'] = #TODO
+
+# 2. Feature Engineering
+# ----------------------
+
+# Create a new feature: Length of Stay Category
+bins = [0, 3, 7, 14, np.inf]
+labels = ['Short', 'Medium', 'Long', 'Very Long']
+data_cleaned['Length_of_Stay_Category'] =  #TODO
+
+# Create a new feature: Age Group
+age_bins = [0, 30, 50, 70, np.inf]
+age_labels = ['Young', 'Middle-aged', 'Senior', 'Elderly']
+data_cleaned['Age_Group'] =  #TODO
+
+# Create a new feature: Comorbidity Burden
+data_cleaned['Comorbidity_Burden'] =  #TODO
+
+# 3. Data Analysis
+# ----------------
+
+# Analyzing Readmission Rates by Various Factors
+
+# Readmission rate by Gender
+readmission_by_gender =  #TODO
+print(&quot;Readmission rate by Gender:&quot;)
+print(readmission_by_gender)
+
+# Readmission rate by Primary Diagnosis
+readmission_by_diagnosis = #TODO
+print(&quot;\nReadmission rate by Primary Diagnosis:&quot;)
+print(readmission_by_diagnosis)
+
+# Readmission rate by Length of Stay Category
+readmission_by_los =  #TODO
+print(&quot;\nReadmission rate by Length of Stay Category:&quot;)
+print(readmission_by_los)
+
+# Readmission rate by Age Group
+readmission_by_age_group = #TODO
+print(&quot;\nReadmission rate by Age Group:&quot;)
+print(readmission_by_age_group)
+
+# Readmission rate by Discharge Destination
+readmission_by_discharge = #TODO
+print(&quot;\nReadmission rate by Discharge Destination:&quot;)
+print(readmission_by_discharge)
+
+# Readmission rate by Comorbidity Burden
+readmission_by_comorbidity = data_cleaned.groupby('Comorbidity_Burden')['Readmitted_Within_30_Days'].mean()
+print(&quot;\nReadmission rate by Comorbidity Burden:&quot;)
+print(readmission_by_comorbidity)
+
+# Summary Statistics for Data
+summary_stats = #TODO
+print(&quot;\nSummary statistics of cleaned data:&quot;)
+print(summary_stats)
+
+# Count of patients in each group (e.g., Age Group, Length of Stay Category)
+age_group_counts = #TODO
+length_of_stay_counts = data_cleaned['Length_of_Stay_Category'].value_counts()
+
+print(&quot;\nCount of patients by Age Group:&quot;)
+print(age_group_counts)
+
+print(&quot;\nCount of patients by Length of Stay Category:&quot;)
+print(length_of_stay_counts)
+
+# Correlation Matrix
+# Convert categorical features to numerical using one-hot encoding
+data_cleaned = pd.get_dummies(data_cleaned)
+# Correlation matrix for numerical features
+correlation_matrix = data_cleaned.corr()
+print(&quot;\nCorrelation matrix: of values abs(corr) &gt; 0.8&quot;)
+# format the output only show the values that are greater than 0.8 in absolute value
+# Output: feature 1 vs feature 2 : correlation value and only show the values that are greater than 0.8 in absolute value
+print(correlation_matrix[(correlation_matrix.abs() &gt; 0.8) &amp; (correlation_matrix &lt; 1)].stack().dropna())
+
+</code></pre>
+<h3 id="code-explanation">Code Explanation</h3>
+<ol>
+<li><strong>Data Cleaning:</strong></li>
+<li>Check and handle missing values and duplicates.</li>
+<li>
+<p>Standardize the format of categorical data.</p>
+</li>
+<li>
+<p><strong>Feature Engineering:</strong></p>
+</li>
+<li>
+<p>Create new features like <code>Length_of_Stay_Category</code>, <code>Age_Group</code>, and <code>Comorbidity_Burden</code> based on existing columns.</p>
+</li>
+<li>
+<p><strong>Data Analysis:</strong></p>
+</li>
+<li>Calculate the readmission rate by different categorical features such as gender, primary diagnosis, length of stay, age group, discharge destination, and comorbidity burden.</li>
+<li>Generate summary statistics for the cleaned data.</li>
+<li>Calculate the correlation matrix to understand relationships between numerical features.</li>
+</ol>
+<p>This code is designed to provide insight into patterns in the data and help identify factors associated with readmission without delving into model creation or visualization.</p>
+<p><em>You finished this problem, if you complete the code above, and test it with the example usage. (EASY)</em></p>
+<h2 id="-_2">---</h2>
+<hr />
+<h2 id="problem-2-analyzing-medication-adherence-in-chronic-disease-patients">Problem 2: Analyzing Medication Adherence in Chronic Disease Patients</h2>
+<h3 id="hard_1">Hard</h3>
+<p><strong>Scenario:</strong> A clinic is concerned about medication adherence among its chronic disease patients (e.g., diabetes, hypertension). Poor adherence can lead to worsening health outcomes and increased healthcare costs. The clinic has data on patient visits, prescriptions, and self-reported adherence levels.</p>
+<p><strong>Objective:</strong> Identify patients at high risk of non-adherence and the factors associated with poor adherence. Create a system to flag patients who may need additional support.</p>
+<p><strong>Pandas Tasks:</strong></p>
+<ol>
+<li><strong>Data Merging:</strong> Combine multiple datasets, such as tables from patients and visits with prescription records, into a single DataFrame for analysis.</li>
+<li><strong>Adherence Calculation:</strong> Calculate medication adherence rates for each patient by comparing the number of prescribed doses to the number of doses reported as taken.</li>
+<li><strong>Risk Stratification:</strong> Group patients by adherence levels (e.g., high, medium, low) and analyze the characteristics of each group (e.g., age, number of medications, comorbidities).</li>
+</ol>
+<pre><code class="language-python"># Example usage (dummy data)
+# Load the datasets
+patients_df = pd.read_csv('fictitious_patients.csv')
+visits_df = pd.read_csv('fictitious_visits.csv')
+
+# 1. Data Merging
+# Combine patients and visits data into a single DataFrame
+# 2. Adherence Calculation
+# Calculate medication adherence rates
+# 3. Risk Stratification
+# Classify patients into risk categories based on adherence rate
+# Analyze characteristics of each group
+
+# Output the results
+print(grouped_df)
+
+# Example: Flag patients with low adherence for additional support
+print(&quot;Patients at high risk of non-adherence:&quot;)
+print(low_adherence_patients[['Patient_ID', 'Age', 'Condition', 'Adherence_Rate']])
+</code></pre>
+<p><em>If you stop here, and code this function, by yourself, you will learn a lot. (HARD)</em></p>
+<h2 id="-_3">---</h2>
+<hr />
+<h3 id="medium_1">Medium</h3>
+<ol>
+<li><strong>Data Merging:</strong></li>
+<li>Merge the <code>patients_df</code> and <code>visits_df</code> DataFrames on the common column <code>Patient_ID</code> using an inner join.<ul>
+<li>Use the <code>pd.merge()</code> function to combine the two DataFrames based on the <code>Patient_ID</code> column.</li>
+<li>Choose the appropriate join type (e.g., inner, outer, left, right) based on the data requirements.</li>
+<li>Store the merged DataFrame in a variable like <code>merged_df</code>.</li>
+<li>Check the resulting DataFrame to ensure the merge was successful.</li>
+<li>Handle any missing or duplicate values that may arise during the merge.</li>
+</ul>
+</li>
+<li><strong>Adherence Calculation:</strong></li>
+<li>Calculate the medication adherence rate for each patient.<ul>
+<li>Create a new column <code>Adherence_Rate</code> in the <code>merged_df</code> DataFrame by dividing the <code>Reported_Doses_Taken</code> by the <code>Prescribed_Doses</code> and multiplying by 100.</li>
+<li>Ensure that the calculation is accurate and handles any potential division by zero errors.</li>
+<li>Round the adherence rate to two decimal places for better readability.</li>
+<li>Check the resulting DataFrame to verify the correctness of the adherence rate calculation.</li>
+</ul>
+</li>
+<li><strong>Risk Stratification:</strong></li>
+<li>Classify patients into different adherence levels based on their adherence rates.<ul>
+<li>Define a function <code>classify_adherence(rate)</code> that takes an adherence rate as input and returns a category (e.g., 'High', 'Medium', 'Low') based on predefined thresholds.</li>
+<li>Apply this function to the <code>Adherence_Rate</code> column in the <code>merged_df</code> DataFrame to create a new column <code>Adherence_Level</code>.</li>
+<li>Check the distribution of patients across different adherence levels.</li>
+</ul>
+</li>
+</ol>
+<p><em>If you stop here, and code this function, with the help of the instructions above, you still learn a lot. (MEDIUM)</em></p>
+<h2 id="-_4">---</h2>
+<hr />
+<h3 id="easy_1">Easy</h3>
+<p>Here's a dummy Python code using Pandas to tackle the outlined tasks for the medication adherence scenario:</p>
+<pre><code class="language-python">import pandas as pd
+
+# Load the datasets
+patients_df = #TODO
+visits_df = #TODO
+
+# 1. Data Merging: Combine patients and visits data into a single DataFrame
+# Assume there's a common column 'Patient_ID' in both datasets
+merged_df = #TODO
+
+# 2. Adherence Calculation: Calculate medication adherence rates
+# Adherence Rate = (Reported Doses Taken / Prescribed Doses) * 100
+merged_df['Adherence_Rate'] = #TODO
+
+# 3. Risk Stratification: Classify patients into risk categories based on adherence rate
+def classify_adherence(rate):
+    #TODO
+
+merged_df['Adherence_Level'] = #TODO
+
+# Analyze characteristics of each group
+# Grouping by Adherence Level and aggregating other characteristics
+grouped_df = merged_df.groupby('Adherence_Level').agg({
+    'Age': 'mean',
+    'Num_Medications': 'mean',
+    'Condition': pd.Series.mode,
+    'Patient_ID': 'nunique'  # Count of unique patients in each adherence group
+}).reset_index()
+
+# Output the results
+print(grouped_df)
+
+# Example: Flag patients with low adherence for additional support
+low_adherence_patients = #TODO
+print(&quot;Patients at high risk of non-adherence:&quot;)
+print(low_adherence_patients[['Patient_ID', 'Age']].drop_duplicates())
+
+</code></pre>
+    </div>
+    
+    <hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
+    <p style="text-align: center; color: #2c3e50; font-style: italic;">
+        <strong>Happy Learning! 🐍✨</strong>
+    </p>
+</body>
+</html>

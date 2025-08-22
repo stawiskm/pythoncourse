@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Python Arrays and Multidimensional Arrays - Python Course</title>
+    
+    <style>
+    /* Inline CSS for immediate styling */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        border: 3px solid #2c3e50;
+    }
+
+    .header h1 {
+        color: #2c3e50;
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .nav-breadcrumb {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-breadcrumb a {
+        display: inline-block;
+        margin: 0.2rem;
+        padding: 0.5rem 1rem;
+        background: #FCE834;
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .nav-breadcrumb a:hover {
+        background: #2c3e50;
+        color: #FCE834;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-colab {
+        background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+        color: white !important;
+    }
+
+    .btn-video {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        color: white !important;
+    }
+
+    .btn-theory {
+        background: #2c3e50;
+        color: white !important;
+    }
+
+    .btn-principles {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50 !important;
+        font-weight: 600;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #2c3e50;
+    }
+
+    h1 {
+        border-bottom: 3px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h2 {
+        border-bottom: 2px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h3 {
+        border-bottom: 1px solid #FCE834;
+        padding-bottom: 0.3rem;
+    }
+
+    code {
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    }
+
+    pre {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        border-left: 4px solid #FCE834;
+    }
+
+    pre code {
+        background: none;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 4px solid #FCE834;
+        margin: 0;
+        padding: 1rem;
+        background: #f9f9f9;
+        font-style: italic;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    th {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background-color: rgba(252, 232, 52, 0.1);
+    }
+
+    ul, ol {
+        padding-left: 2rem;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: #FCE834;
+        background: #2c3e50;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .practice-links {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .practice-links h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="../Lecture_Notes/index.html">📚 Lecture Notes</a></div>
+    <div class="content">
+        <h1 id="introduction-to-python-arrays-and-multidimensional-arrays">Introduction to Python Arrays and Multidimensional Arrays</h1>
+<p><a href="Python01-py101.html">⬅ Previous: Python Basics</a> | <a href="../README.html">🎠 Main Page</a> | <a href="Python03-Pandas.html">➡ Next: Pandas</a></p>
+<h2 id="overview">Overview</h2>
+<p><a href="Python02-arrays_An_Introduction_to_Python_Arrays__From_Lists_to_Light_Speed.mp4">🎥 Video: Introduction to Python Arrays and Multidimensional Arrays</a></p>
+<h2 id="practice-in-google-colab">🚀 Practice in Google Colab</h2>
+<ul>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py02-arrays-b.ipynb">🟢 <strong>Beginner Level</strong></a> - Start here if you're new</li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py02-arrays.ipynb">🟡 <strong>Easy Level</strong></a> - Basic understanding</li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py02-arrays.ipynb">🟠 <strong>Medium Level</strong></a> - Intermediate challenges</li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py02-arrays.ipynb">🔴 <strong>Hard Level</strong></a> - Advanced problems</li>
+</ul>
+<h2 id="assignments">📝 Assignments</h2>
+<ul>
+<li><a href="../Assignments/Py02-Assignments.html">Python 02 Assignments</a></li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Assignments/Py02-Assignments.ipynb">Assignment Notebook</a></li>
+</ul>
+<p>In this guide, we will cover the basics of working with arrays and multidimensional arrays in Python. Python provides multiple ways to handle arrays, including the built-in <code>list</code> type and the <code>array</code> and <code>numpy</code> modules for more advanced usage. We will explore how to create, manipulate, and perform operations on these arrays.</p>
+<h2 id="official-documentation">Official Documentation</h2>
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/datastructures.html">Python Lists</a></li>
+<li><a href="https://docs.python.org/3/library/array.html">Python Arrays</a></li>
+<li><a href="https://numpy.org/doc/stable/user/absolute_beginners.html">NumPy Arrays</a></li>
+</ul>
+<h3 id="table-of-contents">Table of Contents</h3>
+<ul>
+<li><a href="#introduction-to-python-arrays-and-multidimensional-arrays">Introduction to Python Arrays and Multidimensional Arrays</a></li>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+</ul>
+</li>
+<li><a href="#1-introduction-to-arrays">1. Introduction to Arrays</a><ul>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#arrays-from-the-array-module">Arrays from the <code>array</code> module</a></li>
+</ul>
+</li>
+<li><a href="#2-introduction-to-multidimensional-arrays">2. Introduction to Multidimensional Arrays</a><ul>
+<li><a href="#lists-of-lists">Lists of Lists</a></li>
+<li><a href="#numpy-arrays">Numpy Arrays</a></li>
+</ul>
+</li>
+<li><a href="#3-operations-on-arrays">3. Operations on Arrays</a><ul>
+<li><a href="#indexing-and-slicing">Indexing and Slicing</a></li>
+<li><a href="#lists-1">Lists</a></li>
+<li><a href="#numpy-arrays-1">Numpy Arrays</a></li>
+<li><a href="#adding-removing-and-modifying-elements">Adding, Removing, and Modifying Elements</a></li>
+<li><a href="#lists-2">Lists</a></li>
+<li><a href="#numpy-arrays-2">Numpy Arrays</a></li>
+</ul>
+</li>
+<li><a href="#4-operations-on-multidimensional-arrays">4. Operations on Multidimensional Arrays</a><ul>
+<li><a href="#indexing-and-slicing-1">Indexing and Slicing</a></li>
+<li><a href="#adding-removing-and-modifying-elements-1">Adding, Removing, and Modifying Elements</a></li>
+</ul>
+</li>
+<li><a href="#5-common-array-functions-and-methods">5. Common Array Functions and Methods</a><ul>
+<li><a href="#list-methods">List Methods</a></li>
+<li><a href="#numpy-array-functions">Numpy Array Functions</a></li>
+</ul>
+</li>
+<li><a href="#6-excurse-images">6. Excurse: Images</a><ul>
+<li><a href="#images-as-arrays">Images as Arrays</a></li>
+<li><a href="#image-processing-with-numpy">Image Processing with Numpy</a></li>
+<li><a href="#displaying-images">Displaying Images</a></li>
+</ul>
+</li>
+<li><a href="#introduction-to-numpy-arrays-and-vectorized-operations">Introduction to NumPy Arrays and Vectorized Operations</a><ul>
+<li><a href="#example-1-using-nested-for-loops">Example 1: Using Nested For Loops</a></li>
+<li><a href="#example-2-using-array-calculations-vectorized-operations">Example 2: Using Array Calculations (Vectorized Operations)</a></li>
+<li><a href="#explanation">Explanation</a></li>
+<li><a href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="1-introduction-to-arrays">1. Introduction to Arrays</h2>
+<h3 id="lists">Lists</h3>
+<p>The simplest way to create an array in Python is by using a list. Lists are dynamic arrays that can hold elements of different types.</p>
+<pre><code class="language-python"># Creating a list
+my_list = [1, 2, 3, 4, 5]
+print(my_list)  # Output: [1, 2, 3, 4, 5]
+</code></pre>
+<h3 id="arrays-from-the-array-module">Arrays from the <code>array</code> module</h3>
+<p>For more specialized array handling, Python provides the <code>array</code> module. Arrays from this module are more memory-efficient than lists.</p>
+<pre><code class="language-python">import array
+
+# Creating an array of integers
+my_array = array.array('i', [1, 2, 3, 4, 5])
+print(my_array)  # Output: array('i', [1, 2, 3, 4, 5])
+</code></pre>
+<h2 id="2-introduction-to-multidimensional-arrays">2. Introduction to Multidimensional Arrays</h2>
+<h3 id="lists-of-lists">Lists of Lists</h3>
+<p>You can create a 2D array using lists of lists.</p>
+<pre><code class="language-python"># Creating a 2D list
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+print(matrix)
+# Output:
+# [[1, 2, 3],
+#  [4, 5, 6],
+#  [7, 8, 9]]
+</code></pre>
+<h3 id="numpy-arrays">Numpy Arrays</h3>
+<p>For more efficient handling of multidimensional arrays, we use the <code>numpy</code> library.</p>
+<pre><code class="language-python">import numpy as np
+
+# Creating a 2D numpy array
+matrix = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+print(matrix)
+# Output:
+# [[1 2 3]
+#  [4 5 6]
+#  [7 8 9]]
+</code></pre>
+<h2 id="3-operations-on-arrays">3. Operations on Arrays</h2>
+<h3 id="indexing-and-slicing">Indexing and Slicing</h3>
+<h4 id="lists_1">Lists</h4>
+<pre><code class="language-python"># Accessing elements in a list
+print(my_list[0])  # Output: 1
+print(my_list[-1])  # Output: 5
+
+# Slicing a list
+print(my_list[1:3])  # Output: [2, 3]
+</code></pre>
+<h4 id="numpy-arrays_1">Numpy Arrays</h4>
+<pre><code class="language-python"># Accessing elements in a numpy array
+print(matrix[0, 0])  # Output: 1
+print(matrix[1, -1])  # Output: 6
+
+# Slicing a numpy array
+print(matrix[:, 1])  # Output: [2 5 8]
+</code></pre>
+<h3 id="adding-removing-and-modifying-elements">Adding, Removing, and Modifying Elements</h3>
+<h4 id="lists_2">Lists</h4>
+<pre><code class="language-python"># Adding elements
+my_list.append(6)
+print(my_list)  # Output: [1, 2, 3, 4, 5, 6]
+
+# Removing elements
+my_list.remove(2)
+print(my_list)  # Output: [1, 3, 4, 5, 6]
+
+# Modifying elements
+my_list[0] = 10
+print(my_list)  # Output: [10, 3, 4, 5, 6]
+</code></pre>
+<h4 id="numpy-arrays_2">Numpy Arrays</h4>
+<pre><code class="language-python"># Adding elements
+matrix = np.append(matrix, [[10, 11, 12]], axis=0)
+print(matrix)
+# Output:
+# [[ 1  2  3]
+#  [ 4  5  6]
+#  [ 7  8  9]
+#  [10 11 12]]
+
+# Removing elements
+matrix = np.delete(matrix, 0, axis=0)
+print(matrix)
+# Output:
+# [[ 4  5  6]
+#  [ 7  8  9]
+#  [10 11 12]]
+
+# Modifying elements
+matrix[0, 0] = 100
+print(matrix)
+# Output:
+# [[100   5   6]
+#  [  7   8   9]
+#  [ 10  11  12]]
+</code></pre>
+<h2 id="4-operations-on-multidimensional-arrays">4. Operations on Multidimensional Arrays</h2>
+<h3 id="indexing-and-slicing_1">Indexing and Slicing</h3>
+<p>For 2D arrays, you can access rows, columns, or individual elements using indices.</p>
+<pre><code class="language-python"># Accessing a row
+print(matrix[0])  # Output: [100   5   6]
+
+# Accessing a column
+print(matrix[:, 1])  # Output: [ 5  8 11]
+
+# Accessing a specific element
+print(matrix[1, 2])  # Output: 9
+</code></pre>
+<h3 id="adding-removing-and-modifying-elements_1">Adding, Removing, and Modifying Elements</h3>
+<pre><code class="language-python"># Adding a new row
+new_row = np.array([[13, 14, 15]])
+matrix = np.vstack([matrix, new_row])
+print(matrix)
+# Output:
+# [[100   5   6]
+#  [  7   8   9]
+#  [ 10  11  12]
+#  [ 13  14  15]]
+
+# Adding a new column
+new_col = np.array([[16], [17], [18], [19]])
+matrix = np.hstack([matrix, new_col])
+print(matrix)
+# Output:
+# [[100   5   6  16]
+#  [  7   8   9  17]
+#  [ 10  11  12  18]
+#  [ 13  14  15  19]]
+
+# Removing a row
+matrix = np.delete(matrix, 1, axis=0)
+print(matrix)
+# Output:
+# [[100   5   6  16]
+#  [ 10  11  12  18]
+#  [ 13  14  15  19]]
+
+# Removing a column
+matrix = np.delete(matrix, 2, axis=1)
+print(matrix)
+# Output:
+# [[100   5  16]
+#  [ 10  11  18]
+#  [ 13  14  19]]
+</code></pre>
+<h2 id="5-common-array-functions-and-methods">5. Common Array Functions and Methods</h2>
+<h3 id="list-methods">List Methods</h3>
+<ul>
+<li><code>append()</code>: Adds an element to the end of the list.</li>
+<li><code>remove()</code>: Removes the first occurrence of an element.</li>
+<li><code>pop()</code>: Removes and returns the element at the given index.</li>
+<li><code>sort()</code>: Sorts the list in ascending order.</li>
+<li><code>reverse()</code>: Reverses the list.</li>
+</ul>
+<h3 id="numpy-array-functions">Numpy Array Functions</h3>
+<ul>
+<li><code>np.append()</code>: Appends values to the end of an array.</li>
+<li><code>np.delete()</code>: Deletes elements from an array.</li>
+<li><code>np.reshape()</code>: Reshapes an array.</li>
+<li><code>np.transpose()</code>: Transposes the array.</li>
+<li><code>np.sum()</code>: Returns the sum of array elements.</li>
+</ul>
+<h2 id="6-excurse-images">6. Excurse: Images</h2>
+<h3 id="images-as-arrays">Images as Arrays</h3>
+<p>Images can be represented as arrays, where each element corresponds to a pixel value. In Python, we can use the <code>PIL</code> (Pillow) library to work with images.</p>
+<pre><code class="language-python">from PIL import Image
+
+# Load an image
+img = Image.open('image.jpg')
+
+# Convert the image to a numpy array
+img_array = np.array(img)
+print(img_array.shape)  # Output: (height, width, channels)
+</code></pre>
+<h3 id="image-processing-with-numpy">Image Processing with Numpy</h3>
+<p>We can perform various image processing operations using numpy functions.</p>
+<pre><code class="language-python"># Convert the image to grayscale
+gray_img = np.mean(img_array, axis=2)
+
+# Resize the image
+resized_img = np.resize(gray_img, (new_height, new_width))
+
+# Apply a filter
+filter = np.array([[0, -1, 0], [-1, 4, -1], [0, -1, 0]])
+filtered_img = np.clip(np.convolve(gray_img, filter), 0, 255)
+</code></pre>
+<h3 id="displaying-images">Displaying Images</h3>
+<p>We can display images using matplotlib.</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+
+# Display the original image
+plt.imshow(img_array)
+plt.axis('off')
+plt.show()
+
+# Display the processed image
+plt.imshow(filtered_img, cmap='gray')
+plt.axis('off')
+plt.show()
+</code></pre>
+<h2 id="introduction-to-numpy-arrays-and-vectorized-operations">Introduction to NumPy Arrays and Vectorized Operations</h2>
+<p>Let's compare the use of two nested for loops versus array calculations using NumPy for a simple task, such as adding two matrices.</p>
+<h3 id="example-1-using-nested-for-loops">Example 1: Using Nested For Loops</h3>
+<p>We'll add two matrices using nested for loops.</p>
+<pre><code class="language-python"># Traditional nested loops method
+import numpy as np
+
+# Define two 3x3 matrices
+A = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+B = np.array([[9, 8, 7], [6, 5, 4], [3, 2, 1]])
+
+# Initialize an empty matrix to store the result
+result = np.zeros((3, 3))
+
+# Using nested for loops to add the matrices
+for i in range(3):
+    for j in range(3):
+        result[i][j] = A[i][j] + B[i][j]
+
+print(&quot;Result using nested loops:&quot;)
+print(result)
+</code></pre>
+<h3 id="example-2-using-array-calculations-vectorized-operations">Example 2: Using Array Calculations (Vectorized Operations)</h3>
+<p>Now, let's do the same addition using NumPy's array operations, which is much faster and more concise.</p>
+<pre><code class="language-python"># Using NumPy's array operations
+result_vectorized = A + B
+
+print(&quot;Result using array calculation:&quot;)
+print(result_vectorized)
+</code></pre>
+<h3 id="explanation">Explanation</h3>
+<ol>
+<li>
+<p><strong>Nested For Loops</strong>: In the first example, we manually iterate through each element of the matrices using two loops. This method is straightforward but can be slow for large matrices.</p>
+</li>
+<li>
+<p><strong>Array Calculations</strong>: In the second example, NumPy's array operations handle the element-wise addition automatically. This method is highly optimized and generally much faster, especially for large arrays.</p>
+</li>
+</ol>
+<h3 id="output">Output</h3>
+<p>Both methods will produce the same output:</p>
+<pre><code>Result using nested loops:v
+[[10. 10. 10.]
+ [10. 10. 10.]
+ [10. 10. 10.]]
+
+Result using array calculation:
+[[10 10 10]
+ [10 10 10]
+ [10 10 10]]
+</code></pre>
+<p>The second method is more efficient and concise, making it preferable for most use cases involving array operations.</p>
+<h2 id="next-steps">🎯 Next Steps</h2>
+<ol>
+<li><strong>Practice with exercises</strong>: Open the <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py02-arrays-b.ipynb">Colab notebooks</a> and complete the exercises</li>
+<li><strong>Complete assignments</strong>: Work through the <a href="../Assignments/Py02-Assignments.html">Py02 Assignments</a></li>
+<li><strong>Continue learning</strong>: Move on to <a href="Python03-Pandas.html">Python03: Pandas</a></li>
+</ol>
+<hr />
+<p><a href="Python01-py101.html">⬅ Previous: Python Basics</a> | <a href="../README.html">🎠 Main Page</a> | <a href="Python03-Pandas.html">➡ Next: Pandas</a></p>
+    </div>
+    
+    <hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
+    <p style="text-align: center; color: #2c3e50; font-style: italic;">
+        <strong>Happy Learning! 🐍✨</strong>
+    </p>
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming with Python - Python Course</title>
+    
+    <style>
+    /* Inline CSS for immediate styling */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        border: 3px solid #2c3e50;
+    }
+
+    .header h1 {
+        color: #2c3e50;
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .nav-breadcrumb {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-breadcrumb a {
+        display: inline-block;
+        margin: 0.2rem;
+        padding: 0.5rem 1rem;
+        background: #FCE834;
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .nav-breadcrumb a:hover {
+        background: #2c3e50;
+        color: #FCE834;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-colab {
+        background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+        color: white !important;
+    }
+
+    .btn-video {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        color: white !important;
+    }
+
+    .btn-theory {
+        background: #2c3e50;
+        color: white !important;
+    }
+
+    .btn-principles {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50 !important;
+        font-weight: 600;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #2c3e50;
+    }
+
+    h1 {
+        border-bottom: 3px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h2 {
+        border-bottom: 2px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h3 {
+        border-bottom: 1px solid #FCE834;
+        padding-bottom: 0.3rem;
+    }
+
+    code {
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    }
+
+    pre {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        border-left: 4px solid #FCE834;
+    }
+
+    pre code {
+        background: none;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 4px solid #FCE834;
+        margin: 0;
+        padding: 1rem;
+        background: #f9f9f9;
+        font-style: italic;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    th {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background-color: rgba(252, 232, 52, 0.1);
+    }
+
+    ul, ol {
+        padding-left: 2rem;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: #FCE834;
+        background: #2c3e50;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .practice-links {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .practice-links h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="../Lecture_Notes/index.html">📚 Lecture Notes</a></div>
+    <div class="content">
+        <h1 id="programming-with-python">Programming with Python</h1>
+<p><a href="README.html">⬅ Back to Lecture Notes</a> | <a href="../README.html">🎠 Main Page</a> | <a href="Python02-arrays.html">➡ Next: Arrays</a></p>
+<h2 id="introduction">Introduction</h2>
+<p><a href="Python01-py101_The_Builder_s_Journey__A_Guide_to_Python.mp4">🎥 Video: Python Programming 101</a></p>
+<h2 id="practice-in-google-colab">🚀 Practice in Google Colab</h2>
+<ul>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py01-py101-b.ipynb">🟢 <strong>Beginner Level</strong></a> - Start here if you're new</li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py01-py101.ipynb">🟡 <strong>Easy Level</strong></a> - Basic understanding</li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py01-py101.ipynb">🟠 <strong>Medium Level</strong></a> - Intermediate challenges</li>
+<li><a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py01-py101.ipynb">🔴 <strong>Hard Level</strong></a> - Advanced problems</li>
+</ul>
+<h2 id="assignments">📝 Assignments</h2>
+<ul>
+<li><a href="../Assignments/Py01-Assignments.html">Python 01 Assignments</a></li>
+</ul>
+<p>This comprehensive guide will cover various fundamental topics in Python programming. It aims to provide detailed explanations, examples, and code snippets to help you understand and master these concepts. The topics covered in this guide include:</p>
+<h2 id="official-documentation">Official Documentation</h2>
+<ul>
+<li><a href="https://docs.python.org/3/index.html">Python Documentation</a></li>
+<li><a href="https://docs.python.org/3/tutorial/index.html">Python Tutorial</a></li>
+</ul>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#programming-with-python">Programming with Python</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#data-types">Data Types</a><ul>
+<li><a href="#numeric-types">Numeric Types</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#booleans">Booleans</a></li>
+</ul>
+</li>
+<li><a href="#lists-sets-and-dictionaries">Lists, Sets, and Dictionaries</a><ul>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#sets">Sets</a></li>
+<li><a href="#dictionaries">Dictionaries</a></li>
+</ul>
+</li>
+<li><a href="#operators">Operators</a><ul>
+<li><a href="#arithmetic-operations">Arithmetic Operations</a></li>
+<li><a href="#comparison-operators">Comparison Operators</a></li>
+<li><a href="#logical-operators">Logical Operators</a></li>
+<li><a href="#assignment-operators">Assignment Operators</a></li>
+<li><a href="#identity-operators">Identity Operators</a></li>
+<li><a href="#membership-operators">Membership Operators</a></li>
+</ul>
+</li>
+<li><a href="#conditions-and-conditional-statements">Conditions and Conditional Statements</a><ul>
+<li><a href="#if-statements">If Statements</a></li>
+</ul>
+</li>
+<li><a href="#loops-while-and-for-continue-break">Loops: while and for, continue, break</a><ul>
+<li><a href="#while-loop">while Loop</a></li>
+<li><a href="#for-loop">for Loop</a></li>
+<li><a href="#continue-and-break-statements">continue and break Statements</a></li>
+</ul>
+</li>
+<li><a href="#functions">Functions</a><ul>
+<li><a href="#defining-functions">Defining Functions</a></li>
+</ul>
+</li>
+<li><a href="#external-libraries">External Libraries</a><ul>
+<li><a href="#installing-external-libraries">Installing External Libraries</a></li>
+<li><a href="#importing-external-libraries">Importing External Libraries</a></li>
+<li><a href="#popular-libraries">Popular Libraries</a></li>
+</ul>
+</li>
+<li><a href="#class-and-object">Class and Object</a></li>
+<li><a href="#basics-of-terminal-commands">Basics of Terminal Commands</a><ul>
+<li><a href="#running-python-files">Running Python Files</a></li>
+<li><a href="#navigating-directories">Navigating Directories</a></li>
+<li><a href="#listing-files-and-directories">Listing Files and Directories</a></li>
+<li><a href="#creating-and-deleting-filesdirectories">Creating and Deleting Files/Directories</a></li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+<p>Let's get started!</p>
+<h2 id="variables">Variables</h2>
+<p>In Python, variables are used to store data. They act as containers that hold values of different types, such as numbers, strings, or more complex data structures. To assign a value to a variable, you can use the assignment operator <code>=</code>. Here's an example:</p>
+<pre><code class="language-python">x = 10
+y = &quot;Hello, World!&quot;
+</code></pre>
+<p>Variable names can contain letters, numbers, and underscores, but they cannot start with a number. Python is case-sensitive, so <code>my_variable</code>, <code>My_Variable</code>, and <code>MY_VARIABLE</code> are considered different variables.</p>
+<h2 id="data-types">Data Types</h2>
+<h3 id="numeric-types">Numeric Types</h3>
+<p>Python supports several numeric types, including integers (<code>int</code>), floating-point numbers (<code>float</code>), and complex numbers (<code>complex</code>). Here's an example:</p>
+<pre><code class="language-python"># Integer
+x = 10
+
+# Floating-point number
+y = 3.14
+
+# Complex number
+z = 2 + 3j
+</code></pre>
+<h3 id="strings">Strings</h3>
+<p>Strings are used to represent text data in Python. You can define strings using either single quotes (<code>'</code>) or double quotes (<code>"</code>). Here's an example:</p>
+<pre><code class="language-python">message = &quot;Hello, World!&quot;
+</code></pre>
+<p>You can perform various operations on strings, such as concatenation (<code>+</code>), slicing, and accessing individual characters.</p>
+<h3 id="booleans">Booleans</h3>
+<p>Booleans represent the truth values <code>True</code> or <code>False</code>. They are often used in conditions and logical operations. Here's an example:</p>
+<pre><code class="language-python">is_valid = True
+is_invalid = False
+</code></pre>
+<h2 id="lists-sets-and-dictionaries">Lists, Sets, and Dictionaries</h2>
+<h3 id="lists">Lists</h3>
+<p>Lists are mutable, ordered collections that can store elements of different types. Here are some common operations you can perform on lists:</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+# Accessing elements
+print(fruits[0])    # Output: apple
+
+# Modifying elements
+fruits[1] = &quot;pear&quot;
+print(fruits)       # Output: ['apple', 'pear', 'cherry']
+
+# Adding elements
+fruits.append(&quot;orange&quot;)
+print(fruits)       # Output: ['apple', 'pear', 'cherry', 'orange']
+
+# Removing elements
+fruits.remove(&quot;apple&quot;)
+print(fruits)       # Output: ['pear', 'cherry', 'orange']
+</code></pre>
+<h3 id="sets">Sets</h3>
+<p>Sets are mutable, unordered collections of unique elements. Here are some common operations you can perform on sets:</p>
+<pre><code class="language-python">colors = {&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;}
+
+# Adding elements
+colors.add(&quot;yellow&quot;)
+print(colors)       # Output: {'red', 'green', 'blue', 'yellow'}
+
+# Removing elements
+colors.remove(&quot;red&quot;)
+print(colors)       # Output: {'green', 'blue', 'yellow'}
+</code></pre>
+<h3 id="dictionaries">Dictionaries</h3>
+<p>Dictionaries are mutable, unordered collections of key-value pairs. Here are some common operations you can perform on dictionaries:</p>
+<pre><code class="language-python">person = {
+    &quot;name&quot;: &quot;John&quot;,
+    &quot;age&quot;: 30,
+    &quot;city&quot;: &quot;New York&quot;
+}
+
+# Accessing values
+print(person[&quot;name&quot;])   # Output: John
+
+# Modifying values
+person[&quot;age&quot;] = 31
+print(person)           # Output: {'name': 'John', 'age': 31, 'city': 'New York'}
+
+# Adding new key-value pairs
+person[&quot;gender&quot;] = &quot;Male&quot;
+print(person)           # Output: {'name':'John', 'age': 31, 'city': 'New York', 'gender': 'Male'}
+
+# Removing key-value pairs
+del person[&quot;city&quot;]
+print(person)           # Output: {'name': 'John', 'age': 31, 'gender': 'Male'}
+</code></pre>
+<h2 id="operators">Operators</h2>
+<h3 id="arithmetic-operations">Arithmetic Operations</h3>
+<p>Python supports various arithmetic operations, including addition (<code>+</code>), subtraction (<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>), and exponentiation (<code>**</code>). Here are a few examples:</p>
+<pre><code class="language-python">a = 5
+b = 2
+
+sum = a + b          # Addition
+difference = a - b   # Subtraction
+product = a * b      # Multiplication
+quotient = a / b     # Division
+exponent = a ** b    # Exponentiation
+</code></pre>
+<h3 id="comparison-operators">Comparison Operators</h3>
+<p>Python provides comparison operators to compare values. These include equal to (<code>==</code>), not equal to (<code>!=</code>), greater than (<code>&gt;</code>), less than (<code>&lt;</code>), greater than or equal to (<code>&gt;=</code>), and less than or equal to (<code>&lt;=</code>).</p>
+<pre><code class="language-python">a = 5
+b = 2
+
+is_equal = a == b          # Equal to
+is_not_equal = a != b      # Not equal to
+is_greater = a &gt; b         # Greater than
+is_less = a &lt; b            # Less than
+is_greater_equal = a &gt;= b  # Greater than or equal to
+is_less_equal = a &lt;= b     # Less than or equal to
+</code></pre>
+<h3 id="logical-operators">Logical Operators</h3>
+<p>Python provides logical operators to combine multiple conditions. These include <code>and</code>, <code>or</code>, and <code>not</code>. Here's an example:</p>
+<pre><code class="language-python">a = 5
+b = 2
+
+# Logical AND
+result_and = (a &gt; 0) and (b &lt; 0)
+
+# Logical OR
+result_or = (a &gt; 0) or (b &lt; 0)
+
+# Logical NOT
+result_not = not (a &gt; 0)
+</code></pre>
+<h3 id="assignment-operators">Assignment Operators</h3>
+<p>Python provides shorthand assignment operators to perform arithmetic operations and assign the result back to a variable. These include <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, and <code>**=</code>. Here's an example:</p>
+<pre><code class="language-python">a = 5
+
+a += 2   # Equivalent to: a = a + 2
+a -= 2   # Equivalent to: a = a - 2
+a *= 2   # Equivalent to: a = a * 2
+a /= 2   # Equivalent to: a = a / 2
+a **= 2  # Equivalent to: a = a ** 2
+</code></pre>
+<h3 id="identity-operators">Identity Operators</h3>
+<p>Python provides identity operators to compare the memory location of two objects. These include <code>is</code> and <code>is not</code>. Here's an example:</p>
+<pre><code class="language-python">a = [1, 2, 3]
+b = [1, 2, 3]
+
+# Check if a and b refer to the same object
+is_same = a is b
+# Check if a and b refer to different objects
+is_different = a is not b
+</code></pre>
+<h3 id="membership-operators">Membership Operators</h3>
+<p>Python provides membership operators to check if a value is present in a sequence (such as a list, set, or dictionary). These include <code>in</code> and <code>not in</code>. Here's an example:</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+# Check if &quot;apple&quot; is in the list
+is_present = &quot;apple&quot; in fruits
+# Check if &quot;pear&quot; is not in the list
+is_absent = &quot;pear&quot; not in fruits
+</code></pre>
+<h2 id="conditions-and-conditional-statements">Conditions and Conditional Statements</h2>
+<h3 id="if-statements">If Statements</h3>
+<p>If statements allow you to execute different blocks of code based on certain conditions. Here's an example:</p>
+<pre><code class="language-python">age = 18
+
+if age &gt;= 18:
+    print(&quot;You are an adult.&quot;)
+elif age &gt;= 13:
+    print(&quot;You are a teenager.&quot;)
+else:
+    print(&quot;You are a child.&quot;)
+</code></pre>
+<h2 id="loops-while-and-for-continue-break">Loops: while and for, continue, break</h2>
+<h3 id="while-loop">while Loop</h3>
+<p>The <code>while</code> loop repeatedly executes a block of code as long as a given condition is true. Here's an example:</p>
+<pre><code class="language-python">count = 0
+
+while count &lt; 5:
+    print(count)
+    count += 1
+</code></pre>
+<h3 id="for-loop">for Loop</h3>
+<p>The <code>for</code> loop iterates over a sequence of elements. Here's an example:</p>
+<pre><code class="language-python">fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+for fruit in fruits:
+    print(fruit)
+</code></pre>
+<h3 id="continue-and-break-statements">continue and break Statements</h3>
+<ul>
+<li>The <code>continue</code> statement is used to skip the current iteration and move to the next one in the loop.</li>
+<li>The <code>break</code> statement is used to exit the loop prematurely. It terminates the loop and continues with the next statement after the loop.</li>
+</ul>
+<pre><code class="language-python">for i in range(10):
+    if i % 2 == 0:
+        continue    # Skip even numbers
+    elif i == 7:
+        break       # Exit the loop when i is 7
+    print(i)
+</code></pre>
+<h2 id="functions">Functions</h2>
+<h3 id="defining-functions">Defining Functions</h3>
+<p>Functions in Python allow you to encapsulate reusable blocks of code. They take input arguments (if any) and can return a value (or not). You can define your own functions using the <code>def</code> keyword. Here's an example of a function that calculates the sum of two numbers:</p>
+<pre><code class="language-python">def add_numbers(a, b):
+    sum = a + b
+    return sum
+</code></pre>
+<p>You can call this function by passing two numbers as arguments:</p>
+<pre><code class="language-python">result = add_numbers(3, 4)
+print(result)  # Output: 7
+</code></pre>
+<h2 id="external-libraries">External Libraries</h2>
+<h3 id="installing-external-libraries">Installing External Libraries</h3>
+<p>To use external libraries in Python, you need to install them. The most common way to install libraries is using the package manager <code>pip</code>. For example, to install the <code>requests</code> library, you can run the following command in your terminal:</p>
+<pre><code class="language-shell">pip install requests
+</code></pre>
+<h3 id="importing-external-libraries">Importing External Libraries</h3>
+<p>Once a library is installed, you can import it into your Python code using the <code>import</code> statement. Here's an example:</p>
+<pre><code class="language-python">import requests
+
+response = requests.get(&quot;https://www.example.com&quot;)
+print(response.status_code)
+</code></pre>
+<p>Some libraries may have submodules or functions that you can import individually. For example:</p>
+<pre><code class="language-python">from math import sqrt
+
+result = sqrt(16)
+print(result)  # Output: 4.0
+</code></pre>
+<p>Python comes with a rich ecosystem of libraries that can help you perform various tasks, such as data analysis, web scraping, machine learning, and more. Explore the Python Package Index (PyPI) to discover libraries that suit your needs. Some libraries come pre-installed with Python, while others need to be installed separately using <code>pip</code>.</p>
+<h3 id="popular-libraries">Popular Libraries</h3>
+<p>Some popular libraries include:</p>
+<ul>
+<li><code>numpy</code> for numerical computing.</li>
+<li><code>pandas</code> for data manipulation and analysis.</li>
+<li><code>matplotlib</code> for data visualization.</li>
+<li><code>scikit-learn</code> for machine learning.</li>
+<li><code>flask</code> for web development.</li>
+</ul>
+<h2 id="class-and-object">Class and Object</h2>
+<p>Python is an object-oriented programming language, which means it supports classes and objects. A class is a blueprint for creating objects, while an object is an instance of a class. Classes can have attributes (variables) and methods (functions).</p>
+<p>Here's an example of defining a class and creating objects:</p>
+<pre><code class="language-python">class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f&quot;Hello, my name is {self.name} and I am {self.age} years old.&quot;)
+
+# Create objects of the Person class
+person1 = Person(&quot;Alice&quot;, 30)
+person2 = Person(&quot;Bob&quot;, 25)
+
+# Call the greet method on the objects
+person1.greet()
+person2.greet()
+</code></pre>
+<p>In this example, the <code>Person</code> class has attributes <code>name</code> and <code>age</code>, and a method <code>greet</code> that prints a greeting message. We create two objects of the <code>Person</code> class and call the <code>greet</code> method on each object.</p>
+<h2 id="basics-of-terminal-commands">Basics of Terminal Commands</h2>
+<h3 id="running-python-files">Running Python Files</h3>
+<p>To run a Python file, open your terminal or command prompt and navigate to the directory where the file is located. Then, use the <code>python</code> command followed by the file name and its extension. For example:</p>
+<pre><code>python my_script.py
+</code></pre>
+<h3 id="navigating-directories">Navigating Directories</h3>
+<ul>
+<li><code>cd directory_name</code> - Change to a specific directory.</li>
+<li><code>cd ..</code> - Move up to the parent directory.</li>
+<li><code>cd /</code> - Move to the root directory.</li>
+</ul>
+<h3 id="listing-files-and-directories">Listing Files and Directories</h3>
+<ul>
+<li><code>ls</code> - List files and directories in the current directory.</li>
+<li><code>ls -l</code> - List files and directories with detailed information.</li>
+<li><code>ls -a</code> - List all files and directories, including hidden ones.</li>
+</ul>
+<h3 id="creating-and-deleting-filesdirectories">Creating and Deleting Files/Directories</h3>
+<ul>
+<li><code>touch file_name</code> - Create an empty file.</li>
+<li><code>mkdir directory_name</code> - Create a new directory.</li>
+<li><code>rm file_name</code> - Delete a file.</li>
+<li><code>rmdir directory_name</code> - Delete an empty directory.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>This guide has introduced you to the basics of Python programming, covering topics such as variables, data types, lists, sets, dictionaries, operators, conditions, loops, functions, external libraries, and terminal commands. By mastering these concepts, you'll be well-equipped to write Python code for a wide range of applications. Keep practicing, experimenting, and learning to enhance your Python skills further. Good luck on your programming journey!</p>
+<h2 id="next-steps">🎯 Next Steps</h2>
+<ol>
+<li><strong>Practice with exercises</strong>: Open the <a href="https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py01-py101-b.ipynb">Colab notebooks</a> and complete the exercises</li>
+<li><strong>Complete assignments</strong>: Work through the <a href="../Assignments/Py01-Assignments.html">Py01 Assignments</a></li>
+<li><strong>Continue learning</strong>: Move on to <a href="Python02-arrays.html">Python02: Arrays</a></li>
+</ol>
+<hr />
+<p><a href="README.html">⬅ Back to Lecture Notes</a> | <a href="../README.html">🎠 Main Page</a> | <a href="Python02-arrays.html">➡ Next: Arrays</a></p>
+    </div>
+    
+    <hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
+    <p style="text-align: center; color: #2c3e50; font-style: italic;">
+        <strong>Happy Learning! 🐍✨</strong>
+    </p>
+</body>
+</html>

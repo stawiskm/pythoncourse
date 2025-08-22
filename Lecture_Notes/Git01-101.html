@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Tutorial: A Step-by-Step Guide - Python Course</title>
+    
+    <style>
+    /* Inline CSS for immediate styling */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        border: 3px solid #2c3e50;
+    }
+
+    .header h1 {
+        color: #2c3e50;
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .nav-breadcrumb {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-breadcrumb a {
+        display: inline-block;
+        margin: 0.2rem;
+        padding: 0.5rem 1rem;
+        background: #FCE834;
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .nav-breadcrumb a:hover {
+        background: #2c3e50;
+        color: #FCE834;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-colab {
+        background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+        color: white !important;
+    }
+
+    .btn-video {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        color: white !important;
+    }
+
+    .btn-theory {
+        background: #2c3e50;
+        color: white !important;
+    }
+
+    .btn-principles {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50 !important;
+        font-weight: 600;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #2c3e50;
+    }
+
+    h1 {
+        border-bottom: 3px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h2 {
+        border-bottom: 2px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h3 {
+        border-bottom: 1px solid #FCE834;
+        padding-bottom: 0.3rem;
+    }
+
+    code {
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    }
+
+    pre {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        border-left: 4px solid #FCE834;
+    }
+
+    pre code {
+        background: none;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 4px solid #FCE834;
+        margin: 0;
+        padding: 1rem;
+        background: #f9f9f9;
+        font-style: italic;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    th {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background-color: rgba(252, 232, 52, 0.1);
+    }
+
+    ul, ol {
+        padding-left: 2rem;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: #FCE834;
+        background: #2c3e50;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .practice-links {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .practice-links h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="../Lecture_Notes/index.html">📚 Lecture Notes</a></div>
+    <div class="content">
+        <h1 id="git-tutorial-a-step-by-step-guide">Git Tutorial: A Step-by-Step Guide</h1>
+<p><a href="../README.html">🎠 Main Page</a> | <a href="README.html">📚 All Lecture Notes</a> | <a href="Python01-py101.html">➡ Start Python Course</a></p>
+<h2 id="introduction">Introduction</h2>
+<p><a href="Git01-101_Explained__From_Chaos_to_Control.mp4">🎥 Video Tutorial on Git</a></p>
+<p>Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It allows multiple developers to work on a project simultaneously without interfering with each other's work. This guide will walk you through the basics of Git, from installation to advanced features.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#understanding-version-control">Understanding Version Control</a></li>
+<li><a href="#installing-git">Installing Git</a></li>
+<li><a href="#getting-started-with-git">Getting Started with Git</a></li>
+<li><a href="#basic-git-commands">Basic Git Commands</a><ul>
+<li><a href="#git-init">git init</a></li>
+<li><a href="#git-clone">git clone</a></li>
+<li><a href="#git-status">git status</a></li>
+<li><a href="#git-add">git add</a></li>
+<li><a href="#git-commit">git commit</a></li>
+<li><a href="#git-push">git push</a></li>
+<li><a href="#git-pull">git pull</a></li>
+</ul>
+</li>
+<li><a href="#branching-and-merging">Branching and Merging</a><ul>
+<li><a href="#creating-a-branch">Creating a Branch</a></li>
+<li><a href="#switching-branches">Switching Branches</a></li>
+<li><a href="#merging-branches">Merging Branches</a></li>
+</ul>
+</li>
+<li><a href="#collaborating-with-others">Collaborating with Others</a></li>
+<li><a href="#rebasing">Rebasing</a></li>
+<li><a href="#undoing-changes">Undoing Changes</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+<hr />
+<h2 id="understanding-version-control">Understanding Version Control</h2>
+<p>Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later. There are two main types of version control systems:</p>
+<ul>
+<li><strong>Centralized Version Control Systems (CVCS)</strong>: A single server stores all the versions of the project files, and clients check out files from this central place.</li>
+<li><strong>Distributed Version Control Systems (DVCS)</strong>: Each client mirrors the entire repository. This means that if any server dies, any of the client repositories can be copied back up to the server to restore it.</li>
+</ul>
+<p>Git is a DVCS, which means every developer has a complete history of the project on their local machine.</p>
+<h2 id="installing-git">Installing Git</h2>
+<h3 id="on-windows">On Windows</h3>
+<ol>
+<li>Download Git from <a href="https://gitforwindows.org/">Git for Windows</a>.</li>
+<li>Run the installer and follow the instructions. Choose the default options unless you have a specific reason to change them.</li>
+</ol>
+<h3 id="on-macos">On macOS</h3>
+<p>You can install Git using Homebrew:</p>
+<pre><code class="language-bash">brew install git
+</code></pre>
+<p>Alternatively, you can install it as part of Xcode Command Line Tools:</p>
+<pre><code class="language-bash">xcode-select --install
+</code></pre>
+<h3 id="on-linux">On Linux</h3>
+<p>For Debian/Ubuntu-based distributions:</p>
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get install git
+</code></pre>
+<p>For Fedora:</p>
+<pre><code class="language-bash">sudo dnf install git
+</code></pre>
+<p>To verify the installation, run:</p>
+<pre><code class="language-bash">git --version
+</code></pre>
+<h2 id="getting-started-with-git">Getting Started with Git</h2>
+<h3 id="setting-up-your-identity">Setting Up Your Identity</h3>
+<p>After installing Git, the first thing you should do is set up your username and email address. Git uses this information to label the commits you make.</p>
+<pre><code class="language-bash">git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;your.email@example.com&quot;
+</code></pre>
+<h3 id="initializing-a-repository">Initializing a Repository</h3>
+<p>A Git repository is a directory that contains your project files and the history of all changes made to those files.</p>
+<p>To create a new repository:</p>
+<pre><code class="language-bash">mkdir my_project
+cd my_project
+git init
+</code></pre>
+<p>This command creates a <code>.git</code> directory inside <code>my_project</code> that tracks changes.</p>
+<h2 id="basic-git-commands">Basic Git Commands</h2>
+<h3 id="git-init"><code>git init</code></h3>
+<p>This command initializes a new Git repository.</p>
+<pre><code class="language-bash">git init
+</code></pre>
+<h3 id="git-clone"><code>git clone</code></h3>
+<p>To clone an existing repository:</p>
+<pre><code class="language-bash">git clone https://github.com/user/repo.git
+</code></pre>
+<p>This command copies the repository from GitHub (or any other remote) to your local machine.</p>
+<h3 id="git-status"><code>git status</code></h3>
+<p>To check the status of your files in the working directory and staging area:</p>
+<pre><code class="language-bash">git status
+</code></pre>
+<h3 id="git-add"><code>git add</code></h3>
+<p>To add a file to the staging area (preparing it for commit):</p>
+<pre><code class="language-bash">git add file_name
+</code></pre>
+<p>To add all changes:</p>
+<pre><code class="language-bash">git add .
+</code></pre>
+<h3 id="git-commit"><code>git commit</code></h3>
+<p>To commit the changes in the staging area:</p>
+<pre><code class="language-bash">git commit -m &quot;Commit message&quot;
+</code></pre>
+<h3 id="git-push"><code>git push</code></h3>
+<p>To push your changes to a remote repository:</p>
+<pre><code class="language-bash">git push origin branch_name
+</code></pre>
+<h3 id="git-pull"><code>git pull</code></h3>
+<p>To fetch and merge changes from the remote repository:</p>
+<pre><code class="language-bash">git pull origin branch_name
+</code></pre>
+<h2 id="branching-and-merging">Branching and Merging</h2>
+<h3 id="creating-a-branch">Creating a Branch</h3>
+<p>To create a new branch:</p>
+<pre><code class="language-bash">git branch branch_name
+</code></pre>
+<h3 id="switching-branches">Switching Branches</h3>
+<p>To switch to a different branch:</p>
+<pre><code class="language-bash">git checkout branch_name
+</code></pre>
+<h3 id="merging-branches">Merging Branches</h3>
+<p>To merge a branch into your current branch:</p>
+<pre><code class="language-bash">git merge branch_name
+</code></pre>
+<h2 id="collaborating-with-others">Collaborating with Others</h2>
+<p>When working with others, it's common to create branches for new features or bug fixes. Here's how you can collaborate:</p>
+<ol>
+<li><strong>Create a new branch</strong>: <code>git checkout -b feature_branch</code></li>
+<li><strong>Work on your changes</strong> and commit them.</li>
+<li><strong>Push the branch</strong>: <code>git push origin feature_branch</code></li>
+<li><strong>Create a Pull Request</strong> on GitHub for code review and merging.</li>
+</ol>
+<h2 id="rebasing">Rebasing</h2>
+<p>Rebasing is the process of moving or combining a sequence of commits to a new base commit. This can be useful for keeping a clean project history.</p>
+<pre><code class="language-bash">git rebase branch_name
+</code></pre>
+<h2 id="undoing-changes">Undoing Changes</h2>
+<h3 id="undo-a-commit">Undo a Commit</h3>
+<p>To undo the last commit (but keep the changes):</p>
+<pre><code class="language-bash">git reset --soft HEAD~1
+</code></pre>
+<p>To undo the last commit and discard the changes:</p>
+<pre><code class="language-bash">git reset --hard HEAD~1
+</code></pre>
+<h3 id="discard-changes-in-a-file">Discard Changes in a File</h3>
+<p>To discard changes in a specific file:</p>
+<pre><code class="language-bash">git checkout -- file_name
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>This tutorial has covered the basics of Git, from installation to more advanced topics like branching, merging, and rebasing. By mastering these commands and concepts, you'll be well on your way to managing your projects efficiently with Git.</p>
+<p>For more detailed information, consult the <a href="https://git-scm.com/doc">official Git documentation</a>.</p>
+<hr />
+    </div>
+    
+    <hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
+    <p style="text-align: center; color: #2c3e50; font-style: italic;">
+        <strong>Happy Learning! 🐍✨</strong>
+    </p>
+</body>
+</html>

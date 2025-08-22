@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PythonE-Numpy - Python Course</title>
+    
+    <style>
+    /* Inline CSS for immediate styling */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        padding: 2rem;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        border: 3px solid #2c3e50;
+    }
+
+    .header h1 {
+        color: #2c3e50;
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .nav-breadcrumb {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-breadcrumb a {
+        display: inline-block;
+        margin: 0.2rem;
+        padding: 0.5rem 1rem;
+        background: #FCE834;
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .nav-breadcrumb a:hover {
+        background: #2c3e50;
+        color: #FCE834;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn-colab {
+        background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+        color: white !important;
+    }
+
+    .btn-video {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        color: white !important;
+    }
+
+    .btn-theory {
+        background: #2c3e50;
+        color: white !important;
+    }
+
+    .btn-principles {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50 !important;
+        font-weight: 600;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #2c3e50;
+    }
+
+    h1 {
+        border-bottom: 3px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h2 {
+        border-bottom: 2px solid #FCE834;
+        padding-bottom: 0.5rem;
+    }
+
+    h3 {
+        border-bottom: 1px solid #FCE834;
+        padding-bottom: 0.3rem;
+    }
+
+    code {
+        background: #f5f5f5;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+    }
+
+    pre {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        overflow-x: auto;
+        border-left: 4px solid #FCE834;
+    }
+
+    pre code {
+        background: none;
+        padding: 0;
+    }
+
+    blockquote {
+        border-left: 4px solid #FCE834;
+        margin: 0;
+        padding: 1rem;
+        background: #f9f9f9;
+        font-style: italic;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    th {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    td {
+        padding: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+        vertical-align: top;
+    }
+
+    tr:hover {
+        background-color: rgba(252, 232, 52, 0.1);
+    }
+
+    ul, ol {
+        padding-left: 2rem;
+    }
+
+    li {
+        margin: 0.5rem 0;
+    }
+
+    a {
+        color: #2c3e50;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: #FCE834;
+        background: #2c3e50;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .practice-links {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .practice-links h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="../Lecture_Notes/index.html">📚 Lecture Notes</a></div>
+    <div class="content">
+        <h1 id="guide-to-using-numpy-with-python"><strong>Guide to Using NumPy with Python</strong></h1>
+<h2 id="introduction-to-numpy"><strong>Introduction to NumPy</strong></h2>
+<p><a href="PythonE-Numpy__Your_Python_Superpower_for_Data.mp4">Video: Introduction to NumPy</a></p>
+<p><strong>NumPy</strong> is a powerful library in Python that provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays efficiently. It is the foundation for many other scientific computing libraries like SciPy, Pandas, and more.</p>
+<hr />
+<h2 id="installation"><strong>Installation</strong></h2>
+<p>To use NumPy, you need to install it. You can install NumPy using pip:</p>
+<pre><code class="language-bash">pip install numpy
+</code></pre>
+<hr />
+<h2 id="importing-numpy"><strong>Importing NumPy</strong></h2>
+<p>Once installed, you can import NumPy into your Python script or Jupyter Notebook. It is customary to import it using the alias <code>np</code>:</p>
+<pre><code class="language-python">import numpy as np
+</code></pre>
+<hr />
+<h2 id="basic-array-operations"><strong>Basic Array Operations</strong></h2>
+<h3 id="1-creating-arrays"><strong>1. Creating Arrays</strong></h3>
+<ul>
+<li><strong>From Lists:</strong></li>
+</ul>
+<p>You can create a NumPy array from a Python list using the <code>np.array()</code> function.</p>
+<pre><code class="language-python">import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)
+</code></pre>
+<ul>
+<li><strong>Multi-Dimensional Arrays:</strong></li>
+</ul>
+<p>Create 2D or multi-dimensional arrays by passing nested lists.</p>
+<pre><code class="language-python">matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(matrix)
+</code></pre>
+<ul>
+<li><strong>Zeros and Ones:</strong></li>
+</ul>
+<p>Create arrays filled with zeros or ones using <code>np.zeros()</code> and <code>np.ones()</code>.</p>
+<pre><code class="language-python">zeros = np.zeros((3, 3))
+ones = np.ones((2, 4))
+</code></pre>
+<ul>
+<li><strong>Range and Linspace:</strong></li>
+</ul>
+<p>Use <code>np.arange()</code> to create arrays with a specified range and step size, or <code>np.linspace()</code> to create an array of evenly spaced values.</p>
+<pre><code class="language-python">range_array = np.arange(0, 10, 2)
+linspace_array = np.linspace(0, 1, 5)
+</code></pre>
+<h3 id="2-array-attributes"><strong>2. Array Attributes</strong></h3>
+<p>Explore important attributes of arrays:</p>
+<ul>
+<li><strong>Shape:</strong></li>
+</ul>
+<p>The shape of an array tells you its dimensions.</p>
+<pre><code class="language-python">print(matrix.shape)
+</code></pre>
+<ul>
+<li><strong>Size:</strong></li>
+</ul>
+<p>The total number of elements in the array.</p>
+<pre><code class="language-python">print(matrix.size)
+</code></pre>
+<ul>
+<li><strong>Data Type:</strong></li>
+</ul>
+<p>Check the data type of the array elements.</p>
+<pre><code class="language-python">print(arr.dtype)
+</code></pre>
+<hr />
+<h2 id="indexing-and-slicing"><strong>Indexing and Slicing</strong></h2>
+<p>NumPy arrays can be indexed and sliced similarly to Python lists, but with more power, especially for multi-dimensional arrays.</p>
+<h3 id="1-indexing"><strong>1. Indexing</strong></h3>
+<ul>
+<li><strong>1D Array:</strong></li>
+</ul>
+<pre><code class="language-python">arr = np.array([10, 20, 30, 40, 50])
+print(arr[2])  # Outputs 30
+</code></pre>
+<ul>
+<li><strong>2D Array:</strong></li>
+</ul>
+<pre><code class="language-python">matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(matrix[1, 2])  # Outputs 6
+</code></pre>
+<h3 id="2-slicing"><strong>2. Slicing</strong></h3>
+<ul>
+<li><strong>1D Array:</strong></li>
+</ul>
+<pre><code class="language-python">print(arr[1:4])  # Outputs [20 30 40]
+</code></pre>
+<ul>
+<li><strong>2D Array:</strong></li>
+</ul>
+<pre><code class="language-python">print(matrix[:, 1])  # Outputs second column [2 5 8]
+</code></pre>
+<h3 id="3-fancy-indexing"><strong>3. Fancy Indexing</strong></h3>
+<p>Select elements from arrays using lists or arrays of indices.</p>
+<pre><code class="language-python">arr = np.array([10, 20, 30, 40, 50])
+indices = [0, 2, 4]
+print(arr[indices])  # Outputs [10 30 50]
+</code></pre>
+<hr />
+<h2 id="array-operations"><strong>Array Operations</strong></h2>
+<p>NumPy supports element-wise operations as well as matrix operations.</p>
+<h3 id="1-element-wise-operations"><strong>1. Element-wise Operations</strong></h3>
+<pre><code class="language-python">arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+# Element-wise addition
+print(arr1 + arr2)
+
+# Element-wise multiplication
+print(arr1 * arr2)
+</code></pre>
+<h3 id="2-universal-functions-ufuncs"><strong>2. Universal Functions (ufuncs)</strong></h3>
+<p>NumPy provides many mathematical functions that operate element-wise.</p>
+<pre><code class="language-python">arr = np.array([1, 2, 3, 4])
+
+# Square root
+print(np.sqrt(arr))
+
+# Exponential
+print(np.exp(arr))
+</code></pre>
+<p>There is a wide range of ufuncs available in NumPy for various mathematical operations: <code>np.sin()</code>, <code>np.cos()</code>, <code>np.log()</code>, <code>np.sum()</code>, <code>np.mean()</code>, and more.</p>
+<h3 id="3-matrix-operations"><strong>3. Matrix Operations</strong></h3>
+<ul>
+<li><strong>Dot Product:</strong></li>
+</ul>
+<pre><code class="language-python">matrix1 = np.array([[1, 2], [3, 4]])
+matrix2 = np.array([[5, 6], [7, 8]])
+
+result = np.dot(matrix1, matrix2)
+print(result)
+</code></pre>
+<ul>
+<li><strong>Transpose:</strong></li>
+</ul>
+<pre><code class="language-python">print(matrix1.T)
+</code></pre>
+<hr />
+<h2 id="broadcasting"><strong>Broadcasting</strong></h2>
+<p>Broadcasting allows NumPy to perform element-wise operations on arrays of different shapes.</p>
+<pre><code class="language-python">arr = np.array([1, 2, 3])
+matrix = np.array([[10, 20, 30], [40, 50, 60]])
+
+# Broadcasting arr to match the shape of matrix
+result = matrix + arr
+print(result)
+</code></pre>
+<hr />
+<h2 id="aggregations"><strong>Aggregations</strong></h2>
+<p>NumPy provides a variety of aggregation functions:</p>
+<pre><code class="language-python">arr = np.array([1, 2, 3, 4, 5])
+
+# Sum
+print(np.sum(arr))
+
+# Mean
+print(np.mean(arr))
+
+# Maximum
+print(np.max(arr))
+
+# Minimum
+print(np.min(arr))
+</code></pre>
+<p>For multi-dimensional arrays, you can specify the axis:</p>
+<pre><code class="language-python">matrix = np.array([[1, 2, 3], [4, 5, 6]])
+
+# Sum along the columns
+print(np.sum(matrix, axis=0))
+
+# Sum along the rows
+print(np.sum(matrix, axis=1))
+</code></pre>
+<hr />
+<h2 id="difference-and-cumulative-sum"><strong>Difference and Cumulative Sum</strong></h2>
+<h3 id="1-npdiff-compute-differences-between-elements"><strong>1. <code>np.diff</code>: Compute Differences Between Elements</strong></h3>
+<p>The <code>np.diff()</code> function calculates the difference between consecutive elements in an array.</p>
+<ul>
+<li><strong>1D Array:</strong></li>
+</ul>
+<pre><code class="language-python">arr = np.array([10, 20, 30, 40, 50])
+diff = np.diff(arr)
+print(diff)  # Outputs [10 10 10 10]
+</code></pre>
+<ul>
+<li><strong>2D Array:</strong></li>
+</ul>
+<p>For 2D arrays, you can specify the axis along which to calculate the differences.</p>
+<pre><code class="language-python">matrix = np.array([[1, 2, 4],
+                   [7, 11, 13]])
+diff_axis0 = np.diff(matrix, axis=0)  # Difference along rows
+diff_axis1 = np.diff(matrix, axis=1)  # Difference along columns
+print(diff_axis0)  # Outputs [[6 9 9]]
+print(diff_axis1)  # Outputs [[ 1  2] [ 4  2]]
+</code></pre>
+<h3 id="2-npcumsum-compute-cumulative-sum"><strong>2. <code>np.cumsum</code>: Compute Cumulative Sum</strong></h3>
+<p>The <code>np.cumsum()</code> function returns the cumulative sum of elements along a given axis.</p>
+<ul>
+<li><strong>1D Array:</strong></li>
+</ul>
+<pre><code class="language-python">arr = np.array([1, 2, 3, 4, 5])
+cumsum = np.cumsum(arr)
+print(cumsum)  # Outputs [ 1  3  6 10 15]
+</code></pre>
+<ul>
+<li><strong>2D Array:</strong></li>
+</ul>
+<p>For 2D arrays, you can also specify the axis.</p>
+<pre><code class="language-python">matrix = np.array([[1, 2, 3], [4, 5, 6]])
+cumsum_axis0 = np.cumsum(matrix, axis=0)  # Cumulative sum along columns
+cumsum_axis1 = np.cumsum(matrix, axis=1)  # Cumulative sum along rows
+print(cumsum_axis0)  # Outputs [[ 1  2  3] [ 5  7  9]]
+print(cumsum_axis1)  # Outputs [[ 1  3  6] [ 4  9 15]]
+</code></pre>
+<hr />
+<h2 id="reshaping-and-resizing"><strong>Reshaping and Resizing</strong></h2>
+<ul>
+<li><strong>Reshape:</strong></li>
+</ul>
+<p>Change the shape of an array without changing its data.</p>
+<pre><code class="language-python">arr = np.arange(1, 7)
+reshaped = arr.reshape((2, 3))
+print(reshaped)
+</code></pre>
+<ul>
+<li><strong>Flatten:</strong></li>
+</ul>
+<p>Convert a multi-dimensional array to a 1D array.</p>
+<pre><code class="language-python">flattened = reshaped.flatten()
+print(flattened)
+</code></pre>
+<hr />
+<h2 id="random-numbers"><strong>Random Numbers</strong></h2>
+<p>NumPy's <code>random</code> module provides functions for generating random numbers.</p>
+<pre><code class="language-python"># Random integers
+rand_ints = np.random.randint(0, 10, size=(3, 3))
+
+# Random floats between 0 and 1
+rand_floats = np.random.rand(3, 3)
+
+# Normal distribution
+rand_normal = np.random.randn(3, 3)
+</code></pre>
+<hr />
+<h2 id="saving-and-loading-data"><strong>Saving and Loading Data</strong></h2>
+<ul>
+<li><strong>Save:</strong></li>
+</ul>
+<p>You can save arrays to disk in binary format using <code>np.save()</code> or in text format using <code>np.savetxt()</code>.</p>
+<pre><code class="language-python">np.save('array.npy', arr)
+np.savetxt('array.txt', arr)
+</code></pre>
+<ul>
+<li><strong>Load:</strong></li>
+</ul>
+<p>Load arrays from files.</p>
+<pre><code class="language-python">loaded_arr = np.load('array.npy')
+loaded_txt_arr = np.loadtxt('array.txt')
+</code></pre>
+<hr />
+<h2 id="practice-problems"><strong>Practice Problems</strong></h2>
+<ol>
+<li>Create a 4x4 matrix with values ranging from 0 to 15.</li>
+<li>Create a 3x3 identity matrix.</li>
+<li>Generate a 10x10 matrix with random values and find the minimum and maximum values.</li>
+<li>Subtract the mean of each row of a given matrix.</li>
+<li>Multiply two matrices of size 3x3 and 3x2.</li>
+<li>Find the difference between consecutive elements of a 1D array.
+7</li>
+</ol>
+<p>. Compute the cumulative sum of a 2D matrix along both axes.</p>
+<hr />
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>NumPy is a vast library with capabilities far beyond what is covered in this guide. This introduction should help you get started with basic array operations, mathematical functions, and array manipulation. As you progress, you'll find that NumPy is indispensable for scientific computing and data analysis in Python. Happy coding!</p>
+    </div>
+    
+    <hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
+    <p style="text-align: center; color: #2c3e50; font-style: italic;">
+        <strong>Happy Learning! 🐍✨</strong>
+    </p>
+</body>
+</html>
