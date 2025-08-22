@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignments (Py04) - Python Course</title>
-    
+#!/usr/bin/env python3
+"""
+Fix styling in all HTML files to ensure consistent appearance.
+This script ensures all HTML files have the complete CSS styling.
+"""
+
+import os
+import re
+import glob
+
+def get_complete_css():
+    """Get the complete CSS styling for all HTML files."""
+    return """
     <style>
     /* Inline CSS for immediate styling */
     body {
@@ -317,92 +323,91 @@
         font-size: 0.9rem;
     }
     </style>
+    """
+
+def fix_html_file_styling(file_path):
+    """Fix styling in a single HTML file."""
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
     
+    # Check if this file already has our complete styling
+    if 'nav-breadcrumb' in content and 'module-table' in content and 'level-grid' in content:
+        print(f"Styling already complete: {file_path}")
+        return False
+    
+    # Extract existing content between <body> and </body>
+    body_match = re.search(r'<body[^>]*>(.*)</body>', content, re.DOTALL)
+    if not body_match:
+        print(f"No body content found: {file_path}")
+        return False
+    
+    body_content = body_match.group(1)
+    
+    # Extract title from existing content
+    title_match = re.search(r'<title>([^<]+)</title>', content)
+    title = title_match.group(1) if title_match else "Python Course"
+    
+    # Get relative path to determine navigation
+    relative_path = os.path.relpath(file_path, os.getcwd())
+    path_parts = relative_path.split(os.sep)[:-1]  # Remove filename
+    
+    # Build navigation based on location
+    nav_links = ['<a href="../index.html">🏠 Home</a>']
+    if 'Lecture_Notes' in path_parts:
+        nav_links.append('<a href="index.html">📚 Lecture Notes</a>')
+    elif 'Assignments' in path_parts:
+        nav_links.append('<a href="index.html">📝 Assignments</a>')
+    elif 'Coding' in path_parts:
+        nav_links.append('<a href="index.html">💻 Coding</a>')
+    
+    navigation = f'<div class="nav-breadcrumb">{"".join(nav_links)}</div>'
+    
+    # Create complete HTML with proper styling
+    complete_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    {get_complete_css()}
 </head>
 <body>
-    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="index.html">📝 Assignments</a></div>
+    {navigation}
     <div class="content">
-        
-        <h1 id="assignments-py04">Assignments (Py04)</h1>
-<h2 id="python-assignment-unique-and-informative-data-visualization">Python Assignment: Unique and Informative Data Visualization</h2>
-<h3 id="overview">Overview</h3>
-<p>In this assignment, you are tasked with creating a unique and highly informative plot using data from the given CSV file, which can be accessed via the link provided on opendata.swiss.</p>
-<h3 id="instructions">Instructions</h3>
-<ol>
-<li><strong>Data Acquisition</strong>:</li>
-<li>Visit the provided link and download the CSV file containing SARS-CoV-2 (COVID-19) related data.</li>
-<li>
-<p><a href="https://idd.bag.admin.ch/api/v1/export/current/COVID19_oblig/csv">COVID-19 Data</a></p>
-</li>
-<li>
-<p><strong>Data Exploration</strong>:</p>
-</li>
-<li>Load the CSV file into a Pandas DataFrame. You may use the <code>pandas</code> library to accomplish this. pd.read_csv(https://idd.bag.admin.ch/api/v1/export/current/COVID19_oblig/csv)</li>
-<li>
-<p>Explore the dataset to understand its structure, content, and the relationships between different variables.</p>
-</li>
-<li>
-<p><strong>Plot Creation</strong>:</p>
-</li>
-<li>Based on your exploration, identify a unique and insightful aspect of the data that can be visualized. This might involve:<ul>
-<li>Analyzing trends over time.</li>
-<li>Comparing different categories or regions.</li>
-<li>Highlighting correlations or anomalies.</li>
-<li>Performing statistical or predictive analysis.</li>
-</ul>
-</li>
-<li>
-<p>Use Python libraries such as Matplotlib, Seaborn, Plotly, or others to create a visualization that is:</p>
-<ul>
-<li><strong>Unique</strong>: Aim to create a plot that few others would think to create. The more unique the perspective or combination of data points, the higher your grade.</li>
-<li><strong>Informative</strong>: Ensure that your visualization conveys valuable insights. The clarity, depth, and relevance of the information presented will be a major factor in grading.</li>
-</ul>
-</li>
-<li>
-<p><strong>Documentation</strong>:</p>
-</li>
-<li>
-<p>Write a brief explanation (in Markdown or as a comment) detailing the rationale behind your choice of visualization, the insights it provides, and any challenges you encountered.</p>
-</li>
-<li>
-<p><strong>Submission</strong>:</p>
-</li>
-<li>Submit your Python script or Jupyter notebook containing:<ul>
-<li>The code to load, explore, and visualize the data.</li>
-<li>The final plot.</li>
-<li>Your written explanation.</li>
-</ul>
-</li>
-<li>Additionally, submit a powerpoint presentation with one slide containing the plot, a brief explanation of the plot and your name.</li>
-</ol>
-<h3 id="evaluation-criteria">Evaluation Criteria</h3>
-<ul>
-<li><strong>Uniqueness (50%)</strong>:</li>
-<li><strong>Hard</strong>: If you are the only one to present the chosen visualization or analysis.</li>
-<li><strong>Medium</strong>: If only two of you present a similar type of visualization.</li>
-<li>
-<p><strong>Easy</strong>: If more than three students present similar visualizations.</p>
-</li>
-<li>
-<p><strong>Informative Value (50%)</strong>:</p>
-</li>
-<li>How well the visualization captures and communicates important insights from the data.</li>
-<li>The effectiveness of the visualization in answering a significant question or revealing hidden patterns.</li>
-</ul>
-<h2 id="tips-for-success">Tips for Success</h2>
-<ul>
-<li>Think creatively about the data. Consider different angles and questions that the data might answer.</li>
-<li>Consider combining multiple visualizations or layers within a single plot to tell a more comprehensive story.</li>
-<li>Pay attention to the aesthetics and clarity of your plot. Ensure that it is not only unique but also easy to interpret.</li>
-<li>Double-check your data handling and ensure that any conclusions drawn are supported by the data.</li>
-</ul>
-<p>This assignment is designed to challenge your ability to extract meaningful insights from data and present them in a way that stands out. Good luck!</p>
+        {body_content.strip()}
+    </div>
+    
     <hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
     <p style="text-align: center; color: #2c3e50; font-style: italic;">
         <strong>Happy Learning! 🐍✨</strong>
     </p>
-    </div>
-    
-    
 </body>
-</html>
+</html>"""
+    
+    # Write the updated file
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(complete_html)
+    
+    print(f"Fixed styling: {file_path}")
+    return True
+
+def main():
+    """Fix styling in all HTML files that need it."""
+    # Find all HTML files
+    html_files = []
+    for root, dirs, files in os.walk('.'):
+        for file in files:
+            if file.endswith('.html') and file != 'index.html':  # Skip main index
+                html_files.append(os.path.join(root, file))
+    
+    print(f"Found {len(html_files)} HTML files to check:")
+    
+    fixed_count = 0
+    for html_file in html_files:
+        if fix_html_file_styling(html_file):
+            fixed_count += 1
+    
+    print(f"\\nProcessed {len(html_files)} files, fixed styling in {fixed_count} files.")
+
+if __name__ == "__main__":
+    main()

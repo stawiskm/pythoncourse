@@ -57,6 +57,30 @@
         color: #FCE834;
     }
 
+    .nav-links {
+        background: #f5f5f5;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        margin: 0.5rem;
+        padding: 0.7rem 1.2rem;
+        background: #FCE834;
+        color: #2c3e50;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .nav-links a:hover {
+        background: #2c3e50;
+        color: #FCE834;
+    }
+
     .btn {
         display: inline-block;
         padding: 0.5rem 1rem;
@@ -92,6 +116,34 @@
         font-weight: 600;
     }
 
+    .module-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .module-table th {
+        background: linear-gradient(135deg, #FCE834 0%, #f9e71e 100%);
+        color: #2c3e50;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    .module-table td {
+        padding: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+        vertical-align: top;
+    }
+
+    .module-table tr:hover {
+        background-color: rgba(252, 232, 52, 0.1);
+    }
+
     h1, h2, h3, h4, h5, h6 {
         color: #2c3e50;
     }
@@ -116,6 +168,7 @@
         padding: 0.2rem 0.4rem;
         border-radius: 4px;
         font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+        color: #2c3e50;
     }
 
     pre {
@@ -199,12 +252,77 @@
         margin-top: 0;
         color: #2c3e50;
     }
+
+    .level-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .level-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .level-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .level-beginner {
+        border-left: 5px solid #28a745;
+    }
+
+    .level-easy {
+        border-left: 5px solid #FCE834;
+    }
+
+    .level-medium {
+        border-left: 5px solid #fd7e14;
+    }
+
+    .level-hard {
+        border-left: 5px solid #dc3545;
+    }
+
+    .card-title {
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .card-content {
+        margin-bottom: 1rem;
+    }
+
+    .file-list {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+
+    .file-list ul {
+        margin: 0;
+        padding-left: 1.5rem;
+    }
+
+    .file-list li {
+        margin: 0.3rem 0;
+        font-family: monospace;
+        font-size: 0.9rem;
+    }
     </style>
     
 </head>
 <body>
-    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="../Lecture_Notes/index.html">📚 Lecture Notes</a></div>
+    <div class="nav-breadcrumb"><a href="../index.html">🏠 Home</a><a href="index.html">📚 Lecture Notes</a></div>
     <div class="content">
+        
         <h1 id="programming-with-python">Programming with Python</h1>
 <p><a href="README.html">⬅ Back to Lecture Notes</a> | <a href="../README.html">🎠 Main Page</a> | <a href="Python02-arrays.html">➡ Next: Arrays</a></p>
 <h2 id="introduction">Introduction</h2>
@@ -566,11 +684,12 @@ person2.greet()
 </ol>
 <hr />
 <p><a href="README.html">⬅ Back to Lecture Notes</a> | <a href="../README.html">🎠 Main Page</a> | <a href="Python02-arrays.html">➡ Next: Arrays</a></p>
-    </div>
-    
     <hr style="border: none; border-top: 3px solid #FCE834; margin: 3rem 0;">
     <p style="text-align: center; color: #2c3e50; font-style: italic;">
         <strong>Happy Learning! 🐍✨</strong>
     </p>
+    </div>
+    
+    
 </body>
 </html>
