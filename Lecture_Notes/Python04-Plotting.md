@@ -1,3 +1,7 @@
+---
+title: "Guide to Plotting with Seaborn and Matplotlib in Python"
+---
+
 # Guide to Plotting with Seaborn and Matplotlib in Python
 
 [⬅ Previous: Pandas](Python03-Pandas.md) | [🎠 Main Page](../README.md) | [➡ Next: Data Science](../Lecture_Notes/PythonE-Datascience.md)

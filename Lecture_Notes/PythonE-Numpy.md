@@ -1,6 +1,8 @@
-# **Guide to Using NumPy with Python**
-
 ---
+title: "Guide to Using NumPy with Python"
+---
+
+# **Guide to Using NumPy with Python**
 
 ## **Introduction to NumPy**
 

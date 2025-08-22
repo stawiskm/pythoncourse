@@ -1,3 +1,7 @@
+---
+title: "Guide to Using Python with Pandas"
+---
+
 # Guide to Using Python with Pandas
 
 [⬅ Previous: Arrays](Python02-arrays.md) | [🎠 Main Page](../README.md) | [➡ Next: Plotting](Python04-Plotting.md)

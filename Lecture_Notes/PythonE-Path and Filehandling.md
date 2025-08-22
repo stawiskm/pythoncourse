@@ -1,3 +1,7 @@
+---
+title: "Guide to Path Building and File Handling in Python"
+---
+
 # Guide to Path Building and File Handling in Python
 
 ## Introduction

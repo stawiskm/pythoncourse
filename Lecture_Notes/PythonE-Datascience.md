@@ -1,3 +1,7 @@
+---
+title: "Python Data Science Guide"
+---
+
 # Python Data Science Guide
 
 [Video: Python Data Science Guide](PythonE-Datascience_The_Data_Science_Journey__From_Numbers_to_Knowledge.mp4)

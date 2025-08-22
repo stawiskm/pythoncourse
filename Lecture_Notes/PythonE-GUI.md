@@ -1,3 +1,7 @@
+---
+title: "Programming a Python Script with Console Launch and GUI"
+---
+
 # Step-by-Step Guide: Programming a Python Script with Console Launch
 
 This step-by-step guide will help you learn how to program a Python script that can be launched from the console. We will gradually build the script, adding new features and functionality at each step. The final code will include a graphical user interface (GUI) with various features such as BMI calculation, data logging, data storage in CSV format, data visualization, and more.

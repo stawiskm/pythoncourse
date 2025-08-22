@@ -1,9 +1,5 @@
 ---
-layout: default
 title: "Programming with Python"
-module: "01"
-difficulty: "beginner"
-description: "Introduction to Python programming fundamentals"
 ---
 
 # Programming with Python

@@ -1,7 +1,5 @@
 ---
-layout: default
 title: "Lecture Notes"
-description: "Interactive Python tutorials with video guides and practice exercises"
 ---
 
 # Lecture Notes
