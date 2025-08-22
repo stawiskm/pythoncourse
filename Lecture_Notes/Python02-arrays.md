@@ -1,8 +1,20 @@
 # Introduction to Python Arrays and Multidimensional Arrays
 
+[⬅ Previous: Python Basics](Python01-py101.md) | [🎠 Main Page](../README.md) | [➡ Next: Pandas](Python03-Pandas.md)
+
 ## Overview
 
-[Video: Introduction to Python Arrays and Multidimensional Arrays](Python02-arrays_An_Introduction_to_Python_Arrays__From_Lists_to_Light_Speed.mp4)
+[🎥 Video: Introduction to Python Arrays and Multidimensional Arrays](Python02-arrays_An_Introduction_to_Python_Arrays__From_Lists_to_Light_Speed.mp4)
+
+## 🚀 Practice in Google Colab
+- [🟢 **Beginner Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py02-arrays-b.ipynb) - Start here if you're new
+- [🟡 **Easy Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py02-arrays.ipynb) - Basic understanding
+- [🟠 **Medium Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py02-arrays.ipynb) - Intermediate challenges
+- [🔴 **Hard Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py02-arrays.ipynb) - Advanced problems
+
+## 📝 Assignments
+- [Python 02 Assignments](../Assignments/Py02-Assignments.md)
+- [Assignment Notebook](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Assignments/Py02-Assignments.ipynb)
 
 In this guide, we will cover the basics of working with arrays and multidimensional arrays in Python. Python provides multiple ways to handle arrays, including the built-in `list` type and the `array` and `numpy` modules for more advanced usage. We will explore how to create, manipulate, and perform operations on these arrays.
 
@@ -370,4 +382,12 @@ Result using array calculation:
  [10 10 10]]
 ```
 
-The second method is more efficient and concise, making it preferable for most use cases involving array operations.y<>
+The second method is more efficient and concise, making it preferable for most use cases involving array operations.
+
+## 🎯 Next Steps
+1. **Practice with exercises**: Open the [Colab notebooks](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py02-arrays-b.ipynb) and complete the exercises
+2. **Complete assignments**: Work through the [Py02 Assignments](../Assignments/Py02-Assignments.md)
+3. **Continue learning**: Move on to [Python03: Pandas](Python03-Pandas.md)
+
+---
+[⬅ Previous: Python Basics](Python01-py101.md) | [🎠 Main Page](../README.md) | [➡ Next: Pandas](Python03-Pandas.md)

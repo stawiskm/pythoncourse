@@ -1,7 +1,18 @@
 # Programming with Python
 
+[⬅ Back to Lecture Notes](README.md) | [🎠 Main Page](../README.md) | [➡ Next: Arrays](Python02-arrays.md)
+
 ## Introduction
-[Video: Python Programming 101](Python01-py101_The_Builder_s_Journey__A_Guide_to_Python.mp4)
+[🎥 Video: Python Programming 101](Python01-py101_The_Builder_s_Journey__A_Guide_to_Python.mp4)
+
+## 🚀 Practice in Google Colab
+- [🟢 **Beginner Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py01-py101-b.ipynb) - Start here if you're new
+- [🟡 **Easy Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py01-py101.ipynb) - Basic understanding
+- [🟠 **Medium Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py01-py101.ipynb) - Intermediate challenges
+- [🔴 **Hard Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py01-py101.ipynb) - Advanced problems
+
+## 📝 Assignments
+- [Python 01 Assignments](../Assignments/Py01-Assignments.md)
 
 This comprehensive guide will cover various fundamental topics in Python programming. It aims to provide detailed explanations, examples, and code snippets to help you understand and master these concepts. The topics covered in this guide include:
 
@@ -433,3 +444,11 @@ python my_script.py
 ## Conclusion
 
 This guide has introduced you to the basics of Python programming, covering topics such as variables, data types, lists, sets, dictionaries, operators, conditions, loops, functions, external libraries, and terminal commands. By mastering these concepts, you'll be well-equipped to write Python code for a wide range of applications. Keep practicing, experimenting, and learning to enhance your Python skills further. Good luck on your programming journey!
+
+## 🎯 Next Steps
+1. **Practice with exercises**: Open the [Colab notebooks](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py01-py101-b.ipynb) and complete the exercises
+2. **Complete assignments**: Work through the [Py01 Assignments](../Assignments/Py01-Assignments.md)
+3. **Continue learning**: Move on to [Python02: Arrays](Python02-arrays.md)
+
+---
+[⬅ Back to Lecture Notes](README.md) | [🎠 Main Page](../README.md) | [➡ Next: Arrays](Python02-arrays.md)

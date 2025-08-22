@@ -1,7 +1,19 @@
 # Guide to Using Python with Pandas
 
+[⬅ Previous: Arrays](Python02-arrays.md) | [🎠 Main Page](../README.md) | [➡ Next: Plotting](Python04-Plotting.md)
+
 ## Introduction
-[Video: Introduction to Pandas](Python03-Pandas_Your_Ultimate_Data_Sidekick.mp4)
+[🎥 Video: Introduction to Pandas](Python03-Pandas_Your_Ultimate_Data_Sidekick.mp4)
+
+## 🚀 Practice in Google Colab
+- [🟢 **Beginner Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py03-pandas-b.ipynb) - Start here if you're new
+- [🟡 **Easy Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py03-pandas.ipynb) - Basic understanding
+- [🟠 **Medium Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py03-pandas.ipynb) - Intermediate challenges
+- [🔴 **Hard Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py03-pandas.ipynb) - Advanced problems
+
+## 📝 Assignments
+- [Python 03 Assignments](../Assignments/Py03-Assignments.md)
+- [Assignment Notebook](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Assignments/Py03-Assignments.ipynb)
 
 Pandas is a powerful data manipulation and analysis library for Python. It is widely used for data wrangling, cleaning, and analysis due to its intuitive data structures and easy-to-use functions.
 
@@ -280,3 +292,11 @@ df.to_sql('table_name', conn, if_exists='replace', index=False)
 ## Conclusion
 
 This guide provides an overview of using Pandas for data manipulation and analysis. By mastering these basic and advanced operations, you can efficiently handle and analyze large datasets in Python. Practice with different datasets and explore Pandas documentation for more functionalities and use cases. Happy coding!
+
+## 🎯 Next Steps
+1. **Practice with exercises**: Open the [Colab notebooks](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py03-pandas-b.ipynb) and complete the exercises
+2. **Complete assignments**: Work through the [Py03 Assignments](../Assignments/Py03-Assignments.md)
+3. **Continue learning**: Move on to [Python04: Plotting](Python04-Plotting.md)
+
+---
+[⬅ Previous: Arrays](Python02-arrays.md) | [🎠 Main Page](../README.md) | [➡ Next: Plotting](Python04-Plotting.md)

@@ -1,6 +1,18 @@
 # Guide to Plotting with Seaborn and Matplotlib in Python
 
-[Video: Data Visualization with Matplotlib and Seaborn](Python04-Plotting_s_Viz_Duel__Matplotlib_vs.mp4)
+[⬅ Previous: Pandas](Python03-Pandas.md) | [🎠 Main Page](../README.md) | [➡ Next: Data Science](../Lecture_Notes/PythonE-Datascience.md)
+
+[🎥 Video: Data Visualization with Matplotlib and Seaborn](Python04-Plotting_s_Viz_Duel__Matplotlib_vs.mp4)
+
+## 🚀 Practice in Google Colab
+- [🟢 **Beginner Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py04-plotting-b.ipynb) - Start here if you're new
+- [🟡 **Easy Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%201%20(Easy)/Py04-plotting.ipynb) - Basic understanding
+- [🟠 **Medium Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%202%20(Medium)/Py04-plotting.ipynb) - Intermediate challenges
+- [🔴 **Hard Level**](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%203%20(Hard)/Py04-plotting.ipynb) - Advanced problems
+
+## 📝 Assignments
+- [Python 04 Assignments](../Assignments/Py04-Assignments.md)
+- [Assignment Notebook](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Assignments/Py04-Assignments.ipynb)
 
 Data visualization is an essential part of data analysis, as it helps you understand patterns and relationships in your data. Python offers powerful libraries for creating various types of plots, including Matplotlib and Seaborn. This guide will introduce you to these libraries and show you how to create different types of plots to visualize your data.
 
@@ -326,3 +338,11 @@ plt.savefig('passengers_over_time.png')
 ## Conclusion
 
 This guide provides a basic overview of how to create and customize plots using Matplotlib and Seaborn. Both libraries offer extensive documentation and numerous options for creating complex and informative visualizations. Practice by trying out different types of plots and customizations to become proficient in data visualization with Python.
+
+## 🎯 Next Steps
+1. **Practice with exercises**: Open the [Colab notebooks](https://colab.research.google.com/github/stawiskm/pythoncourse/blob/student/Coding/Level%200%20(Beginner)/Py04-plotting-b.ipynb) and complete the exercises
+2. **Complete assignments**: Work through the [Py04 Assignments](../Assignments/Py04-Assignments.md)
+3. **Explore advanced topics**: Continue with [Data Science](../Lecture_Notes/PythonE-Datascience.md) or [NumPy](../Lecture_Notes/PythonE-Numpy.md)
+
+---
+[⬅ Previous: Pandas](Python03-Pandas.md) | [🎠 Main Page](../README.md) | [➡ Next: Data Science](../Lecture_Notes/PythonE-Datascience.md)
