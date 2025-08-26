@@ -7,6 +7,9 @@
 **Scenario:**  
 A hospital has a patient monitoring system that tracks the vital signs of patients in the intensive care unit (ICU). Each patient’s heart rate is recorded every minute and stored in an array. The array for each patient contains the heart rate data for the last 24 hours (1440 minutes). The hospital wants to implement an alert system that detects potential issues based on abnormal heart rate patterns.
 
+**Data:**
+url = "https://raw.githubusercontent.com/stawiskm/pythoncourse/student/Assignments/Data/heart_rate_data.csv"
+
 **Problem Statement:**  
 Write a program that takes in the heart rate data for a patient as an array of 1440 integers and checks for the following:
     1. **Tachycardia Alert:** If the heart rate exceeds 100 bpm for 15 consecutive minutes or more, raise a Tachycardia alert.
